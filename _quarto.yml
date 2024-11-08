@@ -16,7 +16,8 @@ book:
     - 07-laboratory-report.qmd
     - references.qmd
 
-bibliography: resources/bib-final.bib
+bibliography: bibliografi.bib
+bibliography: bibliografi_5.bib
 
 format: pdf
 

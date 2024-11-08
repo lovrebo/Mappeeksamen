@@ -1,13 +1,16 @@
 ---
+title: "Assignment 5: Analyzing repeated measures experiments"
+format: html
+editor: visual
 output: html_document
 editor_options: 
   chunk_output_type: console
+bibliography: bibliografi_5.bib
 ---
-# Assignment 5: Analyzing repeated measures experiments {#assignment5}
+
+(&Aring;r)  H&oslash;gde
 
 ## Assignment overview
-
-Lars var her
 
 In this assignment you will analyse and report on trial investigating the effect of resistance training volume on lean mass and muscle strength. The data are part of the `exscidata` package and can be accessed as `data("strengthvolume")` and `data("dxadata")`. Read the [instructions carefully](https://dhammarstrom.github.io/quant-methods-workshops/assignment-5.html)!
 
@@ -19,28 +22,79 @@ In this assignment you will analyse and report on trial investigating the effect
 ## Methods
 
 ### Participants and study overview
-
-### Muscle strength and hypertrophy
-
-### Data analysis and statistics
-
-## Results
-
 ```{r}
-#| label: "Load packages and data"
 #| warning: false
 #| message: false
 #| echo: false
-#| output: false
+#| label: tbl-deltakara
 
 
 
 library(tidyverse); library(exscidata)
-library(lme4)
+library(lme4) 
+library(gt)
+library(kableExtra)
 
 
-## Import data set, extract leg lean mass per leg and remove observations
-# that are include == "excl".
+#deltakar tabell
+deltakar_tabell <- exscidata::dxadata %>% 
+  filter(time == "pre",
+         include == "incl") %>% 
+  select(participant, sex, age, height, weight) %>% 
+  pivot_longer(names_to = "variable",
+               values_to = "value",
+               cols = age:weight) %>% 
+  summarise(.by = c(sex, variable),
+            m = mean(value),
+            s = sd(value),
+            n = n()) %>% 
+  mutate(sex = if_else(sex == "male",
+                       "Mann", "Kvinne"),
+         sex = paste0(sex, "  n = ", n),
+         stat = paste0(round(m, 1),
+                       "(",
+                       round(s, 1),
+                       ")")) %>% 
+  dplyr::select(sex, variable, stat) %>% 
+  pivot_wider(names_from = variable,
+              values_from = stat) %>% 
+  kable(format = "html",
+        col.names = c(" ", "Alder (&Aring;r)", "H&oslash;gde (cm)", "Vekt (kg)"),
+        escape = FALSE,
+        caption = "Deltakere") %>% 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+
+deltakar_tabell
+
+```
+
+
+
+Basert på dataen i @tbl-deltakara er deltakerane under 30 år
+
+
+
+
+#### Muscle strength and hypertrophy + lean body mass
+
+#### training protocol
+
+### Data analysis and statistics
+Para t-test
+
+## Resultat
+122,8g meir i lean  for 3set vs 1set p=0,036 
+
+```{r}
+#| echo: false
+#| message: false 
+#| warning: false 
+
+library(tidyverse); library(exscidata)
+library(lme4) 
+library(gt)
+
+#filtrere datasett for magermasse
 
 leanmass <- dxadata %>%
   select(participant:include, lean.left_leg, lean.right_leg) %>%
@@ -55,9 +109,8 @@ leanmass <- dxadata %>%
   ## Change levels for time and sets
   mutate(time = factor(time, levels = c("pre", "post")), 
          sets = factor(sets, levels = c("single", "multiple")), 
-         leg = paste0(participant, leg)) %>%
-  
-  print()
+         leg = paste0(participant, leg))
+
 
 
 # Create a wide data set of change scores per volume condition
@@ -70,177 +123,286 @@ leanmass_change_wide <- leanmass %>%
   pivot_wider(names_from = sets, 
               values_from = change) %>%
   
-  mutate(diff = multiple - single) %>%
-  
-  print()
-
-
-leanmass_change_wide_time <- leanmass %>%
-  pivot_wider(names_from = time, values_from = lean.mass) %>%
-
-  select(participant, sex, sets, pre, post) %>%
-  
-  print()
+  mutate(diff = multiple - single) 
 
 
 
+# para t-test av leanmass for multiple og single
 
-## Do a t-test on change scores per condition. 
-
-## Alternatives (paired, equal variation)
-tt1 <- with(leanmass_change_wide, t.test(multiple, single, paired = TRUE))
-
-## The same model but with lm
-m1 <- lm(diff ~ 1, data = leanmass_change_wide)
-
-summary(m1)
+tt_lbm <- with(leanmass_change_wide, t.test(multiple, single, paired = TRUE))
 
 
+## Write up the t-test
+
+pval <- round(tt_lbm$p.value, 3)
+
+tval <- round(tt_lbm$statistic,2)
+
+df <- tt_lbm$parameter
+
+cil <- round(tt_lbm$conf.int[1],1)
+ciu <- sprintf("%.1f", round(tt_lbm$conf.int[2],1))
+
+estimate <- round(tt_lbm$estimate,1)
 
 
-### Mixed effects model
-# A mixed effects model allowing for a random slope for time is very similar 
-# to the t-test used above. 
-
-m2 <- lmer(lean.mass ~ time * sets +( 1 + time |participant), 
-           data = leanmass)
-
-# Check the summary 
-summary(m2)
-# Check assumptions of equal residual variance
-plot(m2)
-
-## Mixed-Effects ANCOVA
-
-# The lm model does not contain information on multiple
-# observations per participant
-m3 <- lm(post ~ pre + sets, data = leanmass_change_wide_time)
-
-
-# A more correct model also include random intercepts per 
-# participant. Mixed effects ANCOVA mnodel:
-m4 <- lmer(post ~ pre + sets + (1|participant), 
-           data = leanmass_change_wide_time)
-
-
-summary(m3)
-
-summary(m4)
-
-
-
-### How to extract data from a model:
-
-# m1 is a linear model of difference in differences
-# we can use it for inference, extract average diff and confidence 
-# intervals and p-value
-
-# Save all elements of inline results
-m1pval <- round(coef(summary(m1))[1, 4], 3)
-m1est <- round(coef(summary(m1))[1, 1], 1)
-
-m1ciu <- round(confint(m1)[1,2], 1)
-m1cil <- round(confint(m1)[1,1], 1)
-
-# Combine into an object
-m1results <- paste0(m1est, 
-                    ", 95% CI: [",
-                    m1cil, 
-                    ", ",
-                    m1ciu, 
-                    "], p = ",
-                    m1pval
-                    )
-
-
-
-
+lean.mass.resultat <- paste0(estimate, 
+                            " (95% CI: [", 
+                            cil, 
+                            ", ", 
+                            ciu, 
+                            "], *P*-value = ", 
+                            pval, 
+                            ", t<sub>", 
+                            df, "</sub> = ", 
+                            tval, ")")
 
 ```
 
-The average difference in lean mass changes between sets were `r m1results`.
+Den gjennomsnittlige differansen i regional mager masse endring mellom tre og eit sett var `r lean.mass.resultat`.
+
+
+
 
 
 
 ```{r}
+#| echo: false  
+#| message: false 
+#| warning: false 
+#| label: tbl-change-leanmass  
+#| tbl-cap: "Mean Lean Mass Change by Sex" 
 
-## Time points in strength data set
-
-strengthvolume %>%
-  distinct(exercise)
-
-
-
-## Exploratory plot of strength data 
-
-str <- strengthvolume %>%
-  filter(include == "incl") %>%
-  mutate(time = factor(time, levels = c("pre", "session1", 
-                                        "week2", "week5", 
-                                        "week9", "post"))) %>%
-  print()
+library(dplyr) 
+library(gt) 
 
 
-str %>%
-  ggplot(aes(time, 
-             load, 
-             group = paste(participant, sets), 
-             color = sets)) + 
-  geom_line() + 
-  facet_wrap(~ exercise, scales = "free")
+leanmass_mean_by_sex <- leanmass_change_wide %>% 
+  group_by(sex) %>% 
+  summarise(mean_single = mean(single, na.rm = TRUE),
+            mean_multiple = mean(multiple, na.rm = TRUE),
+            mean_diff = mean(diff, na.rm = TRUE))
+
+
+leanmass_mean_by_sex %>% 
+   mutate(sex = if_else(sex == "male", "Mann", "Kvinne"),
+          across(where(is.numeric), ~ round(., 1))) %>%
+  kable(format = "html",
+        col.names = c(" ", "Endring eit sett", "Endring tre sett", "Forskjell mellom eit og tre sett"),
+        escape = FALSE,
+        caption = "Gjennomsnittlig endring i mager masse for begge kjønn") %>% 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+   
+
   
-
-## How many measurements per participant
-
-str %>%
-  filter(!is.na(load)) %>%
-  group_by(participant, exercise, sets) %>%
-  summarise(n = n() ) %>%
-  ggplot(aes(n, participant, color = sets)) +
-  geom_point() + 
-  facet_wrap(~ exercise) + 
-  theme(axis.text.y = element_blank())
-
-
-
-## Use pre and post data 
-# Combine pre data prior to data analysis
-# per exercise, leg, participant, and sets
-
-str %>%
-  mutate(time = if_else(time %in% c("pre", "session1"), "pre", time)) %>%
-  
-  filter(time %in% c("pre", "post")) %>%
-  
-  summarise(load = max(load, na.rm = TRUE), 
-            .by = c(participant, 
-                    sex, 
-                    time, 
-                    sets,
-                    exercise,
-                    leg)) %>%
-  
-  print()
-
-
-
-
-
-
-
-
-
-
-
 ```
 
 
 
 
 
+```{r}
+#| echo: false  
+#| message: false 
+#| warning: false 
+#| label: fig-lean-body-mass  
+#| fig-cap: "Mean lean body mass changes from pre- to post-intervention in male and female participants" 
+
+# Ensure `sets` variable is preserved in leanmass_change_wide 
+leanmass_change_wide1 <- leanmass %>% 
+  pivot_wider(names_from = time, values_from = lean.mass) %>%
+  mutate(change = post - pre) %>% 
+  select(participant, sex, sets, change) %>%
+  pivot_wider(names_from = sets, 
+              values_from = change) %>%
+  mutate(diff = multiple - single) %>% 
+  pivot_longer(cols = single:multiple, names_to = "sets",
+               values_to = "change")  
+
+
+# Calculate means and standard errors for the plot 
+leanmass_summary <- leanmass_change_wide1 %>% 
+  group_by(sex, sets) %>% 
+  summarise(mean_change = mean(change, na.rm = TRUE), 
+            se_change = sd(change, na.rm = TRUE) / sqrt(n()),
+            .groups = 'drop') %>% 
+  mutate(sex = if_else(sex == "male", "Mann", "Kvinne"))%>%
+  mutate(sets = if_else(sets == "multiple", "Tre sett", "Eit sett"))
+  
+
+ 
+# Plot using ggplot2
+ggplot(leanmass_summary, aes(x = sets, 
+                             y = mean_change, 
+                             fill = sex)) + 
+  geom_bar(stat = "identity", 
+           position = position_dodge(width = 0.7), width = 0.6) +
+  geom_errorbar(aes(ymin = mean_change - se_change, 
+                    ymax = mean_change + se_change), 
+                width = 0.2, 
+                position = position_dodge(width = 0.7)) + 
+  labs(x = "Sett", 
+       y = "Gjsnitt endring i mager masse (g)", 
+       fill = "Kjønn") + 
+  theme_minimal() + 
+  theme(plot.title = element_text(hjust = 0.5), 
+        legend.position = "top") 
+
+```
+
+
+
+```{r}
+#| echo: false  
+#| message: false 
+#| warning: false 
+#| output: false 
+
+
+
+str <- strengthvolume %>% 
+  filter(include == "incl") %>% 
+  mutate(time = factor(time, levels = c("pre", "session1",  
+                                        "week2", "week5",  
+                                        "week9", "post")))  
+
+
+  str_pre_post <- str %>% 
+    mutate(time = if_else(time %in% c("pre", "session1"), "pre", time)) %>% 
+    filter(time %in% c("pre", "post")) %>%
+    group_by(participant, sex, time, sets, exercise, leg) %>%
+    summarise(load = max(load, na.rm = TRUE),
+              .groups = "drop") %>%
+    filter_all(all_vars(!is.infinite(.))) 
+
+
+str_change <- str_pre_post %>%  
+  pivot_wider(names_from = time, values_from = load) %>%
+  mutate(change = post - pre) %>% 
+  select(participant, sex, sets,exercise, change) %>%
+  pivot_wider(names_from = sets,  
+              values_from = change) %>% 
+  mutate(diff = multiple - single) %>%
+  print() 
+
+
+str_tst <-str_change %>%  
+  filter(exercise == "legpress") %>%  
+  select(participant, sex, single, multiple, diff) %>%  
+  print() 
+
+ 
+tt2 <- t.test(str_tst$multiple, str_tst$single, paired = TRUE) 
+
+str(tt2) 
+pval2 <- round(tt2$p.value, 3) 
+
+tval2 <- round(tt2$statistic, 2) 
+
+df2 <- tt2$parameter 
+
+cil2 <- round(tt2$conf.int[1], 1) 
+
+ciu2 <- sprintf("%.1f", round(tt2$conf.int[2], 1)) 
+
+estimate2 <- round(tt2$estimate, 1)  
+
+strength.results <- paste0(estimate2, 
+                             " (95% CI: [", 
+                            cil2, 
+                            ", ", 
+                            ciu2, 
+                            "], *p*-value = ", 
+                            pval2, 
+                            ", t<sub>", 
+                            df2, "</sub> = ", 
+                            tval2,")") 
+
+```
+
+
+
+
+```{r}
+#| echo: false  
+#| message: false 
+#| warning: false 
+#| label: tbl-change-strength  
+#| tbl-cap: "Mean maximum strength change by sex" 
+
+
+library(dplyr) 
+library(gt) 
+
+
+# Calculate mean changes by sex 
+strength_mean_by_sex <- str_tst %>% 
+  group_by(sex) %>% 
+  summarise(mean_single = mean(single, na.rm = TRUE),
+            mean_multiple = mean(multiple, na.rm = TRUE),
+            mean_diff = mean(diff, na.rm = TRUE)) 
+
+ 
+strength_mean_by_sex %>% 
+   mutate(sex = if_else(sex == "male", "Mann", "Kvinne"),
+          across(where(is.numeric), ~ round(., 1))) %>%
+  kable(format = "html",
+        col.names = c(" ", "Endring eit sett", "Endring tre sett", "Forskjell mellom eit og tre sett"),
+        escape = FALSE,
+        caption = "Gjennomsnittlig endring i legpress for begge kjønn") %>% 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed")) 
+
+```
+
+
+
+```{r}
+#| echo: false  
+#| message: false 
+#| warning: false 
+#| label: fig-max-strength  
+#| fig-cap: "maximum strength changes from pre- to post-intervention in male and female participants" 
+
+
+str_tst %>% 
+  select(participant, sex, "Eit sett" = single, "Tre sett" = multiple, diff) %>%
+  pivot_longer(names_to = "sets", 
+               values_to = "load", 
+               cols = "Tre sett":"Eit sett") %>% 
+  mutate(sets = factor(sets, levels = c("Eit sett", "Tre sett"))) %>% 
+  mutate(sex = if_else(sex == "male", "Mann", "Kvinne")) %>% 
+  ggplot(aes(sets, load, group = participant,
+             color = sex)) + 
+  geom_line() + 
+  geom_point() + 
+  labs(x = "Sett", 
+       color = "Kjønn", 
+       y = "Belastning (kg)") 
+
+
+
+```
+
+
+### Different trainingvolum
+
+
 ## Discussion
 
+Styrketrening har gjennom tida blitt eit vanleg fenomen i kvardagen til mange menneske. [@Kraemer] definerte styrketrening som eit generelt omgrep som viser til trening der ein må utøve kraft mot ei motstand, og har vist seg å vere ein særs effektiv metode for å auke muskelstyrke, lokal muskeluthald, kraft, hypertrofi og motorisk yteevne.
+[@Ost] og [@Cannon] har funnet at det er liten variasjon i responsen på maksstyrke og mager masse ved lavt og høyt treningsvolum. [@Galvao], [@Humburg] og [@McBirde] konkluderte mostridande til det då dei såg ein forbetring av høgare volum.  
+
 ## Conclusion
+[@Ost] sa at høgt volum ikkje hadde noke å sei
+
+## Referanser
+
+
+
+
+
+
+
 
 
 
