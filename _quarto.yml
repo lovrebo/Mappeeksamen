@@ -3,8 +3,8 @@ project:
 
 book:
   title: "Mappeeksamen IDR4000"
-  author: "Student Studentson"
-  date: "2024-09-10"
+  author: "Lars Øvrebø"
+  date: "2024-11-22"
   chapters:
     - index.qmd
     - 01-reliabilitet.qmd
@@ -17,9 +17,9 @@ book:
     - references.qmd
 
 bibliography: bibliografi.bib
-bibliography: bibliografi_5.bib
 
-format: pdf
+
+format: html
 
 
 

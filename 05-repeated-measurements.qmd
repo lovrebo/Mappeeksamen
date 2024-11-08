@@ -5,7 +5,7 @@ editor: visual
 output: html_document
 editor_options: 
   chunk_output_type: console
-bibliography: bibliografi_5.bib
+bibliography: bibliografi.bib
 ---
 
 (&Aring;r)  H&oslash;gde
@@ -18,6 +18,11 @@ In this assignment you will analyse and report on trial investigating the effect
 > Below you will find a basic outline of the report and example code that we worked on in class.
 
 ## Introduction
+
+Styrketrening har gjennom tida blitt eit vanleg fenomen i kvardagen til mange menneske. [@Kraemer] definerte styrketrening som eit generelt omgrep som viser til trening der ein må utøve kraft mot ei motstand, og sa det har vist seg å vere ein særs effektiv metode for å auke muskelstyrke og muskelvekst. Korleis ein skal trene styrketrening har over tid blitt studert for å finne svar på kva som er optimalt når det kjem til volum, frekvens og intensitet for å få best mogleg muskelvekst og forbetring av muskelstyrke. [@Berger] var tidleg ute med å undersøke ulike styrketreningsmetodar då han fordelte college studentar i ni grupper som trena med forskjellige sett og repetisjonar, og konkluderte med at tre sett med seks tunge repetisjonar førte til den største forbetringa i muskelstyrken. 
+I seinare tid har det blitt gjort studiar som ikkje er einige i sine svar på kva som er optimalt treningsvolum for forbetring av maksstyrke og  muskelvekst. Studien av [@Ost] som undersøkte forskjellen på tre ulike treningsvolum kategorisert som låg, middels og høg, og konkluderte med at det ikkje var forskjell mellom dei metodane. I nyare tid har andre studiar funne ut at eit større treningsvolum i form av tre eller seks sett mot eit sett per øvelse er betre for å auke muskelstyrke og muskelmasse [@Galvao], [@Humburg] og [@McBride]. Etter desse har studien til [@Cannon] lagt fram sine funn om at høgt treningsvolum ikkje fungerte betre for muskelstyrke enn lågt treningsvolum. Dei sprikande resultata frå studiane gjer at det må undersøkast vidare. I denne rapporten skal vi sjå på effekten frå to metodar for treningsvolum i form av tre sett mot eit sett på kvart sitt bein i øvelsen beinpress på muskelstyrke og mager masse.      
+
+
 
 ## Methods
 
@@ -389,8 +394,8 @@ str_tst %>%
 
 ## Discussion
 
-Styrketrening har gjennom tida blitt eit vanleg fenomen i kvardagen til mange menneske. [@Kraemer] definerte styrketrening som eit generelt omgrep som viser til trening der ein må utøve kraft mot ei motstand, og har vist seg å vere ein særs effektiv metode for å auke muskelstyrke, lokal muskeluthald, kraft, hypertrofi og motorisk yteevne.
-[@Ost] og [@Cannon] har funnet at det er liten variasjon i responsen på maksstyrke og mager masse ved lavt og høyt treningsvolum. [@Galvao], [@Humburg] og [@McBirde] konkluderte mostridande til det då dei såg ein forbetring av høgare volum.  
+Styrketrening har gjennom tida blitt eit vanleg fenomen i kvardagen til mange menneske. [@Kraemer] definerte styrketrening som eit generelt omgrep som viser til trening der ein må utøve kraft mot ei motstand, og har vist seg å vere ein særs effektiv metode for å auke muskelstyrke, lokal muskeluthald, kraft, hypertrofi og motorisk yteevne. [@Berger] college
+[@Ost] og [@Cannon] har funnet at det er liten variasjon i responsen på maksstyrke og mager masse ved lavt og høyt treningsvolum. [@Galvao], [@Humburg] og [@McBride] konkluderte mostridande til det då dei såg ein forbetring av høgare volum.  
 
 ## Conclusion
 [@Ost] sa at høgt volum ikkje hadde noke å sei
