@@ -1,5 +1,5 @@
 ---
-title: "Assignment 5: Analyzing repeated measures experiments"
+title: "Arbeidskrav 5: Analysere repiterte målingar eksperimenter"
 format: html
 editor: visual
 output: html_document
@@ -17,16 +17,16 @@ In this assignment you will analyse and report on trial investigating the effect
 
 > Below you will find a basic outline of the report and example code that we worked on in class.
 
-## Introduction
+## Introduksjon
+Styrketrening har gjennom tida blitt eit vanleg fenomen i kvardagen til mange menneske. [@Kraemer] definerte styrketrening som eit generelt omgrep som viser til trening der ein må utøve kraft mot ei motstand, og sa det har vist seg å vere ein særs effektiv metode for å auke muskelstyrke og muskelvekst. Korleis ein skal trene styrketrening har over tid blitt studert for å finne svar på kva som er optimalt når det kjem til volum, frekvens og intensitet for å få best mogleg muskelvekst og forbetring av muskelstyrke. [@Berger] var tidleg ute med å undersøke ulike styrketreningsmetodar då han fordelte college studentar i ni grupper som trena med forskjellige sett og repetisjonar, og konkluderte med at tre sett med seks tunge repetisjonar førte til den største forbetringa i muskelstyrken.
 
-Styrketrening har gjennom tida blitt eit vanleg fenomen i kvardagen til mange menneske. [@Kraemer] definerte styrketrening som eit generelt omgrep som viser til trening der ein må utøve kraft mot ei motstand, og sa det har vist seg å vere ein særs effektiv metode for å auke muskelstyrke og muskelvekst. Korleis ein skal trene styrketrening har over tid blitt studert for å finne svar på kva som er optimalt når det kjem til volum, frekvens og intensitet for å få best mogleg muskelvekst og forbetring av muskelstyrke. [@Berger] var tidleg ute med å undersøke ulike styrketreningsmetodar då han fordelte college studentar i ni grupper som trena med forskjellige sett og repetisjonar, og konkluderte med at tre sett med seks tunge repetisjonar førte til den største forbetringa i muskelstyrken. 
-I seinare tid har det blitt gjort studiar som ikkje er einige i sine svar på kva som er optimalt treningsvolum for forbetring av maksstyrke og  muskelvekst. Studien av [@Ost] som undersøkte forskjellen på tre ulike treningsvolum kategorisert som låg, middels og høg, og konkluderte med at det ikkje var forskjell mellom dei metodane. I nyare tid har andre studiar funne ut at eit større treningsvolum i form av tre eller seks sett mot eit sett per øvelse er betre for å auke muskelstyrke og muskelmasse [@Galvao], [@Humburg] og [@McBride]. Etter desse har studien til [@Cannon] lagt fram sine funn om at høgt treningsvolum ikkje fungerte betre for muskelstyrke enn lågt treningsvolum. Dei sprikande resultata frå studiane gjer at det må undersøkast vidare. I denne rapporten skal vi sjå på effekten frå to metodar for treningsvolum i form av tre sett mot eit sett på kvart sitt bein i øvelsen beinpress på muskelstyrke og mager masse.      
+I seinare tid har det blitt gjort studiar som ikkje er einige i sine svar på kva som er optimalt treningsvolum for forbetring av maksstyrke og  muskelvekst. Studien av [@Ost] som undersøkte forskjellen på tre ulike treningsvolum kategorisert som låg, middels og høg, og konkluderte med at det ikkje var forskjell mellom dei metodane. I nyare tid har andre studiar funne ut at eit større treningsvolum i form av tre eller seks sett mot eit sett per øvelse er betre for å auke muskelstyrke og muskelmasse [@Galvao], [@Humburg] og [@McBride]. Etter desse har studien til [@Cannon] lagt fram sine funn om at høgt treningsvolum ikkje fungerte betre for muskelstyrke enn lågt treningsvolum. Dei sprikande resultata frå studiane gjer at det må undersøkast vidare. I denne rapporten blei det sett på effekten frå eit mot tre setts protokoller på muskelstyrke og mager kroppsmasse ved hjelp av eit «within-participant» design.
+   
+## Metode
+### Forsøkspersoner og studieoversikt
+Forsøkspersonane i denne studien var 34 friske menneske mellom 18 – 40 år som gjennomførte ein intervensjonsperiode på 12 veke. Info om deltakarane ligger i @tbl-deltakara. Studien nyttar seg av «within-participant» design der forsøkspersonane gjennomførte motstandstrening på eit bein i gongen for å samanlikne responsen frå eit og tre sett trenings protokoll. Alle fekk tilfeldig fordelt kva slags bein som skulle bruke tre og eit sett i alle øvelsane gjennom intervensjonsperioden.   
 
 
-
-## Methods
-
-### Participants and study overview
 ```{r}
 #| warning: false
 #| message: false
@@ -74,18 +74,17 @@ deltakar_tabell
 ```
 
 
+#### Muskelstyrke og mager kroppsmasse
+For å måle muskelstyrke blei det brukt styrketest i form av å måle belastning i kilogram på ein repetisjon maksimum (1RM) av beinpress. For å måle mager kroppsmasse blei det brukt dual-energy X-ray absorptiometry (DXA) test for å bestemme kroppssamansetninga. Testane vart utført ved baseline (pre) og etter 12 veke (post).
 
-Basert på dataen i @tbl-deltakara er deltakerane under 30 år
+#### Treningsprotokoll
+Ein standardisert oppvarming på fem minutt sykling på ergometersykkel, i tillegg til ti repetisjonar av armhevingar(individuelt tilpassa), sit-ups, rygghev og knebøy med kroppsvekt tilsvarande ~50% av (1RM) vart brukt for alle forsøkspersonar før alle økter. I hovuddelen av økta blei beina trent med motstandsøvelsane i følgande rekkefølge: ein fots beinpress, hamstring curl og beinspark, før det blei gjort to sett med benkpress, nedtrekk og endten skulderpres eller sittande roing. Pusane mellom sett var 90 – 180s. I beinøvelsane blei eit sett foten brukt mellom det andre og tredje settet til tre sett foten. 
+Treningsintervensjonen følgde ein progressiv auking i treningsintensitet ved to veker med 10RM, tre veker med 8RM, og sju veker med 7RM i den rekkefølga. Det meste av treningsøktene blei overvaka av forskarteamet og alt som ikkje blei gjennomført med tilsyn vart nøye loggført og vurdert. Etter det var gjennomført ni treningsøkter vart alle veker med tre treningsøkter gjennomført med ein redusert økt tilsvarande 90% av dei to andre. Minst 48 timar skilte økter med maksimal innsats, medan minst 24 timar skilde submaksimale økter (90%).     
+
+### Data analyse og statistikk
+Det blei brukt para t-test for å samanlikne gjennomsnittleg endring frå pre til post test for tre sett mot eit sett for både beinpress og mager kroppsmasse testane.
 
 
-
-
-#### Muscle strength and hypertrophy + lean body mass
-
-#### training protocol
-
-### Data analysis and statistics
-Para t-test
 
 ## Resultat
 122,8g meir i lean  for 3set vs 1set p=0,036 
