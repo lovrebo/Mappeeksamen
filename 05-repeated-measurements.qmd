@@ -1,5 +1,5 @@
 ---
-title: "Arbeidskrav 5: Analysere repiterte målingar eksperimenter"
+title: "Arbeidskrav: Analysere repiterte målingar eksperimenter"
 format: html
 editor: visual
 output: html_document
@@ -8,19 +8,11 @@ editor_options:
 bibliography: bibliografi.bib
 ---
 
-(&Aring;r)  H&oslash;gde
-
-## Assignment overview
-
-In this assignment you will analyse and report on trial investigating the effect of resistance training volume on lean mass and muscle strength. The data are part of the `exscidata` package and can be accessed as `data("strengthvolume")` and `data("dxadata")`. Read the [instructions carefully](https://dhammarstrom.github.io/quant-methods-workshops/assignment-5.html)!
-
-
-> Below you will find a basic outline of the report and example code that we worked on in class.
 
 ## Introduksjon
 Styrketrening har gjennom tida blitt eit vanleg fenomen i kvardagen til mange menneske. [@Kraemer] definerte styrketrening som eit generelt omgrep som viser til trening der ein må utøve kraft mot ei motstand, og sa det har vist seg å vere ein særs effektiv metode for å auke muskelstyrke og muskelvekst. Korleis ein skal trene styrketrening har over tid blitt studert for å finne svar på kva som er optimalt når det kjem til volum, frekvens og intensitet for å få best mogleg muskelvekst og forbetring av muskelstyrke. [@Berger] var tidleg ute med å undersøke ulike styrketreningsmetodar då han fordelte college studentar i ni grupper som trena med forskjellige sett og repetisjonar, og konkluderte med at tre sett med seks tunge repetisjonar førte til den største forbetringa i muskelstyrken.
 
-I seinare tid har det blitt gjort studiar som ikkje er einige i sine svar på kva som er optimalt treningsvolum for forbetring av maksstyrke og  muskelvekst. Studien av [@Ost] som undersøkte forskjellen på tre ulike treningsvolum kategorisert som låg, middels og høg, og konkluderte med at det ikkje var forskjell mellom dei metodane. I nyare tid har andre studiar funne ut at eit større treningsvolum i form av tre eller seks sett mot eit sett per øvelse er betre for å auke muskelstyrke og muskelmasse [@Galvao], [@Humburg] og [@McBride]. Etter desse har studien til [@Cannon] lagt fram sine funn om at høgt treningsvolum ikkje fungerte betre for muskelstyrke enn lågt treningsvolum. Dei sprikande resultata frå studiane gjer at det er behov for tydeligare svar. I denne rapporten blei det sett på effekten frå eit mot tre setts protokoller på muskelstyrke og mager kroppsmasse regionalt ved hjelp av eit «within-participant» design. Hypotesen min er at motstandstrening med tre sett vil gi større effekt på maksimalstyrke og regional mager masse.
+I seinare tid har det blitt gjort studiar som ikkje er einige i sine svar på kva som er optimalt treningsvolum for forbetring av maksstyrke og  muskelvekst. Studien av [@Ost] som undersøkte forskjellen på tre ulike treningsvolum kategorisert som låg, middels og høg, og konkluderte med at det ikkje var forskjell mellom dei metodane. I nyare tid har andre studiar funne ut at eit større treningsvolum i form av tre eller seks sett mot eit sett per øvelse er betre for å auke muskelstyrke [@Galvao], [@Humburg] og [@McBride]. Etter desse har studien til [@Cannon] lagt fram sine funn om at høgt treningsvolum ikkje fungerte betre for muskelstyrke enn lågt treningsvolum. Dei sprikande resultata frå studiane gjer at det er behov for tydeligare svar. I denne rapporten blei det sett på effekten frå eit mot tre setts protokoller på muskelstyrke og mager kroppsmasse regionalt ved hjelp av eit «within-participant» design. Hypotesen min er at motstandstrening med tre sett vil gi større effekt på maksimalstyrke og regional mager masse.
    
 ## Metode
 ### Forsøkspersoner og studieoversikt
@@ -391,19 +383,17 @@ str_tst %>%
 
 
 ## Discussion
-
 ### Generell oppsummering av resultata
 I denne rapporten har det blitt undersøkt effekten av motstandstrening i form av tre sett mot eit sett per øvelse over ti veker. Resultata frå den statistiske analysen viser at tre sett har større effekt for å auke maksimal styrke og regional mager kroppsmasse enn eit sett, noko som stemme overeins med min hypotese. 
-
 ### Maksimalstyrke
-Maksimalstyrke blei i denne rapporten målt som 1RM i beinpress og hadde signifikant større forbedring for tre sett samanlikna med eit sett. Resultata kan sjåast i likheit med [@Galvao] og [@Humburg] som også såg større forbetringar for tre sett mot eit sett (korleis dei målte maksstyrke?). [@McBride] såg også like resultat i samanlikning av høgt volum samanlikna med lågt vulum, då dei såg på seks sett mot eit sett.     
-
+Maksimalstyrke blei i denne rapporten målt som 1RM i beinpress og hadde signifikant større forbetring for tre sett samanlikna med eit sett. Resultata kan sjåast i likheit med [@Galvao] og [@Humburg] som også såg større forbetringar for tre sett mot eit sett. [@McBride] såg også like resultat i samanlikning av høgt volum samanlikna med lågt volum, då dei såg på seks sett mot eit sett. Resultata er også like med studiane til [@Ost] og [@Cannon] i at dei fant auke i maksimalstyrke for metodar med ulikt volum, men skil seg ved at dei ikkje såg nokre forskjellar mellom høgt og lågt volum.       
 
 ### Mager kroppsmasse
+Mager kroppsmasse blei i denne rapporten bestemt ut ifrå DXA testar før og etter intervensjonen. Det blei kunn undersøkt mager masse regionalt frå beina i denne rapporten. I motsetning til maksimalstyrke er dessa resultata ikkje samsvarande med [@Galvao], [@Humburg] og [@McBride] med tanke på større auke i mager masse for høgare volum mot lågare volum på motstandstreninga. Dei skreiv likevel om at det var ein auke i mager masse for begge metodane frå DXA testar. [@Ost] og [@Cannon] fant auke i knestrekkar muskelen (quadriceps) ved hjelp av magnetisk resonansavbildning (MRI) ved både høgt og lågt treningsvolum utan forskjellar. Resultata for mager kroppsmasse frå denne rapporten visar at tre sett har signifikant større auke i mager masse enn eit sett som ser ut til å vere annleis frå tidlegare litteratur som gjer at dette burde undersøkast meir.        
 
+## Konklusjon
+Konklusjonen frå rapporten er at tre sett per øvelse gir større auke i maksimal muskelstyrke og mager kroppsmasse enn eit sett per øvelse for friske menneske i nokså ung alder (18-40). Vidare burde effekten frå ulikt volum på mager kroppsmasse undersøkast meir.  
 
-## Conclusion
-[@Ost] sa at høgt volum ikkje hadde noke å sei
 
 ## Referanser
 
