@@ -34,5 +34,25 @@
   },
   "01-reliabilitet.qmd": {
     "01-reliabilitet.html": "176ccd09"
+  },
+  "01-Reliabilitet.qmd": {
+    "01-Reliabilitet.html": "0fa0b2b4",
+    "01-reliabilitet.html": "328c35e6"
+  },
+  "02-Regresjonsmodellar.qmd": {
+    "02-Regresjonsmodellar.html": "44387955"
+  },
+  "03-Statistisk_inferens.qmd": {
+    "03-Statistisk_inferens.html": "3daf1880"
+  },
+  "04-Studiedesign.qmd": {
+    "04-Studiedesign.html": "b335b447"
+  },
+  "05-Analysere_eksperiment_med_gjentatte_målingar.qmd": {
+    "05-Analysere_eksperiment_med_gjentatte_målingar.html": "3dd58710"
+  },
+  "06-Vitenskapsteori.qmd": {
+    "06-Vitenskapsteori.html": "7b08637f",
+    "06-vitenskapsteori.html": "6bf359ac"
   }
 }

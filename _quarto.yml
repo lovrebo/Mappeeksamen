@@ -7,12 +7,12 @@ book:
   date: "2024-11-22"
   chapters:
     - index.qmd
-    - 01-reliabilitet.qmd
-    - 02-regression-models.qmd
-    - 03-statistical-inference.qmd
-    - 04-study-design.qmd
-    - 05-repeated-measurements.qmd
-    - 06-vitenskapsteori.qmd
+    - 01-Reliabilitet.qmd
+    - 02-Regresjonsmodellar.qmd
+    - 03-Statistisk_inferens.qmd
+    - 04-Studiedesign.qmd
+    - 05-Analysere_eksperiment_med_gjentatte_målingar.qmd
+    - 06-Vitenskapsteori.qmd
     - 07-laboratory-report.qmd
     - references.qmd
 

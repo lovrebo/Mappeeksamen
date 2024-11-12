@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Lars Øvrebø">
-<meta name="dcterms.date" content="2024-11-22">
 
-<title>Mappeeksamen IDR4000</title>
+<title>4&nbsp; Studiedesign – Mappeeksamen IDR4000</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -32,7 +50,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01-Reliabilitet.html" rel="next">
+<link href="./05-Analysere_eksperiment_med_gjentatte_målingar.html" rel="next">
+<link href="./03-Statistisk_inferens.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -82,7 +101,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Forord</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04-Studiedesign.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Studiedesign</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -109,7 +128,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Forord</span></a>
   </div>
 </li>
@@ -133,7 +152,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-Studiedesign.html" class="sidebar-item-text sidebar-link">
+  <a href="./04-Studiedesign.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Studiedesign</span></span></a>
   </div>
 </li>
@@ -146,7 +165,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./06-Vitenskapsteori.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Philosophy of science</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Vitenskapsfilosofi</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -171,7 +190,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#forord" id="toc-forord" class="nav-link active" data-scroll-target="#forord">Forord</a></li>
+  <li><a href="#assignment-4-study-designs" id="toc-assignment-4-study-designs" class="nav-link active" data-scroll-target="#assignment-4-study-designs"><span class="header-section-number">5</span> Assignment 4: Study designs</a>
+  <ul class="collapse">
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview"><span class="header-section-number">5.1</span> Overview</a></li>
+  <li><a href="#rapport-4" id="toc-rapport-4" class="nav-link" data-scroll-target="#rapport-4"><span class="header-section-number">5.2</span> <strong>Rapport 4</strong></a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -180,26 +203,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Mappeeksamen IDR4000</h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Studiedesign</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Lars Øvrebø </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">November 22, 2024</p>
-    </div>
-  </div>
   
     
   </div>
@@ -209,20 +220,60 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="forord" class="level1 unnumbered">
-<h1 class="unnumbered">Forord</h1>
-<p>Takk til Daniel for opplæring i R. Har klart å få på plass ei mappeeksamen som eg er fornøgd med.</p>
-<p>Mappeeksamen består av følgende deler:</p>
-<ul>
-<li>Rapport: “Deskriptiv statistikk, reliabilitet og validitet og verktøy for reproduserbar vitenskap”.</li>
-<li>Laborasjonsrapport fra molekylærlabb</li>
-<li>Arbeidskrav i vitenskapsteori</li>
-<li>Rapport: “Statistisk inferens, statistiske modeller og statistisk styrke”</li>
-<li>Rapport: “Studiedesign”</li>
-<li>Rapport: “Analyse av eksperimenter med repeterte målinger”</li>
-</ul>
+<section id="assignment-4-study-designs" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Assignment 4: Study designs</h1>
+<section id="overview" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">5.1</span> Overview</h2>
+<p>Choose an area of interest (e.g.&nbsp;protein supplementation for muscle hypertrophy or the effect of block periodization on VO<sub>2max</sub>). Find at least five <em>original research studies</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> in your selected area and describe strength and weakness of these studies. The report should focus on the design of the studies and selection of statistical tests to answer study aims. Conclude your report with a recommendation, how should future studies in your area be designed to best answer similar questions?</p>
+</section>
+<section id="rapport-4" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="rapport-4"><span class="header-section-number">5.2</span> <strong>Rapport 4</strong></h2>
+<p>Lars Øvrebø</p>
+<p><strong>Studie design</strong></p>
+<p><strong>Introduksjon</strong></p>
+<p>Rapporten har som formål å analysere og vurdere ulike studiedesign brukt av fem andre forskingsstudiar som ser på effekten av blokkperiodisering på utholdenhetsprestasjonen. Blokkperiodisering har som formål å strukturere utholdenhetstrening i bestemte mønstre som skal påverke kondisjonen på ein effektiv og mulig betre måte enn meir tradisjonell stabil trening med mindre variasjonar. Det er blitt ein populær treningsmetode for å forbetre utholdenhetsprestasjonen og blir brukt av mange utholdenhetsutøvarar i dag.</p>
+<p>Analysen i denne rapporten vil evaluere styrkar opp mot svakheiter i fem utvalde studiar ved hjelp av QLAMRI-metoden, med fokus på studiedesign og statistiske testar som skal svare spørsmåla forfattarane ønsker å svare på.</p>
+<p><strong>Metode</strong></p>
+<p>Metoden som blir brukt i rapporten for å analysere og vurdere studiane er QLAMRI-metoden som hjelper til med å dele opp analysene i komponenter som vurderingane skal basere seg frå. Komponentane som blir brukt i metoden er spørsmål (questions), alternativ, logik, metode og slutningar (inferens). Studiane som ble analysert er <span class="citation" data-cites="Alm">(<a href="#ref-Alm" role="doc-biblioref">Almquist et al. 2022</a>)</span>, <span class="citation" data-cites="Ronnestad">(<a href="#ref-Ronnestad" role="doc-biblioref">Rønnestad et al. 2022</a>)</span>, <span class="citation" data-cites="Bakken">(<a href="#ref-Bakken" role="doc-biblioref">Bakken 2013</a>)</span>, <span class="citation" data-cites="McGawley">(<a href="#ref-McGawley" role="doc-biblioref">McGawley et al. 2017</a>)</span> og <span class="citation" data-cites="Nuuttila">(<a href="#ref-Nuuttila" role="doc-biblioref">Nuuttila et al. 2022</a>)</span></p>
+<p><strong>Resultat</strong></p>
+<p>Studien til <span class="citation" data-cites="Alm">(<a href="#ref-Alm" role="doc-biblioref">Almquist et al. 2022</a>)</span> spurte om kva som var effektane av ein seks dagers blokk med høgintensiv trening (HIT) og ein påfølgande fem dagers treningsreduksjon på prestasjonsvariablar for ein langrennsløpar målt opp mot vanleg trening. Dei har ein hypotese om at blokka med påfølgande kvile vil gi betre responsar i treningsvariablane enn den vanlege treninga. Logikken for hypotesen baserer seg på at ein kort intensiv høyintensitetsperiode utan at belastninga blir for stor vil ha meir gunstig påvirkning på utholdenhetsfaktorer som VO2max og blodlaktatterskel enn vanlig trening. Metoden studien blei gjennomført på var å dele i to grupper med godt trente langrensutøvere der ei blokk-gruppe trente blokk og ei kontroll-gruppe trente vanleg. det var like mange utøvara i kvar gruppe, VO2maks var lik for begge grupper før intervensjonen. Statistiske analyser ved hjelp av ANCOVA test blei brukt for å avgjere resultat for samanlikninga av treningsresponsane til gruppene. Resultata viste at blokk gruppa hadde større forbedringer i hastighet siste min av VO2max test og ved blodlaktatterskel satt til 4mmol/L-1 samanlikna med kontroll, samt at blokk gruppa reduserte sine verdiar for respirasjonsvekslingsforhold, blodlaktatkonsentrasjon, hjertefrekvens og opplevd annstrengelse. Forfattarane konkluderer med at resultanta fortel at blokk gruppa har betre resultat etter inervensjonsperioden enn gruppa som trener vanlig.</p>
+<p>Ein tidlegare blokk studie frå <span class="citation" data-cites="Ronnestad">(<a href="#ref-Ronnestad" role="doc-biblioref">Rønnestad et al. 2022</a>)</span> ønsker å finne svar på om det er betre fysiologiske og prestasjons effektar av ein 12 veke lang blokk periode med trening både på HIT, moderat intensitet (MIT) og låg intensitet (LIT) enn tradisjonell periodisering på syklisk auke i treningsbelastning for trente syklistar. Logikken bak temaet kan vere at treningsresponsane til kvar enkelt blokk periode kan vere betre då ein får konsentrert større stimuli på spesifikke intensitetar for kvar periode. Metoden studien blei gjennomført med var ved randomisert kontrollert design der 30 trente syklistar fordelt på to grupper som trente enten blokk eller vanlig trening. Dei to gruppenes resultat vart samanlikna med hjelp av p-verdi for å forklare resultater frå statistisk analyse. Resultata viste at begge grupper hadde forbetringar i utholdenhetsprestasjon. forskjellane mellom gruppane var at blokk gruppa hadde større auke i raude blodceller, mens gruppa med vanleg trening hadde større kapilærtilpasningar i muskelfribre.</p>
+<p>Ein masterstudie av <span class="citation" data-cites="Bakken">(<a href="#ref-Bakken" role="doc-biblioref">Bakken 2013</a>)</span> såg på korleis man best skulle organisere utholdenhetstrening og svare på spørsmålet om kva som var best av blokkperiodisering eller tradisjonell periodisering på trente langrennsløpara og skitytara. Hypotesen sa at blokkpriodisering ville gi betre effekt på VO2max og utholdenhetsprestasjon enn tradisjonell periodisering. Alternative forklaringar som kan påvirke ein slik studie kan vere individuelle treningsresponser, ulik restitusjon, ernæring, søvn. Logikken bak hypotesen er at ein meir konsentrert periode for bestemte intensitetar vil gi eit stimuli som har større fysiologiske tilpassingar. Studien var designa slik at ei blokk gruppe på 10 personar og ei kontroll gruppe på 9 personar vart samanlikna over ein 5 veker treningsintervensjon for å undersøke forskjellane på blokk og vanleg trening. Denne studien brukte 14 menn og 5 kvinner som var godt trente på ski som forsøkspersonar der begge grupper inneholdt både menn og kvinner. Forskjellane mellom gruppene på trening var at blokk gruppa hadde stor variasjon i anntall HIT økter per veke frå 5-1, i motsetning til kontroll gruppa som hadde 2 HIT økter kvar veke. Studien brukte t-test til å avgjere resultata frå statistisk analyser. Resultatet viste at bolk gruppa hadde forbetringar i VO2maks og tid til utmattelse i motsetning til kontroll gruppa som hadde ingen endring.</p>
+<p><span class="citation" data-cites="McGawley">(<a href="#ref-McGawley" role="doc-biblioref">McGawley et al. 2017</a>)</span> skal svare på kva distribuering av HIT trening for trente unge langrennsløparar som er best for prestasjonsframgang av blokk og jevnlig fordeling. Hypotesen er at det vil bli større forbetringar i VO2maks og utholdenhetsprestasjon for blokk trening enn jevnlig trening. Alternative forklaringar til dataen kan vere individuell treningsrespons, ulik restitusjon, ernæring og søvn. Logikken bak er at konsentrert blokk av HIT vil gi eit større stimuli over kort tid med betre treningsrespons. Dinna studien brukte eit randomisert crossover design med 20 trente unge langrennsløparar (10 gutar og 10 jenter). Studien vart gjennomført ved to grupper som over tre veker var gjennom begge periodiseringsmetodane. T-test ble brukt til å forklare resultat i samanlikninga av responsane til begge treningsmetodane. Resultata viste ingen forskjell mellom metodane i VO2maks og utholdenhetsprestadjon.</p>
+<p>Studien til <span class="citation" data-cites="Nuuttila">(<a href="#ref-Nuuttila" role="doc-biblioref">Nuuttila et al. 2022</a>)</span> spurte om det var forskjell i utholdenhetsprestasjon av HIT og LIT blokker for mosjonistar på ein kort periode. Hypotesa var at både HIT og LIT blokker kom til å forbetre utholdenhetsprestasjon. I ein slik studie kan det tenkast at treningskapasiteten vil variere og restitusjonen kan bli forskjellig som blir alternative forklaringar til dataen i tillegg til genetiske faktorar. Det er logisk å tenke at mosjonistane vil få god respons på trening uavhengig av treningsintensitet. Studien brukte eit parallell gruppedesign som brukte gruppene HIT og LIT med 15 personar kvar som gjennomgjekk 2 veker med treningsintervensjon. ANOVA test blei brukt i statistisk analyse av dataen. Resultata viste at begge grupper forbedra seg på utholdenhetsprestasjon i form av ein 3000m test.</p>
+<p><strong>Diskusjon</strong></p>
+<p>(Diskusjon)<span class="citation" data-cites="Alm">(<a href="#ref-Alm" role="doc-biblioref">Almquist et al. 2022</a>)</span> har ein studie med eit relativt lite utval på 24 utøvarar fordelt på to grupper som kan vere negativt for studiens statistiske styrke. Det litle utvalet er godt trente langrennsløparar som er ein relevant gruppe som kan dra stor nytte av temaet. Utvalet gir ein god overføringsverdi for liknande utøvarar. Forskarane nytter seg av gode testar for å måle VO2maks og laktat som er fine metodar å måle endringar i utholdenhetsprestasjon. Det finns og alternative forklaringar som kan ha innvirkning på resultantane som er vanskeleg å kontrollere for, men det er mulighet for at ulik treningshistorikk, genetikk, ernæring, søvn, stressnivå og dagsform påverkar resultata i slike studiar.</p>
+<p>(Diskusjon) Studien til <span class="citation" data-cites="Ronnestad">(<a href="#ref-Ronnestad" role="doc-biblioref">Rønnestad et al. 2022</a>)</span> konkluderer med blokk periodisering var best for å auke mengda raude blodceller, og den vanlege treninga var best for betre kapilærtilpassningar i muskelfibre, men det var ikkje forskjell mellom effektane på utholdenhetsprestasjon. Alternative forklaringar på resultat frå ein slik studie kan vere at det vil vere individuelle forskjellar til responsen på treningsmengda, treningshistorikken til kvar enkelt, søvn, ernering og restitusjon.</p>
+<p>(Diskusjon) Masterstudien til <span class="citation" data-cites="Bakken">(<a href="#ref-Bakken" role="doc-biblioref">Bakken 2013</a>)</span> konkluderte med at blokk periodisering såg ut til å ha betre responsar for utholdenhetsprestasjonen enn kontrollgruppa over ein fem veker lang periode, og at det kan tyde på at det er ein meir effektiv måte å trene på for utholdenhetsutøvarar. Temaet og utvalet studien tar for seg passer godt saman til å forklare kva som kan anbefalast for utholdenhetsutøvarar i langrenn og skiskyting som har fokus på treningsoptimalisering. Studien er designet slik at det totale trenings volumet er kontrollert som kan vere bra for å isolere undersøkinga av treninga av blokk mot vanleg trening. Ei svakheit med studien vil vere eit lite utval i kvar gruppe og særleg få jenter som gjer studiens statistiske styrke mykje svakare enn om det hadde vert dobbelt så mange.</p>
+<p>(Diskusjon) <span class="citation" data-cites="McGawley">(<a href="#ref-McGawley" role="doc-biblioref">McGawley et al. 2017</a>)</span> konkluderte med at blokkperiodisering av HIT ikkje gav betre responsar enn jevnlig fordeling av HIT for unge langrennsløparar. Studien er designa ved randomisert crossover slik at effekten av individuelle treningstilpassningar blir redusert og nøyaktigheita av effektane frå kvar periodiseringsmetode blir i større grad kontrollert for enn ikkje randomiserte crossover studiar. Studien har og eit utval som temaet er svært relevant for med tanke på å optimalisere treninga for yngre langrennsløparar. Denne studien har og eit relativt lite utval å undersøke som påverkar den statistiske styrken negativt, men har lik fordeling mellom gutar og jenter. Ein intervensjonsperiode på tre veker er relativt kort og kunne med fordel vert lenger for å gi ytterlegare innsikt på effektar av blokktrening.</p>
+<p><span class="citation" data-cites="Nuuttila">(<a href="#ref-Nuuttila" role="doc-biblioref">Nuuttila et al. 2022</a>)</span> konkluderte med at både LIT og HIT blokk trening forbedra utholdenhetsprestasjonen for mosjonistar. Studien hadde eit litt større utval enn de andre studiane som er analysert som gjer den statistiske styrken sannsynlegvis litt sterkare, men det er fortsatt eit relativt lite utval som gir låg statistisk styrke. Mosjonistar som utval er meir representativt for ein større del menneske enn idrettsutøvarar.</p>
+<p><strong>Referanser</strong></p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Alm" class="csl-entry" role="listitem">
+Almquist, Nicki Winfield, Hanne Berg Eriksen, Malene Wilhelmsen, Håvard Hamarsland, Steven Ing, Stian Ellefsen, Øyvind Sandbakk, Bent R Rønnestad, and Knut Skovereng. 2022. <span>“No Differences Between 12 Weeks of Block- Vs. Traditional-Periodized Training in Performance Adaptations in Trained Cyclists.”</span> <em>Front. Physiol.</em> 13 (March): 837634.
+</div>
+<div id="ref-Bakken" class="csl-entry" role="listitem">
+Bakken, Timo Andre. 2013. <em>Effects of Block Periodization Training Versus Traditional Periodization Training in Trained Cross Country Skiers</em>.
+</div>
+<div id="ref-McGawley" class="csl-entry" role="listitem">
+McGawley, Kerry, Elisabeth Juudas, Zuzanna Kazior, Kristoffer Ström, Eva Blomstrand, Ola Hansson, and Hans-Christer Holmberg. 2017. <span>“No Additional Benefits of Block- over Evenly-Distributed High-Intensity Interval Training Within a Polarized Microcycle.”</span> <em>Front. Physiol.</em> 8 (June): 413.
+</div>
+<div id="ref-Nuuttila" class="csl-entry" role="listitem">
+Nuuttila, Olli-Pekka, Ari Nummela, Heikki Kyröläinen, Jari Laukkanen, and Keijo Häkkinen. 2022. <span>“Physiological, Perceptual, and Performance Responses to the 2-Week Block of High- Versus Low-Intensity Endurance Training.”</span> <em>Med. Sci. Sports Exerc.</em> 54 (5): 851–60.
+</div>
+<div id="ref-Ronnestad" class="csl-entry" role="listitem">
+Rønnestad, Bent R, Kjetil Andre Bjerkrheim, Joar Hansen, and Knut Sindre Mølmen. 2022. <span>“A 6-Day High-Intensity Interval Microcycle Improves Indicators of Endurance Performance in Elite Cross-Country Skiers.”</span> <em>Front. Sports Act. Living</em> 4 (November): 948127.
+</div>
+</div>
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Avoid using review articles or meta-analyses<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
@@ -648,10 +699,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./03-Statistisk_inferens.html" class="pagination-link" aria-label="Statistisk inferens">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Statistisk inferens</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01-Reliabilitet.html" class="pagination-link" aria-label="Reliabilitet">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Reliabilitet</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./05-Analysere_eksperiment_med_gjentatte_målingar.html" class="pagination-link" aria-label="Analysere eksperiment med gjentatte målingar">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Analysere eksperiment med gjentatte målingar</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

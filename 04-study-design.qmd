@@ -1,9 +1,0 @@
-# Assignment 4: Study designs
-
-
-## Overview
-Choose an area of interest (e.g. protein supplementation for muscle hypertrophy or the effect of block
-periodization on VO<sub>2max</sub>). Find at least five *original research studies*^[Avoid using review articles or meta-analyses] in your selected area and describe strength and weakness of these studies. The report should focus on the design of the studies and selection of statistical tests to answer study aims.
-Conclude your report with a recommendation, how should future studies in your area be designed to best
-answer similar questions?
-

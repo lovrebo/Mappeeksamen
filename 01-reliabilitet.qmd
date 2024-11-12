@@ -1,3 +1,9 @@
+---
+title: "Reliabilitet"
+format: html
+editor_options: 
+  chunk_output_type: console
+---
 
 
 # Assignment 1: Reliability and tools for reproducible data science {#assignment1}
@@ -12,3 +18,152 @@ The purpose of this assignment is to present estimates of reliability of measure
 - At least one figure (created from your data), and
 - data presented in the text.
 - The report should use a bibliography file to manage references.
+
+
+
+
+
+
+
+# Oppgave 1: Reliabilitet og verktøy for å reprodusere data
+
+Hensikten med denne rapporten er å presentere estimater for reliabilitet av data samlet i fysiologisk testlab ved Høgskolen i Innlandet. Vi har gjennomført VO2max tester på sykkel der 16 deltakere har gjennomført 2 eller 4 tester i løpet av tre uker. De to første testene ble gjennomført med ca. 24 timers mellomrom i uke en. De to siste testene ble gjennomført med ca. 48 timers mellomrom i uke tre. Vi har brukt Rstudio for å analysere dataen og få svar på om våre tester er reliable.
+
+**protokoll (+ preparations of the participant)**
+
+Test protokoll for VO2max test
+
+Test protokoll for VO2maks testingen forteller hvordan testene ble gjennomført. Et plotteark i exel er klargjøort av testleder før man kommer til labben ved å fylle inn informasjon man vet om deltaker på forhånd. I labb forbreder testleder ustyr og maskiner på en standardisert måte hver test. Det første som gjøres i labben er at testleder tar på seg labfrakk som henger i labben, og sørger for at biosen(laktatmåler) er skrudd på og se om kalibreringen måler 12mmol/la. Ved "kalibrerings error" byttes standardveske. Vyntusen skal kalibreres av gasskalibrering og volum kalibrereing mens gassbeholderen er open og trippel står i vyntus. Mens vyntuskalibreringene pågår setter testleder sammen munstykke med naseklype og tar med slange til å puste gjennom som festes til miksekammer og sykkel. For å vere klar til test må gasskalibreringen på vyntus vere innernfor 2,0 diff og volumkalibreringen innenfor 0,2 diff. Deretter hentes utstyret for å måle laktat klart, og sykkelen kalibreres på lodeprogrammet etter at krankarmen er plasert rett opp. Man sjekker også at krankarmen er 172,5mm lang og riktig pedaltype for utøveren. Da er det klart for at utøver kommer i labben for å måle vekt og stille inn sykkelen for sin krop. Deltakerprofil må lages om det ikke allerede eksisterer i både lodeprogram og vyntus. Deltakerprofil inneholder navn og id: "idr4000_h24_g3_id(x)" , fødselsdato, kjønn, høyde og vekt. Sykkelen stilles slik deltakeren vil ha det samt at det ser bra ut ifølge testleder. Sykkelinstillingene lagres i lodeprogrammet. Så starter deltakeren en oppvarmingsprotokoll på 5min sykling med progresiv borg fra 10-13. Testleder setter på vifte mot deltakeren og informerer om at testen kommer til å foregå trappetrinsvis ved økning i watt per min (20w for damer og 25w for menn) og at målet skal vere å sykle til det ikkje går lenger, at det blir målinger hvert 30sek og at man skal sitte gjennom hele testen, og forklare borg skala. Mens deltakeren varmer opp gjør testleder vyntuden klar til test ved å dobbeltsjekker pulsbeltettilkobling, at instillingene står på 30sek målinger og meduim munnstykke, gjennomføre zeroing, flytte trippel v til miksekammeret og skru igjen gassbeholderen. Oppvarming er ferdig og testen startes i vyntus. Testen starter for deltaker ved å starte VO2maks protokollen i lodeprogrammet samt en tidtakerklokke etter 1min er gått i vyntus. Gjennom testen informerer testleder om målinger og økninger samt motiverer når det blir tungt for deltaker. Testen stopper ved at deltaker gir seg eller RPM går under 60. Testleder noterer ned makspuls, sluttid, sluttwatt og borgskår ved endt test. Laktat tas i fingeren 1min etter endt test ved å tørke, stikke, tørke første bloddråpe og fylle laktatrør. Testleder passer på at deltaker har det bra. Laktat plottes i skjema. Deltakeren er da ferdig og testleder avslutter test i vyntus og lodeprogrammet som lagres. Vyntus filen lagres over på minnepen før den lagres i onedrive på lab pc. Sykkelen, munstykket, slangen og pulsbeltet vaskes. Vifta settes til å tørke fukt i miksekammeret. Plotteskjema fylles med verdier frå Vyntus og lagres.
+
+**kommentere standardisering av test**
+
+**post-test data preparation**
+
+**figur og tabell**
+
+**reliability**
+
+**konklusjon**
+
+## Elements of the report
+
+**Importantly, the report should contain:**
+
+-   At least one table (created from your data)
+-   At least one figure (created from your data), and
+-   data presented in the text.
+-   The report should use a bibliography file to manage references.
+
+```{r}
+#| echo: false
+#| warning: false
+
+library(readxl)
+library(dplyr)
+
+vars <- c("id", "timepoint", "temperature", "humidity", 
+          "sex", "age", "height", "weight", "w.max", 
+          "vo2.max", "vco2.max", "rer.max", "ve.max", 
+          "bf.max", "hr.max", "la.max", 
+          "borg.max")
+
+
+dat <- bind_rows(
+read_excel("g1.xlsx", sheet = "data_excel", na = "na") %>%
+  select(all_of(vars)) %>%
+  mutate(group = "G1", 
+         id = paste0(group, "_", id)) ,
+
+read_excel("g2.xlsx", na = "na") %>%
+   select(all_of(vars)) %>%
+  mutate(group = "G2", 
+         id = paste0(group, "_", id)) ,
+
+read_excel("g3.xlsx") %>%
+   select(all_of(vars)) %>%
+  mutate(timepoint = paste0("t", timepoint), 
+         group = "G3", 
+         id = paste0(group, "_", id)) ,
+
+read_excel("g4.xlsx") %>%
+   select(all_of(vars)) %>%
+  mutate(group = "G4", 
+         id = paste0(group, "_", id)) )
+  
+
+
+```
+
+# Figur
+
+```{r}
+#| echo: false
+#| warning: false
+
+library(ggplot2)
+  ggplot(data = dat, aes(x = id , y = vo2.max, color = timepoint)) + geom_point() 
+ 
+
+
+```
+
+Tabell
+
+```{r}
+#| echo: false
+#| warning: false
+#| 
+library(tidyverse)
+dat %>%
+  select(id, timepoint, vo2.max) %>%
+  pivot_wider(names_from = timepoint,
+              values_from = vo2.max) %>%
+  print()
+
+```
+
+Calculate typical error between t1 and t2
+
+```{r}
+#| echo: false
+
+cv1 <- dat %>%
+  select(id, timepoint, vo2.max) %>%
+  pivot_wider(names_from = timepoint, 
+              values_from = vo2.max) %>%
+  
+  mutate(diff = t2 - t1) %>% 
+  summarise(m = mean(c(t1, t2), na.rm = TRUE), 
+            s = sd(diff, na.rm = TRUE),  
+            te = s / sqrt(2), 
+            cv = 100 * (te/m)) %>%
+  print()
+
+
+cv_percent1 <- round(cv1$cv,1) %>%
+  print()
+
+```
+
+Calculate typical error between t3 and t4
+
+```{r}
+#| echo: false
+
+cv2 <- dat %>%
+  select(id, timepoint, vo2.max) %>%
+  pivot_wider(names_from = timepoint, 
+              values_from = vo2.max) %>%
+  
+  mutate(diff = t3 - t4) %>% 
+  summarise(m = mean(c(t1, t2), na.rm = TRUE), 
+            s = sd(diff, na.rm = TRUE),  
+            te = s / sqrt(2), 
+            cv = 100 * (te/m)) %>%
+  print()
+
+
+cv_percent2 <- round(cv2$cv,1) %>%
+  print()
+
+```

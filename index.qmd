@@ -1,6 +1,6 @@
-# Introduksjon {.unnumbered}
+# Forord {.unnumbered}
 
-Ny rad
+Takk til Daniel for opplæring i R. Har klart å få på plass ei mappeeksamen som eg er fornøgd med.
 
 Mappeeksamen består av følgende deler: 
 

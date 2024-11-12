@@ -1,2 +1,1201 @@
 # References {.unnumbered}
 
+&Aring;r  H&oslash;gde
+
+@article{haun2018,
+	title = {Effects of {Graded} {Whey} {Supplementation} {During} {Extreme}-{Volume} {Resistance} {Training}},
+	volume = {5},
+	issn = {2296-861X (Print) 2296-861x},
+	url = {https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6141782/pdf/fnut-05-00084.pdf},
+	doi = {10.3389/fnut.2018.00084},
+	abstract = {We examined hypertrophic outcomes of weekly graded whey protein dosing (GWP) vs. whey protein (WP) or maltodextrin (MALTO) dosed once daily during 6 weeks of high-volume resistance training (RT). College-aged resistance-trained males (training age = 5 +/- 3 years; mean +/- SD) performed 6 weeks of RT wherein frequency was 3 d/week and each session involved 2 upper- and 2 lower-body exercises (10 repetitions/set). Volume increased from 10 sets/exercise (week 1) to 32 sets/exercise (week 6), which is the highest volume investigated in this timeframe. Participants were assigned to WP (25 g/d; n = 10), MALTO (30 g/d; n = 10), or GWP (25-150 g/d from weeks 1-6; n = 11), and supplementation occurred throughout training. Dual-energy x-ray absorptiometry (DXA), vastus lateralis (VL), and biceps brachii ultrasounds for muscle thicknesses, and bioelectrical impedance spectroscopy (BIS) were performed prior to training (PRE) and after weeks 3 (MID) and 6 (POST). VL biopsies were also collected for immunohistochemical staining. The GWP group experienced the greatest PRE to POST reduction in DXA fat mass (FM) (-1.00 kg, p {\textless} 0.05), and a robust increase in DXA fat- and bone-free mass [termed lean body mass (LBM) throughout] (+2.93 kg, p {\textless} 0.05). However, the MALTO group also experienced a PRE to POST increase in DXA LBM (+2.35 kg, p {\textless} 0.05), and the GWP and MALTO groups experienced similar PRE to POST increases in type II muscle fiber cross-sectional area ({\textasciitilde}+300 mum(2)). When examining the effects of training on LBM increases (DeltaLBM) in all participants combined, PRE to MID (+1.34 kg, p {\textless} 0.001) and MID to POST (+0.85 kg, p {\textless} 0.001) increases were observed. However, when adjusting DeltaLBM for extracellular water (ECW) changes, intending to remove the confounder of edema, a significant increase was observed from PRE to MID (+1.18 kg, p {\textless} 0.001) but not MID to POST (+0.25 kg; p = 0.131). Based upon DXA data, GWP supplementation may be a viable strategy to improve body composition during high-volume RT. However, large LBM increases observed in the MALTO group preclude us from suggesting that GWP supplementation is clearly superior in facilitating skeletal muscle hypertrophy. With regard to the implemented RT program, ECW-corrected DeltaLBM gains were largely dampened, but still positive, in resistance-trained participants when RT exceeded {\textasciitilde}20 sets/exercise/wk.},
+	language = {eng},
+	journal = {Front Nutr},
+	author = {Haun, C. T. and Vann, C. G. and Mobley, C. B. and Roberson, P. A. and Osburn, S. C. and Holmes, H. M. and Mumford, P. M. and Romero, M. A. and Young, K. C. and Moon, J. R. and Gladden, L. B. and Arnold, R. D. and Israetel, M. A. and Kirby, A. N. and Roberts, M. D.},
+	year = {2018},
+	note = {Edition: 2018/09/27},
+	keywords = {resistance training, adaptation, muscle hypertrophy, graded whey protein, recovery},
+	pages = {84}},
+}
+
+
+@article{vickers2001,
+	title = {The use of percentage change from baseline as an outcome in a controlled trial is statistically inefficient: a simulation study},
+	volume = {1},
+	issn = {1471-2288},
+	url = {https://www.ncbi.nlm.nih.gov/pmc/articles/PMC34605/pdf/1471-2288-1-6.pdf},
+	abstract = {BACKGROUND: Many randomized trials involve measuring a continuous outcome - such as pain, body weight or blood pressure - at baseline and after treatment. In this paper, I compare four possibilities for how such trials can be analyzed: post-treatment; change between baseline and post-treatment; percentage change between baseline and post-treatment and analysis of covariance (ANCOVA) with baseline score as a covariate. The statistical power of each method was determined for a hypothetical randomized trial under a range of correlations between baseline and post-treatment scores. RESULTS: ANCOVA has the highest statistical power. Change from baseline has acceptable power when correlation between baseline and post-treatment scores is high;when correlation is low, analyzing only post-treatment scores has reasonable power. Percentage change from baseline has the lowest statistical power and was highly sensitive to changes in variance. Theoretical considerations suggest that percentage change from baseline will also fail to protect from bias in the case of baseline imbalance and will lead to an excess of trials with non-normally distributed outcome data. CONCLUSIONS: Percentage change from baseline should not be used in statistical analysis. Trialists wishing to report this statistic should use another method, such as ANCOVA, and convert the results to a percentage change by using mean baseline scores.},
+	language = {eng},
+	journal = {BMC Med Res Methodol},
+	author = {Vickers, A. J.},
+	year = {2001},
+	note = {Edition: 2001/07/19},
+	keywords = {Humans, Models, Statistical, Computer Simulation/*statistics \& numerical data, Randomized Controlled Trials as Topic/*statistics \& numerical data, Research Design/statistics \& numerical data, Software/statistics \& numerical data},
+	pages = {6},
+	file = {Vickers-2001-The use of percentage change from:C\:\\Users\\706194\\Zotero\\storage\\HXX45XYR\\Vickers-2001-The use of percentage change from.pdf:application/pdf},
+}
+
+
+@article{lakens2022,
+	title = {Sample {Size} {Justification}},
+	volume = {8},
+	issn = {2474-7394},
+	url = {https://online.ucpress.edu/collabra/article/8/1/33267/120491/Sample-Size-Justification},
+	doi = {10.1525/collabra.33267},
+	abstract = {An important step when designing an empirical study is to justify the sample size that will be collected. The key aim of a sample size justification for such studies is to explain how the collected data is expected to provide valuable information given the inferential goals of the researcher. In this overview article six approaches are discussed to justify the sample size in a quantitative empirical study: 1) collecting data from (almost) the entire population, 2) choosing a sample size based on resource constraints, 3) performing an a-priori power analysis, 4) planning for a desired accuracy, 5) using heuristics, or 6) explicitly acknowledging the absence of a justification. An important question to consider when justifying sample sizes is which effect sizes are deemed interesting, and the extent to which the data that is collected informs inferences about these effect sizes. Depending on the sample size justification chosen, researchers could consider 1) what the smallest effect size of interest is, 2) which minimal effect size will be statistically significant, 3) which effect sizes they expect (and what they base these expectations on), 4) which effect sizes would be rejected based on a confidence interval around the effect size, 5) which ranges of effects a study has sufficient power to detect based on a sensitivity power analysis, and 6) which effect sizes are expected in a specific research area. Researchers can use the guidelines presented in this article, for example by using the interactive form in the accompanying online Shiny app, to improve their sample size justification, and hopefully, align the informational value of a study with their inferential goals.},
+	language = {en},
+	number = {1},
+	urldate = {2022-04-18},
+	journal = {Collabra: Psychology},
+	author = {Lakens, Daniël},
+	month = mar,
+	year = {2022},
+	pages = {33267},
+	file = {Fulltekst:C\:\\Users\\706194\\Zotero\\storage\\C457SA9E\\Lakens - 2022 - Sample Size Justification.pdf:application/pdf},
+}
+
+
+
+@techreport{bryan_2017,
+	type = {preprint},
+	title = {Excuse me, do you have a moment to talk about version control?},
+	url = {https://peerj.com/preprints/3159v2},
+	abstract = {Data analysis, statistical research, and teaching statistics have at least one thing in common: these activities all produce many files! There are data files, source code, figures, tables, prepared reports, and much more. Most of these files evolve over the course of a project and often need to be shared with others, for reading or edits, as a project unfolds. Without explicit and structured management, project organization can easily descend into chaos, taking time away from the primary work and reducing the quality of the final product. This unhappy result can be avoided by repurposing tools and workflows from the software development world, namely, distributed version control. This article describes the use of the version control system Git and and the hosting site GitHub for statistical and data scientific workflows. Special attention is given to projects that use the statistical language R and, optionally, R Markdown documents. Supplementary materials include an annotated set of links to step-by-step tutorials, real world examples, and other useful learning resources.},
+	language = {en},
+	urldate = {2022-09-20},
+	institution = {PeerJ Preprints},
+	author = {Bryan, Jennifer},
+	month = aug,
+	year = {2017},
+	doi = {10.7287/peerj.preprints.3159v2},
+	file = {Versjon  sendt inn:C\:\\Users\\706194\\Zotero\\storage\\GTWIYRDF\\Bryan - 2017 - Excuse me, do you have a moment to talk about vers.pdf:application/pdf},
+}
+
+
+@book{campbell_2020,
+	address = {Hoboken, NJ},
+	edition = {Fifth edition},
+	title = {Medical statistics: a textbook for the health sciences},
+	isbn = {978-1-119-42364-5},
+	shorttitle = {Medical statistics},
+	abstract = {"The fifth edition of this popular textbook provides students and practitioners with a clear, concise introduction to the statistics they will come across in their regular reading of clinical papers. Written by three experts with wide teaching and consulting experience, Medical Statistics: A Textbook for the Health Sciences, 5th Edition: Assumes no prior knowledge of statistics. Covers all essential statistical methods. Completely revised, updated and expanded. Includes numerous examples and exercises on the interpretation of the statistics in papers published in medical journals. Includes a companion website with downloadable data, new separate chapters on topics such as logistic regression; diagnostic tests; assessing the quality of statistics/reading the statistics in a scientific paper and other statistical methods (such as meta-analysis; the bootstrap; imputation of missing data and summary measures for analysing longitudinal data) and additional sections on designs such as pilot/feasibility studies; cluster and stepped wedge randomised controlled trials"--},
+	publisher = {Wiley-Blackwell},
+	author = {Campbell, Michael J. and Walters, Stephen John and Machin, David},
+	year = {2020},
+	keywords = {Biometry, Statistics as Topic, Research Design, methods},
+}
+
+
+
+@book{statistiske_metoder,
+	address = {Oslo},
+	title = {Statistiske metoder i medisin og helsefag},
+	isbn = {978-82-05-50764-7},
+	language = {Norwegian},
+	publisher = {Gyldendal akademisk},
+	author = {Frigessi, Arnoldo and Aalen, Odd O},
+	year = {2018},
+	note = {OCLC: 1028516585},
+}
+
+
+
+@article{RN2391,
+   author = {Broman, Karl W. and Woo, Kara H.},
+   title = {Data Organization in Spreadsheets},
+   journal = {The American Statistician},
+   volume = {72},
+   number = {1},
+   pages = {2-10},
+   ISSN = {0003-1305},
+   DOI = {10.1080/00031305.2017.1375989},
+   url = {https://doi.org/10.1080/00031305.2017.1375989
+https://www.tandfonline.com/doi/pdf/10.1080/00031305.2017.1375989?needAccess=true},
+   year = {2018},
+   type = {Journal Article}
+}
+
+@article{RN1953,
+   author = {Ioannidis, John P. A.},
+   title = {Why Most Published Research Findings Are False},
+   journal = {PLOS Medicine},
+   volume = {2},
+   number = {8},
+   pages = {e124},
+   DOI = {10.1371/journal.pmed.0020124},
+   url = {https://doi.org/10.1371/journal.pmed.0020124
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1182327/pdf/pmed.0020124.pdf},
+   year = {2005},
+   type = {Journal Article}
+}
+
+@article{RN1955,
+   author = {Leek, J. T. and Peng, R. D.},
+   title = {Statistics: P values are just the tip of the iceberg},
+   journal = {Nature},
+   volume = {520},
+   number = {7549},
+   pages = {612},
+   ISSN = {0028-0836},
+   DOI = {10.1038/520612a},
+   url = {http://www.nature.com:80/polopoly_fs/1.17412!/menu/main/topColumns/topLeftColumn/pdf/520612a.pdf},
+   year = {2015},
+   type = {Journal Article}
+}
+
+@article{RN1492,
+   author = {Peng, R. D. and Dominici, F. and Zeger, S. L.},
+   title = {Reproducible epidemiologic research},
+   journal = {Am J Epidemiol},
+   volume = {163},
+   number = {9},
+   pages = {783-9},
+   ISSN = {0002-9262 (Print)
+0002-9262 (Linking)},
+   DOI = {10.1093/aje/kwj093},
+   url = {http://www.ncbi.nlm.nih.gov/pubmed/16510544},
+   year = {2006},
+   type = {Journal Article}
+}
+
+@book{RN2902,
+   author = {Spiegelhalter, D. J.},
+   title = {The art of statistics : how to learn from data},
+   publisher = {Basic Books},
+   address = {New York},
+   edition = {First US edition.},
+   pages = {xvi, 426 pages},
+   ISBN = {9781541618510
+1541618513},
+   year = {2019},
+   type = {Book}
+}
+
+@article{RN2928,
+   author = {Stephen, G. Powell and Kenneth, R. Baker and Barry, Lawson},
+   title = {Errors in Operational Spreadsheets},
+   journal = {Journal of Organizational and End User Computing (JOEUC)},
+   volume = {21},
+   number = {3},
+   pages = {24-36},
+   ISSN = {1546-2234},
+   DOI = {10.4018/joeuc.2009070102},
+   url = {https://services.igi-global.com/resolvedoi/resolve.aspx?doi=10.4018/joeuc.2009070102},
+   year = {2009},
+   type = {Journal Article}
+}
+
+@article{RN2927,
+   author = {Ziemann, Mark and Eren, Yotam and El-Osta, Assam},
+   title = {Gene name errors are widespread in the scientific literature},
+   journal = {Genome Biology},
+   volume = {17},
+   number = {1},
+   pages = {177},
+   ISSN = {1474-760X},
+   DOI = {10.1186/s13059-016-1044-7},
+   url = {https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4994289/pdf/13059_2016_Article_1044.pdf},
+   year = {2016},
+   type = {Journal Article}
+}
+
+@article{RN1956,
+   author = {Wickham, Hadley},
+   title = {Tidy Data},
+   journal = {Journal of Statistical Software; Vol 1, Issue 10 (2014)},
+   url = {https://www.jstatsoft.org/v059/i10},
+   year = {2014},
+   type = {Journal Article}
+}
+
+
+
+@book{RN2511,
+   author = {Tanner, R.K. and Gore, C.J.},
+   title = {Physiological Tests for Elite Athletes 2nd Edition},
+   publisher = {Human Kinetics},
+   ISBN = {9781450436779},
+   url = {https://books.google.no/books?id=0OPIiMks58MC},
+   year = {2012},
+   type = {Book}
+}
+
+
+
+@article{RN1739,
+   author = {Halperin, I. and Pyne, D. B. and Martin, D. T.},
+   title = {Threats to internal validity in exercise science: a review of overlooked confounding variables},
+   journal = {Int J Sports Physiol Perform},
+   volume = {10},
+   number = {7},
+   pages = {823-9},
+   ISSN = {1555-0273 (Electronic)
+1555-0265 (Linking)},
+   DOI = {10.1123/ijspp.2014-0566},
+   url = {http://www.ncbi.nlm.nih.gov/pubmed/25756869},
+   year = {2015},
+   type = {Journal Article}
+}
+
+
+@book{r4ds,
+  abstract = {Learn how to use R to turn raw data into insight, knowledge, and understanding. This book introduces you to R, RStudio, and the tidyverse, a collection of R packages designed to work together to make data science fast, fluent, and fun. Suitable for readers with no previous programming experience, R for Data Science is designed to get you doing data science as quickly as possible.
+
+Authors Hadley Wickham and Garrett Grolemund guide you through the steps of importing, wrangling, exploring, and modeling your data and communicating the results. You'll get a complete, big-picture understanding of the data science cycle, along with basic tools you need to manage the details. Each section of the book is paired with exercises to help you practice what you've learned along the way.
+
+You'll learn how to:
+
+    Wrangle—transform your datasets into a form convenient for analysis
+    Program—learn powerful R tools for solving data problems with greater clarity and ease
+    Explore—examine your data, generate hypotheses, and quickly test them
+    Model—provide a low-dimensional summary that captures true "signals" in your dataset
+    Communicate—learn R Markdown for integrating prose, code, and results},
+  added-at = {2018-06-18T21:23:34.000+0200},
+  author = {Wickham, Hadley and Grolemund, Garrett},
+  biburl = {https://www.bibsonomy.org/bibtex/22e6e5a8bda4b8020e3b4e90c5accf9a8/pbett},
+  comment = {Available (section-by-section) online from http://r4ds.had.co.nz/},
+  day = 05,
+  edition = 1,
+  howpublished = {Paperback},
+  interhash = {660059a5b6b582a913488afb63e66907},
+  intrahash = {2e6e5a8bda4b8020e3b4e90c5accf9a8},
+  isbn = {1491910399},
+  keywords = {visualisation textbook computing rpackage},
+  month = jan,
+  posted-at = {2017-04-03 14:44:51},
+  priority = {2},
+  publisher = {O'Reilly Media},
+  timestamp = {2018-06-22T18:36:55.000+0200},
+  title = {R for Data Science: Import, Tidy, Transform, Visualize, and Model Data},
+  url = {http://r4ds.had.co.nz/},
+  year = 2017
+}
+
+@article{RN130,
+   author = {Hopkins, W. G.},
+   title = {Measures of reliability in sports medicine and science},
+   journal = {Sports Med},
+   volume = {30},
+   number = {1},
+   pages = {1-15},
+   ISSN = {0112-1642},
+   url = {http://www.ncbi.nlm.nih.gov/pubmed/10907753},
+   year = {2000},
+   type = {Journal Article}
+}
+
+@article{RN2358,
+   author = {Hammarström, Daniel and Øfsteng, Sjur and Koll, Lise and Hanestadhaugen, Marita and Hollan, Ivana and Apró, William and Whist, Jon Elling and Blomstrand, Eva and Rønnestad, Bent R. and Ellefsen, Stian},
+   title = {Benefits of higher resistance-training volume are related to ribosome biogenesis},
+   journal = {The Journal of physiology},
+   volume = {598},
+   number = {3},
+   pages = {543-565},
+   ISSN = {1469-7793},
+   DOI = {10.1113/JP278455},
+   url = {https://www.ncbi.nlm.nih.gov/pubmed/31813190
+https://physoc.onlinelibrary.wiley.com/doi/full/10.1113/JP278455},
+   year = {2020},
+   type = {Journal Article}
+}
+
+
+@article{RN2225,
+   author = {Haun, C. T. and Vann, C G. and Mobley, C. Brooks and Osburn, Shelby C. and Mumford, Petey W. and Roberson, Paul A. and Romero, Matthew A. and Fox, Carlton D. and Parry, Hailey A. and Kavazis, Andreas N. and Moon, Jordan R. and Young, Kaelin C. and Roberts, Michael D.},
+   title = {Pre-training Skeletal Muscle Fiber Size and Predominant Fiber Type Best Predict Hypertrophic Responses to 6 Weeks of Resistance Training in Previously Trained Young Men},
+   journal = {Frontiers in Physiology},
+   volume = {10},
+   number = {297},
+   ISSN = {1664-042X},
+   DOI = {10.3389/fphys.2019.00297},
+   url = {https://www.frontiersin.org/article/10.3389/fphys.2019.00297
+https://fjfsdata01prod.blob.core.windows.net/articles/files/434237/pubmed-zip/.versions/2/.package-entries/fphys-10-00297-r1/fphys-10-00297.pdf?sv=2015-12-11&sr=b&sig=%2BrZ3AS%2BjgTiu%2B08OnwS9E%2BpPjh9i%2B%2FsUvdV1omN6JCk%3D&se=2019-04-11T16%3A43%3A43Z&sp=r&rscd=attachment%3B%20filename%2A%3DUTF-8%27%27fphys-10-00297.pdf},
+   year = {2019},
+   type = {Journal Article}
+}
+
+@article{RN2149,
+   author = {Haun, C. T. and Vann, C. G. and Mobley, C. B. and Roberson, P. A. and Osburn, S. C. and Holmes, H. M. and Mumford, P. M. and Romero, M. A. and Young, K. C. and Moon, J. R. and Gladden, L. B. and Arnold, R. D. and Israetel, M. A. and Kirby, A. N. and Roberts, M. D.},
+   title = {Effects of Graded Whey Supplementation During Extreme-Volume Resistance Training},
+   journal = {Front Nutr},
+   volume = {5},
+   pages = {84},
+   ISSN = {2296-861X (Print)
+2296-861x},
+   DOI = {10.3389/fnut.2018.00084},
+   url = {https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6141782/pdf/fnut-05-00084.pdf},
+   year = {2018},
+   type = {Journal Article}
+}
+
+
+
+@Article{refID1,
+   Author="Ellefsen, S.  and Hammarstrom, D.  and Strand, T. A.  and Zacharoff, E.  and Whist, J. E.  and Rauk, I.  and Nygaard, H.  and Vegge, G.  and Hanestadhaugen, M.  and Wernbom, M.  and Cumming, K. T.  and Rønning, R.  and Raastad, T.  and Rønnestad, B. R. ",
+   Title="{Blood flow-restricted strength training displays high functional and biological efficacy in women: a within-subject comparison with high-load strength training}",
+   Journal="Am. J. Physiol. Regul. Integr. Comp. Physiol.",
+   Year="2015",
+   Volume="309",
+   Number="7",
+   Pages="R767--779",
+   Month="Oct"}
+
+@article{RN228,
+   author = {Newell, J. and Higgins, D. and Madden, N. and Cruickshank, J. and Einbeck, J. and McMillan, K. and McDonald, R.},
+   title = {Software for calculating blood lactate endurance markers},
+   journal = {Journal of Sports Sciences},
+   volume = {25},
+   number = {12},
+   pages = {1403-1409},
+   ISSN = {0264-0414},
+   DOI = {10.1080/02640410601128922},
+   url = {<Go to ISI>://000249680300012},
+   year = {2007},
+   type = {Journal Article}
+}
+
+@book{lsr, 
+title = {Learning statistics with R},
+  author={Navarro, D.},
+note = {\url{https://learningstatisticswithr.com/}},
+year = {2020}
+}
+
+@article{RN2956,
+   author = {Loe, H. and Rognmo, Ø and Saltin, B. and Wisløff, U.},
+   title = {Aerobic capacity reference data in 3816 healthy men and women 20-90 years},
+   journal = {PLoS One},
+   volume = {8},
+   number = {5},
+   pages = {e64319},
+   ISSN = {1932-6203},
+   DOI = {10.1371/journal.pone.0064319},
+   url = {https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3654926/pdf/pone.0064319.pdf},
+   year = {2013},
+   type = {Journal Article}
+}
+
+
+@article{RN2959,
+   author = {Hopkins, W. G. and Hawley, J. A. and Burke, L. M.},
+   title = {Design and analysis of research on sport performance enhancement},
+   journal = {Med Sci Sports Exerc},
+   volume = {31},
+   number = {3},
+   pages = {472-85},
+   ISSN = {0195-9131 (Print)
+0195-9131},
+   DOI = {10.1097/00005768-199903000-00018},
+   year = {1999},
+   type = {Journal Article}
+}
+
+
+
+@inbook{RN2962,
+   author = {Higgins, Julian PT and Li, Tianjing and Deeks, Jonathan J},
+   title = {Choosing effect measures and computing estimates of effect},
+   booktitle = {Cochrane Handbook for Systematic Reviews of Interventions},
+   pages = {143-176},
+   DOI = {https://doi.org/10.1002/9781119536604.ch6},
+   url = {https://onlinelibrary.wiley.com/doi/abs/10.1002/9781119536604.ch6},
+   year = {2019},
+   type = {Book Section}
+}
+
+@article{RN2961,
+   author = {Astorino, T. A. and Schubert, M. M. and Palumbo, E. and Stirling, D. and McMillan, D. W. and Cooper, C. and Godinez, J. and Martinez, D. and Gallant, R.},
+   title = {Magnitude and time course of changes in maximal oxygen uptake in response to distinct regimens of chronic interval training in sedentary women},
+   journal = {Eur J Appl Physiol},
+   volume = {113},
+   number = {9},
+   pages = {2361-9},
+   ISSN = {1439-6319},
+   DOI = {10.1007/s00421-013-2672-1},
+   year = {2013},
+   type = {Journal Article}
+}
+
+
+
+@article{RN2116,
+   author = {Senn, S.},
+   title = {Change from baseline and analysis of covariance revisited},
+   journal = {Stat Med},
+   volume = {25},
+   number = {24},
+   pages = {4334-44},
+   ISSN = {0277-6715 (Print)
+0277-6715},
+   DOI = {10.1002/sim.2682},
+   year = {2006},
+   type = {Journal Article}
+}
+
+@article{RN2118,
+   author = {Vickers, Andrew J. and Altman, Douglas G.},
+   title = {Analysing controlled trials with baseline and follow up measurements},
+   journal = {BMJ : British Medical Journal},
+   volume = {323},
+   number = {7321},
+   pages = {1123-1124},
+   ISSN = {0959-8138
+1468-5833},
+   url = {http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1121605/
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1121605/pdf/1123.pdf},
+   year = {2001},
+   type = {Journal Article}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Referansar til raport 2
+
+@article{Sylta,
+  title    = "The effect of different high-intensity periodization models on
+              endurance adaptations",
+  author   = "Sylta, {\O}ystein and T{\o}nnessen, Espen and Hammarstr{\"o}m,
+              Daniel and Danielsen, J{\o}rgen and Skovereng, Knut and Ravn,
+              Troels and R{\o}nnestad, Bent R and Sandbakk, {\O}yvind and
+              Seiler, Stephen",
+  abstract = "PURPOSE: This study aimed to compare the effects of three
+              different high-intensity training (HIT) models, balanced for
+              total load but differing in training plan progression, on
+              endurance adaptations. METHODS: Sixty-three cyclists (peak oxygen
+              uptake (V˙O2peak) 61.3 $\pm$ 5.8 mL·kg·min) were randomized to
+              three training groups and instructed to follow a 12-wk training
+              program consisting of 24 interval sessions, a high volume of
+              low-intensity training, and laboratory testing. The increasing
+              HIT group (n = 23) performed interval training as 4 $\times$ 16
+              min in weeks 1-4, 4 $\times$ 8 min in weeks 5-8, and 4 $\times$ 4
+              min in weeks 9-12. The decreasing HIT group (n = 20) performed
+              interval sessions in the opposite mesocycle order as the
+              increasing HIT group, and the mixed HIT group (n = 20) performed
+              the interval prescriptions in a mixed distribution in all
+              mesocycles. Interval sessions were prescribed as maximal session
+              efforts and executed at mean values 4.7, 9.2, and 12.7 mmol·L
+              blood lactate in 4 $\times$ 16-, 4 $\times$ 8-, and 4 $\times$
+              4-min sessions, respectively (P 0.05). Further, an individual
+              response analysis indicated similar likelihood of large,
+              moderate, or nonresponses, respectively, in response to each
+              training group (P > 0.05). CONCLUSIONS: This study suggests that
+              organizing different interval sessions in a specific periodized
+              mesocycle order or in a mixed distribution during a 12-wk
+              training period has little or no effect on training adaptation
+              when the overall training load is the same.",
+  journal  = "Med. Sci. Sports Exerc.",
+  volume   =  48,
+  number   =  11,
+  pages    = "2165--2174",
+  month    =  nov,
+  year     =  2016,
+  language = "en"
+}
+ 
+@manual{rstudio,
+    title = {RStudio: Integrated Development Environment for R},
+    author = {{Posit team}},
+    organization = {Posit Software, PBC},
+    address = {Boston, MA},
+    year = {2024},
+    url = {http://www.posit.co/},
+  }
+ 
+@article{Schindelin,
+  title     = "Fiji: an open-source platform for biological-image analysis",
+  author    = "Schindelin, Johannes and Arganda-Carreras, Ignacio and Frise,
+               Erwin and Kaynig, Verena and Longair, Mark and Pietzsch, Tobias
+               and Preibisch, Stephan and Rueden, Curtis and Saalfeld, Stephan
+               and Schmid, Benjamin and Tinevez, Jean-Yves and White, Daniel
+               James and Hartenstein, Volker and Eliceiri, Kevin and Tomancak,
+               Pavel and Cardona, Albert",
+  abstract  = "Fiji is a distribution of the popular open-source software
+               ImageJ focused on biological-image analysis. Fiji uses modern
+               software engineering practices to combine powerful software
+               libraries with a broad range of scripting languages to enable
+               rapid prototyping of image-processing algorithms. Fiji
+               facilitates the transformation of new algorithms into ImageJ
+               plugins that can be shared with end users through an integrated
+               update system. We propose Fiji as a platform for productive
+               collaboration between computer science and biology research
+               communities.",
+  journal   = "Nat. Methods",
+  publisher = "Springer Science and Business Media LLC",
+  volume    =  9,
+  number    =  7,
+  pages     = "676--682",
+  month     =  jun,
+  year      =  2012,
+  language  = "en"
+}
+ 
+@misc{DNA,
+author = {},
+title = {{L}ogin - e{L}ab{F}{T}{W} --- elab.inn.no},
+howpublished = {\url{https://elab.inn.no/experiments.php?mode=view&id=83}},
+year = {},
+note = {[Accessed 20-09-2024]},
+}
+ 
+@article{Haun2018,
+  title    = "Effects of graded whey supplementation during extreme-volume
+              resistance training",
+  author   = "Haun, Cody T and Vann, Christopher G and Mobley, Christopher B
+              and Roberson, Paul A and Osburn, Shelby C and Holmes, Hudson M
+              and Mumford, Petey M and Romero, Matthew A and Young, Kaelin C
+              and Moon, Jordan R and Gladden, L Bruce and Arnold, Robert D and
+              Israetel, Michael A and Kirby, Annie N and Roberts, Michael D",
+  abstract = "We examined hypertrophic outcomes of weekly graded whey protein
+              dosing (GWP) vs. whey protein (WP) or maltodextrin (MALTO) dosed
+              once daily during 6 weeks of high-volume resistance training
+              (RT). College-aged resistance-trained males (training age = 5
+              $\pm$ 3 years; mean $\pm$ SD) performed 6 weeks of RT wherein
+              frequency was 3 d/week and each session involved 2 upper- and 2
+              lower-body exercises (10 repetitions/set). Volume increased from
+              10 sets/exercise (week 1) to 32 sets/exercise (week 6), which is
+              the highest volume investigated in this timeframe. Participants
+              were assigned to WP (25 g/d; n = 10), MALTO (30 g/d; n = 10), or
+              GWP (25-150 g/d from weeks 1-6; n = 11), and supplementation
+              occurred throughout training. Dual-energy x-ray absorptiometry
+              (DXA), vastus lateralis (VL), and biceps brachii ultrasounds for
+              muscle thicknesses, and bioelectrical impedance spectroscopy
+              (BIS) were performed prior to training (PRE) and after weeks 3
+              (MID) and 6 (POST). VL biopsies were also collected for
+              immunohistochemical staining. The GWP group experienced the
+              greatest PRE to POST reduction in DXA fat mass (FM) (-1.00 kg, p
+              < 0.05), and a robust increase in DXA fat- and bone-free mass
+              [termed lean body mass (LBM) throughout] (+2.93 kg, p < 0.05).
+              However, the MALTO group also experienced a PRE to POST increase
+              in DXA LBM (+2.35 kg, p < 0.05), and the GWP and MALTO groups
+              experienced similar PRE to POST increases in type II muscle fiber
+              cross-sectional area (~+300 $\mu$m2). When examining the effects
+              of training on LBM increases ($\Delta$LBM) in all participants
+              combined, PRE to MID (+1.34 kg, p < 0.001) and MID to POST (+0.85
+              kg, p < 0.001) increases were observed. However, when adjusting
+              $\Delta$LBM for extracellular water (ECW) changes, intending to
+              remove the confounder of edema, a significant increase was
+              observed from PRE to MID (+1.18 kg, p < 0.001) but not MID to
+              POST (+0.25 kg; p = 0.131). Based upon DXA data, GWP
+              supplementation may be a viable strategy to improve body
+              composition during high-volume RT. However, large LBM increases
+              observed in the MALTO group preclude us from suggesting that GWP
+              supplementation is clearly superior in facilitating skeletal
+              muscle hypertrophy. With regard to the implemented RT program,
+              ECW-corrected $\Delta$LBM gains were largely dampened, but still
+              positive, in resistance-trained participants when RT exceeded ~20
+              sets/exercise/wk.",
+  journal  = "Front. Nutr.",
+  volume   =  5,
+  pages    = "84",
+  month    =  sep,
+  year     =  2018,
+  keywords = "adaptation; graded whey protein; muscle hypertrophy; recovery;
+              resistance training",
+  language = "en"
+}
+ 
+@article{Haun2019,
+  title     = "Pre-training skeletal muscle fiber size and predominant fiber
+               type best predict hypertrophic responses to 6 weeks of
+               resistance training in previously trained young men",
+  author    = "Haun, Cody T and Vann, Christopher G and Mobley, C Brooks and
+               Osburn, Shelby C and Mumford, Petey W and Roberson, Paul A and
+               Romero, Matthew A and Fox, Carlton D and Parry, Hailey A and
+               Kavazis, Andreas N and Moon, Jordan R and Young, Kaelin C and
+               Roberts, Michael D",
+  abstract  = "Limited evidence exists regarding differentially expressed
+               biomarkers between previously-trained low versus high
+               hypertrophic responders in response to resistance training.
+               Herein, 30 college-aged males (training age 5 $\pm$ 3 years;
+               mean $\pm$ SD) partook in 6 weeks of high-volume resistance
+               training. Body composition, right leg vastus lateralis (VL)
+               biopsies, and blood were obtained prior to training (PRE) and at
+               the 3-week (W3) and 6-week time points (W6). The 10 lowest (LOW)
+               and 10 highest (HIGH) hypertrophic responders were clustered
+               based upon a composite hypertrophy score of PRE-to-W6 changes in
+               right leg VL mean muscle fiber cross-sectional area (fCSA), VL
+               thickness assessed via ultrasound, upper right leg lean soft
+               tissue mass assessed via dual x-ray absorptiometry (DXA), and
+               mid-thigh circumference. Two-way ANOVAs were used to compare
+               biomarker differences between the LOW and HIGH clusters over
+               time, and stepwise linear regression was performed to elucidate
+               biomarkers that explained significant variation in the composite
+               hypertrophy score from PRE to W3, W3 to W6, and PRE to W6 in all
+               30 participants. PRE-to-W6 HIGH and LOW responders exhibited a
+               composite hypertrophy change of +10.7 $\pm$ 3.2 and -2.1 $\pm$
+               1.6\%, respectively (p W3 > PRE), phospho (p)-4EBP1 (PRE >
+               W3\&W6), pan-mTOR (PRE > W3 W3 W3 W3), muscle ubiquitin-labeled
+               proteins (PRE > W6), mechano growth factor mRNA (W6 > W3\&PRE),
+               45S rRNA (PRE > W6), and muscle citrate synthase activity (PRE >
+               W3\&W6). No interactions existed for the aforementioned
+               biomarkers and/or other assayed targets (muscle 20S proteasome
+               activity, serum total testosterone, muscle androgen receptor
+               protein levels, muscle glycogen, or serum creatine kinase).
+               Regression analysis indicated PRE type II fiber percentage (R 2
+               = 0.152, $\beta$ = 0.390, p = 0.033) and PRE type II fCSA (R 2 =
+               0.207, $\beta$ = -0.455, p = 0.019) best predicted the PRE-to-W6
+               change in the composite hypertrophy score. While our sample size
+               is limited, these data suggest: (a) HIGH responders may exhibit
+               more growth potential given that they possessed lower PRE type
+               II fCSA values and (b) possessing a greater type II fiber
+               percentage as a trained individual may be advantageous for
+               hypertrophy in response to resistance training.",
+  journal   = "Front. Physiol.",
+  publisher = "Frontiers Media SA",
+  volume    =  10,
+  pages     = "297",
+  month     =  mar,
+  year      =  2019,
+  keywords  = "high responder; mTOR; proteolysis; resistance training; ribosome
+               biogenesis",
+  copyright = "https://creativecommons.org/licenses/by/4.0/",
+  language  = "en"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Referansar til rapport 4
+
+
+% The entry below contains non-ASCII chars that could not be converted
+% to a LaTeX equivalent.
+@article{Alm,
+  title     = "No differences between 12 weeks of block- vs.
+               Traditional-periodized training in performance adaptations in
+               trained cyclists",
+  author    = "Almquist, Nicki Winfield and Eriksen, Hanne Berg and Wilhelmsen,
+               Malene and Hamarsland, H{\aa}vard and Ing, Steven and Ellefsen,
+               Stian and Sandbakk, {\O}yvind and R{\o}nnestad, Bent R and
+               Skovereng, Knut",
+  abstract  = "The purpose of this study was to compare the effects of 12 weeks
+               load-matched block periodization (BP, n = 14), using weekly
+               concentration of high- (HIT), moderate- (MIT), and low- (LIT)
+               intensity training, with traditional periodization (TP, n = 16)
+               using a weekly, cyclic progressive increase in training load of
+               HIT-, MIT-, and LIT-sessions in trained cyclists (peak oxygen
+               uptake: 58 $\pm$ 8 ml·kg-1·min-1). Red blood cell volume
+               increased 10 $\pm$ 16\% (p = 0.029) more in BP compared to TP,
+               while capillaries around type I fibers increased 20 $\pm$ 12\%
+               (p = 0.002) more in TP compared to BP from Pre to Post12. No
+               other group differences were found in time-trial (TT)
+               performances or muscular-, or hematological adaptations.
+               However, both groups improved 5 and 40-min TT power by 9 $\pm$
+               9\% (p < 0.001) and 8 $\pm$ 9\% (p < 0.001), maximal aerobic
+               power (Wmax) and power output (PO) at 4 mmol·L-1 blood lactate
+               (W4mmol), by 6 $\pm$ 7 (p = 0.001) and 10 $\pm$ 12\% (p =
+               0.001), and gross efficiency (GE) in a semi-fatigued state by
+               0.5 $\pm$ 1.1\%-points (p = 0.026). In contrast, GE in fresh
+               state and VO2peak were unaltered in both groups. The muscle
+               protein content of $\beta$-hydroxyacyl (HAD) increased by 55
+               $\pm$ 58\% in TP only, while both TP and BP increased the
+               content of cytochrome c oxidase subunit IV (COXIV) by 72 $\pm$
+               34\%. Muscle enzyme activities of citrate synthase (CS) and
+               phosphofructokinase (PFK) were unaltered. TP increased
+               capillary-to-fiber ratio and capillary around fiber (CAF) type I
+               by 36 $\pm$ 15\% (p < 0.001) and 17 $\pm$ 8\% (p = 0.025),
+               respectively, while BP increased capillary density (CD) by 28
+               $\pm$ 24\% (p = 0.048) from Pre to Post12. The present study
+               shows no difference in performance between BP and ``best
+               practice''-TP of endurance training intensities using a cyclic,
+               progressively increasing training load in trained cyclists.
+               However, hematological and muscle capillary adaptations may
+               differ.",
+  journal   = "Front. Physiol.",
+  publisher = "Frontiers Media SA",
+  volume    =  13,
+  pages     = "837634",
+  month     =  mar,
+  year      =  2022,
+  keywords  = "best practice; endurance training; hematological measures;
+               periodization; skeletal muscle measures",
+  copyright = "https://creativecommons.org/licenses/by/4.0/",
+  language  = "en"
+}
+
+
+@proceedings{Bakken,
+  title  = "Effects of block periodization training versus traditional
+            periodization training in trained cross country skiers",
+  author = "Bakken, Timo Andre",
+  year   =  2013
+}
+
+
+% The entry below contains non-ASCII chars that could not be converted
+% to a LaTeX equivalent.
+@article{Ronnestad,
+  title    = "A 6-day high-intensity interval microcycle improves indicators of
+              endurance performance in elite cross-country skiers",
+  author   = "R{\o}nnestad, Bent R and Bjerkrheim, Kjetil Andre and Hansen,
+              Joar and M{\o}lmen, Knut Sindre",
+  abstract = "Purpose: The aim of this study was to compare the effects of a
+              6-day high-intensity interval (HIT) block [BLOCK, n = 12, maximal
+              oxygen uptake (V̇O2max = 69. 6 $\pm$ 4.3 mL·min-1·kg-1)] with a
+              time-matched period with usual training (CON, n = 12, V̇O2max =
+              69.2 $\pm$ 4.2 mL·min-1·kg-1) in well-trained cross-country (XC)
+              skiers on physiological determinants and indicators of endurance
+              performance. Furthermore, the study aimed to investigate the
+              acute physiological responses, including time $\geq$90\% of
+              V̇O2max, and its associated reliability during repeated HIT
+              sessions in the HIT microcycle. Methods: Before the 6-day HIT
+              block and following 5 days of recovery after the HIT block, both
+              groups were tested on indicators of endurance performance. To
+              quantify time $\geq$90\% of V̇O2max during interval sessions in
+              the HIT block, V̇O2 measurements were performed on the 1st, 2nd,
+              and last HIT session in BLOCK. Results: BLOCK had a larger
+              improvement than CON in maximal 1-min velocity achieved during
+              the V̇O2max test (3.1 $\pm$ 3.1\% vs. 1.2 $\pm$ 1.6\%,
+              respectively; p = 0.010) and velocity corresponding to 4 mmol·L-1
+              blood lactate (3.2 $\pm$ 2.9\% vs. 0.6 $\pm$ 2.1\%, respectively;
+              p = 0.024). During submaximal exercise, BLOCK displayed a larger
+              reduction in respiratory exchange ratio, blood lactate
+              concentration, heart rate, and rate of perceived exertion (p <
+              0.05) and a tendency towards less energy expenditure compared to
+              CON (p = 0.073). The ICC of time $\geq$90\% V̇O2max in the
+              present study was 0.57, which indicates moderate reliability.
+              Conclusions: In well-trained XC skiers, BLOCK induced superior
+              changes in indicators of endurance performance compared with CON,
+              while time $\geq$90\% of V̇O2max during the HIT sessions in the
+              6-day block had a moderate reliability.",
+  journal  = "Front. Sports Act. Living",
+  volume   =  4,
+  pages    = "948127",
+  month    =  nov,
+  year     =  2022,
+  keywords = "endurance training; high-intensity aerobic training;
+              high-intensity intermittent training; intense exercise; roller
+              skiing",
+  language = "en"
+}
+
+
+@article{McGawley,
+  title     = "No additional benefits of block- over evenly-distributed
+               high-intensity interval training within a polarized microcycle",
+  author    = "McGawley, Kerry and Juudas, Elisabeth and Kazior, Zuzanna and
+               Str{\"o}m, Kristoffer and Blomstrand, Eva and Hansson, Ola and
+               Holmberg, Hans-Christer",
+  abstract  = "Introduction: The current study aimed to investigate the
+               responses to block- versus evenly-distributed high-intensity
+               interval training (HIT) within a polarized microcycle. Methods:
+               Twenty well-trained junior cross-country skiers (10 males, age
+               17.6 $\pm$ 1.5 and 10 females, age 17.3 $\pm$ 1.5) completed
+               two, 3-week periods of training (EVEN and BLOCK) in a
+               randomized, crossover-design study. In EVEN, 3 HIT sessions (5
+               $\times$ 4-min of diagonal-stride roller-skiing) were completed
+               at a maximal sustainable intensity each week while low-intensity
+               training (LIT) was distributed evenly around the HIT. In BLOCK,
+               the same 9 HIT sessions were completed in the second week while
+               only LIT was completed in the first and third weeks. Heart rate
+               (HR), session ratings of perceived exertion (sRPE), and
+               perceived recovery (pREC) were recorded for all HIT and LIT
+               sessions, while distance covered was recorded for each HIT
+               interval. The recovery-stress questionnaire for athletes
+               (RESTQ-Sport) was completed weekly. Before and after EVEN and
+               BLOCK, resting saliva and muscle samples were collected and an
+               incremental test and 600-m time-trial (TT) were completed.
+               Results: Pre- to post-testing revealed no significant
+               differences between EVEN and BLOCK for changes in resting
+               salivary cortisol, testosterone, or IgA, or for changes in
+               muscle capillary density, fiber area, fiber composition, enzyme
+               activity (CS, HAD, and PFK) or the protein content of VEGF or
+               PGC-1$\alpha$. Neither were any differences observed in the
+               changes in skiing economy, [Formula: see text] or 600-m
+               time-trial performance between interventions. These findings
+               were coupled with no significant differences between EVEN and
+               BLOCK for distance covered during HIT, summated HR zone scores,
+               total sRPE training load, overall pREC or overall
+               recovery-stress state. However, 600-m TT performance improved
+               from pre- to post-training, irrespective of intervention (P =
+               0.003), and a number of hormonal and muscle biopsy markers were
+               also significantly altered post-training (P < 0.05). Discussion:
+               The current study shows that well-trained junior cross-country
+               skiers are able to complete 9 HIT sessions within 1 week without
+               compromising total work done and without experiencing greater
+               stress or reduced recovery over a 3-week polarized microcycle.
+               However, the findings do not support block-distributed HIT as a
+               superior method to a more even distribution of HIT in terms of
+               enhancing physiological or performance adaptions.",
+  journal   = "Front. Physiol.",
+  publisher = "Frontiers Media SA",
+  volume    =  8,
+  pages     = "413",
+  month     =  jun,
+  year      =  2017,
+  keywords  = "cross-country skiing; endurance; junior athletes; muscle;
+               periodization; recovery; stress; training load",
+  language  = "en"
+}
+
+
+@article{Nuuttila,
+  title     = "Physiological, perceptual, and performance responses to the
+               2-week block of high- versus low-intensity endurance training",
+  author    = "Nuuttila, Olli-Pekka and Nummela, Ari and Kyr{\"o}l{\"a}inen,
+               Heikki and Laukkanen, Jari and H{\"a}kkinen, Keijo",
+  abstract  = "PURPOSE: This study examined the physiological, perceptual, and
+               performance responses to a 2-wk block of increased training load
+               and compared whether responses differ between high-intensity
+               interval (HIIT) and low-intensity training (LIT). METHODS:
+               Thirty recreationally trained males and females performed a 2-wk
+               block of 10 HIIT sessions (INT, n = 15) or 70\% increased volume
+               of LIT (VOL, n = 15). Running time in the 3000 m and basal serum
+               and urine hormone concentrations were measured before (T1) and
+               after the block (T2), and after a recovery week (T3). In
+               addition, weekly averages of nocturnal heart rate variability
+               (HRV) and perceived recovery were compared with the baseline.
+               RESULTS: Both groups improved their running time in the 3000 m
+               from T1 to T2 (INT = -1.8\% $\pm$ 1.6\%, P = 0.003; VOL = -1.4\%
+               $\pm$ 1.7\%, P = 0.017) and from T1 to T3 (INT = -2.5\% $\pm$
+               1.6\%, P < 0.001; VOL = -2.2\% $\pm$ 1.9\%, P = 0.001). Resting
+               norepinephrine concentration increased in INT from T1 to T2 (P =
+               0.01) and remained elevated at T3 (P = 0.018). The change in HRV
+               from the baseline was different between the groups during the
+               first week (INT = -1.0\% $\pm$ 2.0\% vs VOL = 1.8\% $\pm$ 3.2\%,
+               P = 0.008). Muscle soreness increased only in INT (P < 0.001),
+               and the change was different compared with VOL across the block
+               and recovery weeks (P < 0.05). CONCLUSIONS: HIIT and LIT blocks
+               increased endurance performance in a short period. Although both
+               protocols seemed to be tolerable for recreational athletes, a
+               HIIT block may induce some negative responses such as increased
+               muscle soreness and decreased parasympathetic activity.",
+  journal   = "Med. Sci. Sports Exerc.",
+  publisher = "Ovid Technologies (Wolters Kluwer Health)",
+  volume    =  54,
+  number    =  5,
+  pages     = "851--860",
+  month     =  may,
+  year      =  2022,
+  language  = "en"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Referanser til raport 5
+
+@article{Ost,
+  title    = "The Effect of Weight Training Volume on Hormonal Output and
+              Muscular Size and Function",
+  author   = "Ostrowski, Karl J and Wilson, Greg J and Weatherby, Robert and
+              Murphy, Peter W and Lyttle, Andrew D",
+  abstract = "This study examined the effects of different volumes of
+              resistance training on muscle size and function over a 10-wk
+              period. Low volume = 3 sets per muscle group per week; moderate =
+              6 sets; high = 12 sets. Twenty-seven men with 1--4 yrs weight
+              training experience were randomly assigned to the different
+              training volumes and trained 4 days a week. A periodized routine
+              was used; exercises, training intensity, and number of training
+              days were the same for each group. The only variation between
+              conditions was the number of sets per exercise. Pre and post
+              measurements assessed muscular size via ultrasound; strength via
+              maximum squat and bench press; and power via vertical jump and
+              bench press throw. Urinary concentrations of test-osterone and
+              cortisol were also analyzed to assess the responses to training
+              conditions. All 3 training volumes significantly (p < 0.05)
+              increased muscle size, strength, and upper body power, with no
+              significant between-group differences. There were no significant
+              changes in hormonal concentrations. The results support the use
+              of low volume training for muscular development over a 10-wk
+              period.",
+  journal  = "The Journal of Strength \& Conditioning Research",
+  volume   =  11,
+  number   =  3,
+  pages    = "148--154",
+  year     =  1997,
+  keywords = "strength training; hormonal responses; muscular development"
+}
+
+
+
+@article{Cannon,
+  title     = "Early-phase neuromuscular adaptations to high- and low-volume
+               resistance training in untrained young and older women",
+  author    = "Cannon, Jack and Marino, Frank E",
+  abstract  = "We compared early-phase effects between high- and low-volume
+               moderate-intensity resistance training on lean muscle volume,
+               maximal bilateral leg extension strength, maximal isometric
+               torque, normalized maximal bilateral leg extension strength,
+               normalized maximal isometric torque, and muscle recruitment of
+               the right knee extensors in previously untrained young (23.8
+               $\pm$ 3.7 years, range 20-30 years; n = 16) and older women
+               (67.6 $\pm$ 6.3 years, range 60-78 years; n = 15). Participants
+               performed either one set or three sets of 10 repetitions for the
+               bilateral leg extension and bilateral leg curl at an intensity
+               of 50-75\% of maximal strength 3 days per week for 10 weeks.
+               Main effects were observed over time for all variables (P 0.05).
+               Our results provide a novel contribution to the literature
+               demonstrating that additional neuromuscular adaptation during
+               early-phase moderate-intensity resistance training in previously
+               untrained young and older women may not be elicited through
+               higher-volume training when training loads are matched provided
+               that a minimal volume threshold is attained. These findings may
+               have practical applications for the prescription of
+               short-duration resistance training programmes to enhance muscle
+               strength and achieve hypertrophic and non-hypertrophic
+               adaptations in untrained women.",
+  journal   = "J. Sports Sci.",
+  publisher = "Informa UK Limited",
+  volume    =  28,
+  number    =  14,
+  pages     = "1505--1514",
+  month     =  dec,
+  year      =  2010,
+  language  = "en"
+}
+
+@article{Galvao,
+  title     = "Resistance exercise dosage in older adults: single- versus
+               multiset effects on physical performance and body composition",
+  author    = "Galv{\~a}o, Daniel A and Taaffe, Dennis R",
+  abstract  = "OBJECTIVES: To determine whether variation in resistance
+               exercise volume affects muscle function and physical performance
+               response in older adults. DESIGN: A randomized trial with
+               subjects assigned to a single-set (1-SET) or three-set (3-SET)
+               exercise group. SETTING: An exercise facility at the University
+               of Queensland. PARTICIPANTS: Twenty-eight community-dwelling men
+               and women aged 65 to 78. INTERVENTION: Progressive resistance
+               training consisting of seven exercises targeting the major
+               muscle groups of the upper and lower body performed on exercise
+               machines twice weekly for 20 weeks at eight-repetition maximum
+               (RM) intensity. MEASUREMENTS: Muscle function included isotonic
+               muscle strength (1-RM) of the seven exercises, isokinetic and
+               isometric knee extensor strength, and muscle endurance for the
+               chest press and leg press exercises. Physical performance
+               included timed chair rise, usual and fast 6-m walk, 6-m
+               backwards walk, 400-m walk, floor rise to standing, and stair
+               climbing ability. In addition, body composition was determined
+               using dual energy x-ray absorptiometry. RESULTS: Isotonic muscle
+               strength increased in both exercise groups for all seven
+               exercises (P<.01), with the gain in the 3-SET group greater
+               (P<.05) for the seated row, triceps extension, and knee
+               extension (analysis of covariance). Similarly, muscle endurance
+               gains were greater for the 3-SET than the 1-SET group (P<.01),
+               with no significant difference between groups for isokinetic and
+               isometric knee extensor strength. Both groups improved (P<.05)
+               in the chair rise (1-SET, 10.1\%; 3-SET, 13.6\%), 6-m backwards
+               walk (1-SET, 14.3\%; 3-SET, 14.8\%), 400-m walk (1-SET, 3.8\%;
+               3-SET, 7.4\%), and stair climbing test (1-SET, 7.7\%; 3-SET,
+               6.4\%), with the only difference between groups for the 400-m
+               walk (P<.05). There was no difference between groups for change
+               in body composition. CONCLUSION: Resistance training consisting
+               of only single-set exercises is sufficient to significantly
+               enhance muscle function and physical performance, although
+               muscle strength and endurance gains are greater with
+               higher-volume work. These findings have application in designing
+               time-efficient exercise regimens to enhance neuromuscular
+               function in older adults.",
+  journal   = "J. Am. Geriatr. Soc.",
+  publisher = "Wiley",
+  volume    =  53,
+  number    =  12,
+  pages     = "2090--2097",
+  month     =  dec,
+  year      =  2005,
+  copyright = "http://onlinelibrary.wiley.com/termsAndConditions\#vor",
+  language  = "en"
+}
+
+
+
+@article{Humburg,
+  title     = "1-Set vs. 3-set resistance training: a crossover study",
+  author    = "Humburg, Hartmut and Baars, Hartmut and Schr{\"o}der, Jan and
+               Reer, R{\"u}diger and Braumann, Klaus-Michael",
+  abstract  = "This crossover study was conducted to investigate the effects of
+               a 1-set and 3-set strength training program. The subjects were
+               untrained men and women who were randomly signed into 1 of 3
+               groups: 10 subjects trained during the first 9 weeks (training
+               period 1) with 1 set and 8-12 repetitions per set. After the
+               break (9 weeks), they trained with 3 sets and 8-12 repetitions
+               in training period 2. Twelve subjects started with the 3-set
+               program and continued with the 1-set regime after the break. The
+               control group (n = 7) did not train. The subjects were tested on
+               1 repetition maximum (1RM) for the biceps curl, leg press
+               (unilateral: left and right), and bench press. Analysis of the
+               data was done in a sampled manner for each strength training
+               program (1-set and 3-set). The 1-set (n = 22) and 3-set (n = 22)
+               programs led to significantly (p < 0.05) improved 1RM
+               performances in every exercise. The relative improvements (\%)
+               for the 1RM were significantly higher during the 3-set program
+               for the biceps curl and the bench press compared with the 1-set
+               program. The control group exhibited no changes in any of the
+               tested parameters over the course of this study. The design of
+               this study allowed insight into the effects of different
+               strength training volume without any genetical variations. The
+               same subjects improved their 1RM during the 3-set program by 2.3
+               kg (biceps curl; corresponding effect size = 0.24), 8.9 kg (leg
+               press right; 0.30), 10.9 kg (leg press left; 0.28), and 2.5 kg
+               (bench press; 0.09) more than during the 1-set program.
+               Depending on the goals of each trainee, these differences
+               between the effects of different strength training volumes
+               indicate that it may be worth spending more time on working out
+               with a 3-set strength training regime.",
+  journal   = "J. Strength Cond. Res.",
+  publisher = "Ovid Technologies (Wolters Kluwer Health)",
+  volume    =  21,
+  number    =  2,
+  pages     = "578--582",
+  month     =  may,
+  year      =  2007,
+  language  = "en"
+}
+
+
+
+
+@article{Kraemer,
+  title     = "Understanding the science of resistance training: An
+               evolutionary perspective",
+  author    = "Kraemer, William J and Ratamess, Nicholas A and Flanagan, Shawn
+               D and Shurley, Jason P and Todd, Janice S and Todd, Terry C",
+  abstract  = "The history of resistance training research began with anecdotal
+               ideas and a slow growth of research from the late 1890s through
+               the 1970s. The mid-1970s were a nexus point when resistance
+               training studies evolved from just strength assessments to
+               importance in physiological systems, physical health, and
+               physical performance capabilities for individuals interested in
+               physical fitness through to those seeking elite athletic
+               performances. The pursuit of understanding program design and
+               what mediated successful programs continues today as new
+               findings, replication of old concepts, and new visions with the
+               latest technologies fuel both our understanding and interest in
+               this modality. This brief review highlights some of the
+               important scientific contributions to the evolution of our
+               scientific study of resistance training and provides a
+               literature base analysis for greater quantification of the
+               origins and expanse of such investigations.",
+  journal   = "Sports Med.",
+  publisher = "Springer Science and Business Media LLC",
+  volume    =  47,
+  number    =  12,
+  pages     = "2415--2435",
+  month     =  dec,
+  year      =  2017,
+  language  = "en"
+}
+
+
+@article{McBride,
+  title     = "Effect of resistance exercise volume and complexity on {EMG},
+               strength, and regional body composition",
+  author    = "McBride, Jeffrey M and Blaak, John B and Triplett-McBride,
+               Travis",
+  abstract  = "This study was designed to examine the effects of a 12-week
+               resistance training program using single versus multiple sets of
+               a complex versus simple exercise on EMG, strength and regional
+               body composition. Twenty-eight untrained men ( n=15) and women (
+               n=13) performed resistance training twice per week. Group 1
+               (S-1, n=9) performed one set of a leg press (LP) and bicep curl
+               (BC) exercise, group 2 (M-6, n=9) performed six sets of a LP and
+               BC exercise, and group 3 (C, n=10) was the control group.
+               One-repetition maximums (1RMs) and EMG were measured in the LP
+               and BC during pre-, mid-, and post-training. Lean body mass of
+               the legs and arms were measured pre- and post-training by dual
+               energy X-ray absorptiometry. Results of the study indicated that
+               both S-1 and M-6 groups significantly increased percentage
+               strength pre- to post-training in both the LP and BC [S-1
+               pre-/post-LP=41.2 (23.7)\%, BC=8.5 (6.71)\%; M-6
+               pre-/post-LP=52.6 (12.6)\%, BC=22.8 (15.6)\%; mean (SD)].
+               However, compared to S-1, M-6 showed a significantly greater
+               increase in percentage strength in the BC ( P<or=0.05) from pre-
+               to post-testing. Results also showed that M-6 produced a
+               significant increase in biceps (single-joint) muscle EMG values
+               pre- to mid-testing compared to S-1. There were no significant
+               differences found in lean muscle mass gains for the legs or arms
+               in either training group. The data from this study suggest that
+               multiple sets produce a greater increase in percentage strength
+               gain for a simple exercise. It is possible that some type of
+               neural mechanism is responsible for the observed difference.",
+  journal   = "Eur. J. Appl. Physiol.",
+  publisher = "Springer Science and Business Media LLC",
+  volume    =  90,
+  number    = "5-6",
+  pages     = "626--632",
+  month     =  nov,
+  year      =  2003,
+  language  = "en"
+}
+
+
+@article{Berger,
+  title     = "Effect of varied weight training programs on strength",
+  author    = "Berger, Richard",
+  abstract  = "Nine different weight training programs were compared to
+               determine which were more effective in improving strength. The
+               experiment was conducted with the bench press lift for a period
+               of 12 weeks with approximately 20 subjects in each weight
+               training program. Subjects were tested for the 1 RM on the bench
+               press lift at the beginning of training and at three-week
+               intervals. Training took place three times weekly with the
+               variations in programs involving one, two, and three sets, and
+               two, six, and ten repetitions per set. The results showed that
+               three sets and six repetitions per set were best for improving
+               strength.",
+  journal   = "Res. Q. Am. Assoc. Health Phys. Educ. Recreat.",
+  publisher = "Informa UK Limited",
+  volume    =  33,
+  number    =  2,
+  pages     = "168--181",
+  month     =  may,
+  year      =  1962
+}
+
