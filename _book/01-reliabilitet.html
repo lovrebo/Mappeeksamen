@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -31,6 +51,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./02-Regresjonsmodellar.html" rel="next">
+<link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -67,7 +88,40 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
 
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -106,8 +160,11 @@ ul.task-list li input[type="checkbox"] {
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
- <span class="menu-text">index.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Forord</span></a>
+  </div>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01-Reliabilitet.html" class="sidebar-item-text sidebar-link active">
@@ -141,18 +198,18 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./06-Vitenskapsteori.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Philosophy of science</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Vitenskapsfilosofi</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07-laboratory-report.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Molecular Laboratory report</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Molekylærlabb rapport</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
+  <a href="./Referansar.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -166,15 +223,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#assignment1" id="toc-assignment1" class="nav-link active" data-scroll-target="#assignment1"><span class="header-section-number">2</span> Assignment 1: Reliability and tools for reproducible data science</a>
+  <li><a href="#intrtoduksjon" id="toc-intrtoduksjon" class="nav-link active" data-scroll-target="#intrtoduksjon"><span class="header-section-number">1.1</span> Intrtoduksjon</a></li>
+  <li><a href="#metode" id="toc-metode" class="nav-link" data-scroll-target="#metode"><span class="header-section-number">1.2</span> Metode</a>
   <ul class="collapse">
-  <li><a href="#elements-of-the-report" id="toc-elements-of-the-report" class="nav-link" data-scroll-target="#elements-of-the-report"><span class="header-section-number">2.1</span> Elements of the report</a></li>
+  <li><a href="#standardisering-av-testar" id="toc-standardisering-av-testar" class="nav-link" data-scroll-target="#standardisering-av-testar"><span class="header-section-number">1.2.1</span> Standardisering av testar</a></li>
+  <li><a href="#utstyr" id="toc-utstyr" class="nav-link" data-scroll-target="#utstyr"><span class="header-section-number">1.2.2</span> Utstyr</a></li>
+  <li><a href="#testprotokoll" id="toc-testprotokoll" class="nav-link" data-scroll-target="#testprotokoll"><span class="header-section-number">1.2.3</span> Testprotokoll</a></li>
+  <li><a href="#data-behandling-etter-test" id="toc-data-behandling-etter-test" class="nav-link" data-scroll-target="#data-behandling-etter-test"><span class="header-section-number">1.2.4</span> Data behandling etter test</a></li>
   </ul></li>
-  <li><a href="#oppgave-1-reliabilitet-og-verktøy-for-å-reprodusere-data" id="toc-oppgave-1-reliabilitet-og-verktøy-for-å-reprodusere-data" class="nav-link" data-scroll-target="#oppgave-1-reliabilitet-og-verktøy-for-å-reprodusere-data"><span class="header-section-number">3</span> Oppgave 1: Reliabilitet og verktøy for å reprodusere data</a>
-  <ul class="collapse">
-  <li><a href="#elements-of-the-report-1" id="toc-elements-of-the-report-1" class="nav-link" data-scroll-target="#elements-of-the-report-1"><span class="header-section-number">3.1</span> Elements of the report</a></li>
-  </ul></li>
-  <li><a href="#figur" id="toc-figur" class="nav-link" data-scroll-target="#figur"><span class="header-section-number">4</span> Figur</a></li>
+  <li><a href="#resultat" id="toc-resultat" class="nav-link" data-scroll-target="#resultat"><span class="header-section-number">1.3</span> Resultat</a></li>
+  <li><a href="#diskusjon" id="toc-diskusjon" class="nav-link" data-scroll-target="#diskusjon"><span class="header-section-number">1.4</span> Diskusjon</a></li>
+  <li><a href="#konklusjon" id="toc-konklusjon" class="nav-link" data-scroll-target="#konklusjon"><span class="header-section-number">1.5</span> Konklusjon</a></li>
   </ul>
 </nav>
     </div>
@@ -200,103 +259,210 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="assignment1" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Assignment 1: Reliability and tools for reproducible data science</h1>
-<p>The purpose of this assignment is to present estimates of reliability of measures collected in the physiology lab. A second purpose is to use tools for reproducible data science. The report that you are expected to hand in therefore has some strict requirements in its format (see <a href="https://dhammarstrom.github.io/quant-methods-workshops/assignment-1.html">assignment description</a>). The assignment is a group assignment and at least three students are expected to contribute to each report.</p>
-<section id="elements-of-the-report" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="elements-of-the-report"><span class="header-section-number">2.1</span> Elements of the report</h2>
-<p><strong>Importantly, the report should contain:</strong></p>
-<ul>
-<li>At least one table (created from your data)</li>
-<li>At least one figure (created from your data), and</li>
-<li>data presented in the text.</li>
-<li>The report should use a bibliography file to manage references.</li>
-</ul>
+<div style="page-break-after: always;"></div>
+<section id="intrtoduksjon" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="intrtoduksjon"><span class="header-section-number">1.1</span> Intrtoduksjon</h2>
+<p>Hensikten med denne rapporten er å presentere estimater for reliabilitet av data samlet i fysiologisk testlab ved Høgskolen i Innlandet. Hovudfokuset i eksperimentet er å vise til god standardisering og gjennomtenkt metode for å minske støy, det er viktig for å auke reliabiliteten <span class="citation" data-cites="Halperin">(<a href="#ref-Halperin" role="doc-biblioref">Halperin, Pyne, and Martin 2015</a>)</span>. Ifølge <span class="citation" data-cites="Hopkins">(<a href="#ref-Hopkins" role="doc-biblioref">Hopkins 2000</a>)</span> er reliabilitet reproduserbarheten av verdier fra en test, analyse eller annen måling ved gjentatte forsøk på samme individ. Vi har gjennomført <span class="math inline">\(\dot{V}O_{2max}\)</span> tester på sykkel der 16 deltakere har gjennomført 2 eller 4 tester i løpet av tre uker. De to første testene ble gjennomført med ca. 24 timers mellomrom i uke en. De to siste testene ble gjennomført med ca. 48 timers mellomrom i uke tre. Vi har brukt Rstudio for å analysere dataen og få svar på om våre tester er reliable.</p>
+</section>
+<section id="metode" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="metode"><span class="header-section-number">1.2</span> Metode</h2>
+<p>Vi gjennomførte ein test-retest i studien vår, der vi samla data frå fleire <span class="math inline">\(\dot{V}O_{2max}\)</span>-testar. 16 deltakarar gjennomførte to til fire testar i løpet av ein periode på tre veker. Dei to første testane blei gjennomførte innan 24 timar i løpet av den første veka. Dei siste to testane blei gjennomførte innan 48 timar i løpet av den tredje veka.</p>
+<section id="standardisering-av-testar" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="standardisering-av-testar"><span class="header-section-number">1.2.1</span> Standardisering av testar</h3>
+<p>Resultata av ein <span class="math inline">\(\dot{V}O_{2max}\)</span>-test blir påverka av ulike fysiologiske og miljømessige faktorar, så det er viktig å setje visse reglar som deltakarane må følgje i dagane før testen. Ein rettleiar kan sendast ut til deltakarane nokre dagar før den første testen, med informasjon om korleis dei skal førebu seg. Denne rettleiaren bør inkludere standardiseringspraksisar som bidreg til å isolere deltakarens faktiske aerobe kapasitet og eliminerer ytre faktorar som kan påverke testresultata. Biologiske faktorar som blir kontrollerte, inkluderer trening, hydrering, søvn, inntak av koffein og kaloriar, alkoholkonsum og tidspunkt for testen. Deltakaren må følgje same rutine fram mot neste test for å sikre nøyaktige, pålitelege og samanliknbare resultat.</p>
+</section>
+<section id="utstyr" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="utstyr"><span class="header-section-number">1.2.2</span> Utstyr</h3>
+<p>Spesifikt utstyr er nødvendig for å gjennomføre ein <span class="math inline">\(\dot{V}O_{2max}\)</span>-test. Vi fekk deltakarane til å utføre testen på ein elektromagnetisk bremsa sykkelergometer (Lode Excalibur Sport, Lode B. V., Groningen, The Nederland) for å utfordre deltakarens aerobe kapasitet. Vi brukte også eit system kalla Vyntus CPX mixing chamber (Vyntus CPX, JaegerCareFusion, UK) for å måle <span class="math inline">\(\dot{V}O_{2max}\)</span> For å måle hjartefekvensen blei det brukt pulsmonitor festa til brystet. For å måle laktatnivået til deltakarane brukte vi ein maskin kalla Biosen c-line (EKF diagnostic GmbH, Barleben, Tyskland). Det blei også brukt ei stoppeklokke, ein ekstra datamaskin for excel-arket vårt for plotting og ei badevekt for å måle vekta til deltakarane før testen starta. Denne oppsettet lar oss overvake og måle dataene som trengst for å bestemme deltakarens <span class="math inline">\(\dot{V}O_{2max}\)</span> og gir oss nøyaktig informasjon om deltakarens oksygenforbruk, hjartefrekvens og kraft under sykling.</p>
+</section>
+<section id="testprotokoll" class="level3" data-number="1.2.3">
+<h3 data-number="1.2.3" class="anchored" data-anchor-id="testprotokoll"><span class="header-section-number">1.2.3</span> Testprotokoll</h3>
+<p>Testprotokollen for <span class="math inline">\(\dot{V}O_{2max}\)</span>-testen fortel korleis testen skal utførast kvar gong for å sikre nøyaktige og pålitelege resultat. Ein deltakar bør difor ha same testleiar om testen blir gjentatt. Under testane følgde vi denne protokollen: Før testleiaren kjem til laboratoriet, blir eit excel-ark førebudd. Ved ankomst tek testleiaren på seg labfrakk og sikrar at Biosen er slått på. Maskina skal kalibrerast, og resultatet skal vere 12 mmol/la. Ved kalibreringsfeil, noko som betyr at instrumentet kan gi unøyaktige data, blir standardvæska bytt ut. Vyntus må og kalibrerast med gass- og volumkalibrering. Vi har satt grensar for at gasskalibrering må vere innanfor 2,0 diff., og at volumkalibrering må vere innanfor 0,2 diff. Her må gassbehaldar opnast, og ventilasjonsvolumtransduseren (Triple-V-turbin) koplast til Vyntus. Mens kalibreringa er i gang, set testleiaren saman munnstykket, festar naseklypa, og koplar det til miksekammeret. Sykkelergometeren må deretter kalibrerast ved å posisjonere krankarmen vertikalt. Denne kalibreringa skjer på datamaskinen kopla til ergometeret, då vi bruker eit anna program her enn Vyntus. Pedalarmen blir kontrollert for å sikre at han er 172,5mm lang, og at riktig pedaltype er montert. Til slutt blir utstyret for laktatmåling henta, og alt er klart til deltakarens ankomst.</p>
+<p>Ein deltakarprofil må opprettast i både Vyntus og ergometerprogrammet. Profilen inkluderer deltakarens namn, fødselsdato, kjønn, høgd og vekt. Det første vi gjer når deltakaren kjem, er å måle vekt minus 300g. Sykkelergometeret blir deretter justert slik at deltakaren sit komfortabelt på sykkelen. Sykkelinnstillingane blir deretter lagra i sykkelprogrammet for å bli brukt ved framtidige testar. Oppvarminga varer i fem minutt, der deltakaren skal ha ei gradvis auke på Borgs skala for opplevd anstrengelse (RPE) frå 10 til 13. Om deltakaren ønskjer det, blir vifta slått på og retta mot dei. Testleiaren gir deretter informasjon om testen og Borgs skala.</p>
+<p>Vyntus blir deretter sett til “måling,” og testleiaren sikrar at pulsmonitoren er kopla til Vyntus, samt at innstillingane er sette til 30-sekundsmålingar og storleik medium for munnstykket. Gassbehaldar blir lukka, og Triple-V blir kopla frå Vyntus og fest til miksekammeret. Oppvarminga er ferdig, og testen blir starta i Vyntus. Den eigentlege testen startar når 1 minutt har gått i Vyntus, og <span class="math inline">\(\dot{V}O_{2max}\)</span>-protokollen startar i sykkelprogrammet. Ei stoppeklokke blir også starta og plassert framfor deltakaren.</p>
+<p>Under heile testen informerer testleiaren om auken i motstand (W), vanlegvis 20 W for kvinner og 25 W for menn, og motiverer deltakaren til å sykle til utmatting. Testen stoppast når deltakaren gir opp eller RPM fell under 60. Testleiaren noterer den maksimale pulsen, sluttida, watt ved endt test og Borgs score på slutten av testen i excel-arket. Laktat blir målt eit minutt etter at testen er ferdig, ved å tørke av fingeren til deltakaren, stikke hol, tørke av den første bloddropa og fylle opp røret. Blodet blir deretter analysert i Biosen. Deltakaren er ferdig for deltakaren, og testleiaren avsluttar testen i både Vyntus og sykkelprogrammet. Sykkelen, munnstykket, slangen og pulsmonitoren blir vaska, og vifta blir vend mot miksekammeret for å la det tørke.</p>
+</section>
+<section id="data-behandling-etter-test" class="level3" data-number="1.2.4">
+<h3 data-number="1.2.4" class="anchored" data-anchor-id="data-behandling-etter-test"><span class="header-section-number">1.2.4</span> Data behandling etter test</h3>
+<p>Korrekt innsamling av data frå testen er avgjerande, då det gir oss innsikt i deltakarens aerobe kapasitet. Rapporten generert av Vyntus blir lagra på ein minnepinne, slik at ho seinare kan lagrast på OneDrive. Excel-arket blir deretter fylt ut med verdiar frå rapporten. Desse verdiane inkluderer absolutt <span class="math inline">\(\dot{V}O_{2max}\)</span>, uttrykt i milliliter oksygen per minutt (ml/min), som gir oss det totale oksygenforbruket til deltakaren, noko som er nødvendig for å vurdere den aerobe kapasiteten. Maksimalt volum av karbondioksid (CO2) produsert (vco2.max) fortel oss kor mykje CO2 som blir utskilt av kroppen til deltakaren under testen. Respiratorisk utvekslingsforhold (RER) blir brukt til å estimere forholdet mellom karbondioksid (CO2) produsert og oksygen (O2) forbrukt under metabolisme. Maksimal ventilasjonsvolum per minutt (VE.max) er det høgaste volumet av luft deltakaren kan flytte inn og ut av lungene per minutt. Maksimal pustefrekvens (BF.max) er det høgaste talet på pust per minutt. Til slutt blir laktatmålingane samla frå Biosen. Vi fekk deretter data frå dei andre gruppene og samla alt i eit excel-ark. Dataene blei deretter eksporterte til RStudio, der vi analyserte resultata vidare.</p>
 </section>
 </section>
-<section id="oppgave-1-reliabilitet-og-verktøy-for-å-reprodusere-data" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Oppgave 1: Reliabilitet og verktøy for å reprodusere data</h1>
-<p>Hensikten med denne rapporten er å presentere estimater for reliabilitet av data samlet i fysiologisk testlab ved Høgskolen i Innlandet. Vi har gjennomført VO2max tester på sykkel der 16 deltakere har gjennomført 2 eller 4 tester i løpet av tre uker. De to første testene ble gjennomført med ca. 24 timers mellomrom i uke en. De to siste testene ble gjennomført med ca. 48 timers mellomrom i uke tre. Vi har brukt Rstudio for å analysere dataen og få svar på om våre tester er reliable.</p>
-<p><strong>protokoll (+ preparations of the participant)</strong></p>
-<p>Test protokoll for VO2max test</p>
-<p>Test protokoll for VO2maks testingen forteller hvordan testene ble gjennomført. Et plotteark i exel er klargjøort av testleder før man kommer til labben ved å fylle inn informasjon man vet om deltaker på forhånd. I labb forbreder testleder ustyr og maskiner på en standardisert måte hver test. Det første som gjøres i labben er at testleder tar på seg labfrakk som henger i labben, og sørger for at biosen(laktatmåler) er skrudd på og se om kalibreringen måler 12mmol/la. Ved “kalibrerings error” byttes standardveske. Vyntusen skal kalibreres av gasskalibrering og volum kalibrereing mens gassbeholderen er open og trippel står i vyntus. Mens vyntuskalibreringene pågår setter testleder sammen munstykke med naseklype og tar med slange til å puste gjennom som festes til miksekammer og sykkel. For å vere klar til test må gasskalibreringen på vyntus vere innernfor 2,0 diff og volumkalibreringen innenfor 0,2 diff. Deretter hentes utstyret for å måle laktat klart, og sykkelen kalibreres på lodeprogrammet etter at krankarmen er plasert rett opp. Man sjekker også at krankarmen er 172,5mm lang og riktig pedaltype for utøveren. Da er det klart for at utøver kommer i labben for å måle vekt og stille inn sykkelen for sin krop. Deltakerprofil må lages om det ikke allerede eksisterer i både lodeprogram og vyntus. Deltakerprofil inneholder navn og id: “idr4000_h24_g3_id(x)” , fødselsdato, kjønn, høyde og vekt. Sykkelen stilles slik deltakeren vil ha det samt at det ser bra ut ifølge testleder. Sykkelinstillingene lagres i lodeprogrammet. Så starter deltakeren en oppvarmingsprotokoll på 5min sykling med progresiv borg fra 10-13. Testleder setter på vifte mot deltakeren og informerer om at testen kommer til å foregå trappetrinsvis ved økning i watt per min (20w for damer og 25w for menn) og at målet skal vere å sykle til det ikkje går lenger, at det blir målinger hvert 30sek og at man skal sitte gjennom hele testen, og forklare borg skala. Mens deltakeren varmer opp gjør testleder vyntuden klar til test ved å dobbeltsjekker pulsbeltettilkobling, at instillingene står på 30sek målinger og meduim munnstykke, gjennomføre zeroing, flytte trippel v til miksekammeret og skru igjen gassbeholderen. Oppvarming er ferdig og testen startes i vyntus. Testen starter for deltaker ved å starte VO2maks protokollen i lodeprogrammet samt en tidtakerklokke etter 1min er gått i vyntus. Gjennom testen informerer testleder om målinger og økninger samt motiverer når det blir tungt for deltaker. Testen stopper ved at deltaker gir seg eller RPM går under 60. Testleder noterer ned makspuls, sluttid, sluttwatt og borgskår ved endt test. Laktat tas i fingeren 1min etter endt test ved å tørke, stikke, tørke første bloddråpe og fylle laktatrør. Testleder passer på at deltaker har det bra. Laktat plottes i skjema. Deltakeren er da ferdig og testleder avslutter test i vyntus og lodeprogrammet som lagres. Vyntus filen lagres over på minnepen før den lagres i onedrive på lab pc. Sykkelen, munstykket, slangen og pulsbeltet vaskes. Vifta settes til å tørke fukt i miksekammeret. Plotteskjema fylles med verdier frå Vyntus og lagres.</p>
-<p><strong>kommentere standardisering av test</strong></p>
-<p><strong>post-test data preparation</strong></p>
-<p><strong>figur og tabell</strong></p>
-<p><strong>reliability</strong></p>
-<p><strong>konklusjon</strong></p>
-<section id="elements-of-the-report-1" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="elements-of-the-report-1"><span class="header-section-number">3.1</span> Elements of the report</h2>
-<p><strong>Importantly, the report should contain:</strong></p>
-<ul>
-<li>At least one table (created from your data)</li>
-<li>At least one figure (created from your data), and</li>
-<li>data presented in the text.</li>
-<li>The report should use a bibliography file to manage references.</li>
-</ul>
-</section>
-</section>
-<section id="figur" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Figur</h1>
+<section id="resultat" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="resultat"><span class="header-section-number">1.3</span> Resultat</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="01-Reliabilitet_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+<div id="fig-ovesikt" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ovesikt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="01-Reliabilitet_files/figure-html/fig-ovesikt-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ovesikt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.1: Deltakaranes V̇O<sub>2max</sub> verdiar i ml/min
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Tabell</p>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 16 × 5
-   id         t1    t2    t3    t4
-   &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
- 1 G1_id1  3382. 3065  3190  3343 
- 2 G1_id2  2771  2802. 2464. 2760 
- 3 G1_id3  4234. 4235  3694. 4361 
- 4 G2_4      NA    NA  2820. 2893 
- 5 G2_5    4427  4360.   NA    NA 
- 6 G2_6    3704. 3714.   NA    NA 
- 7 G2_7    5116. 5164. 4951  5294.
- 8 G2_8      NA    NA    NA  2544.
- 9 G3_9    4694  4640. 4614    NA 
-10 G3_10   3014. 3104. 3170. 3093 
-11 G3_11   3576. 3713    NA    NA 
-12 G3_12   4332. 4362  4737    NA 
-13 G4_id13 4634. 4606. 4540.   NA 
-14 G4_id14 4556. 4562. 4437  4545 
-15 G4_id15 4350. 3818. 4134    NA 
-16 G4_id16 4872  5050    NA    NA </code></pre>
-</div>
-</div>
-<p>Calculate typical error between t1 and t2</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 4
-      m     s    te    cv
-  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-1 4102.  184.  130.  3.16</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 3.2</code></pre>
-</div>
-</div>
-<p>Calculate typical error between t3 and t4</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 4
-      m     s    te    cv
-  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-1 4102.  241.  170.  4.15</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 4.2</code></pre>
-</div>
-</div>
+<div id="tbl-testres" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-testres-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1.1: Deltakaranes V̇O<sub>2max</sub> verdiar i ml/min
+</figcaption>
+<div aria-describedby="tbl-testres-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed do-not-create-environment cell caption-top table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">ID</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Test 1</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Test 2</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Test 3</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Test 4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">ID1</td>
+<td style="text-align: right;">3381.5</td>
+<td style="text-align: right;">3065.0</td>
+<td style="text-align: right;">3190.0</td>
+<td style="text-align: right;">3343.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ID2</td>
+<td style="text-align: right;">2771.0</td>
+<td style="text-align: right;">2801.5</td>
+<td style="text-align: right;">2464.5</td>
+<td style="text-align: right;">2760.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ID3</td>
+<td style="text-align: right;">4234.5</td>
+<td style="text-align: right;">4235.0</td>
+<td style="text-align: right;">3693.5</td>
+<td style="text-align: right;">4361.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ID4</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">2819.5</td>
+<td style="text-align: right;">2893.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ID5</td>
+<td style="text-align: right;">4427.0</td>
+<td style="text-align: right;">4359.5</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ID6</td>
+<td style="text-align: right;">3704.5</td>
+<td style="text-align: right;">3713.5</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ID7</td>
+<td style="text-align: right;">5116.5</td>
+<td style="text-align: right;">5163.5</td>
+<td style="text-align: right;">4951.0</td>
+<td style="text-align: right;">5294.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ID8</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">2543.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ID12</td>
+<td style="text-align: right;">4694.0</td>
+<td style="text-align: right;">4640.5</td>
+<td style="text-align: right;">4614.0</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ID9</td>
+<td style="text-align: right;">3014.5</td>
+<td style="text-align: right;">3103.5</td>
+<td style="text-align: right;">3170.5</td>
+<td style="text-align: right;">3093.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ID10</td>
+<td style="text-align: right;">3576.5</td>
+<td style="text-align: right;">3713.0</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ID11</td>
+<td style="text-align: right;">4332.5</td>
+<td style="text-align: right;">4362.0</td>
+<td style="text-align: right;">4737.0</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ID13</td>
+<td style="text-align: right;">4634.5</td>
+<td style="text-align: right;">4606.5</td>
+<td style="text-align: right;">4540.5</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ID14</td>
+<td style="text-align: right;">4556.5</td>
+<td style="text-align: right;">4561.5</td>
+<td style="text-align: right;">4437.0</td>
+<td style="text-align: right;">4545.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ID15</td>
+<td style="text-align: right;">4350.5</td>
+<td style="text-align: right;">3818.5</td>
+<td style="text-align: right;">4134.0</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ID16</td>
+<td style="text-align: right;">4872.0</td>
+<td style="text-align: right;">5050.0</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+</tr>
+</tbody>
+</table>
 
 
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>Resulatata frå vår utrekning av målefeil frå <span class="math inline">\(\dot{V}O_{2max}\)</span> testane viste at mellom t1 og t2 var 3.2% variasjonskoeffisienten og mellom t3 og t4 var 4.2% variasjonskoeffisienten. Det tisvarar ein målefeil på 129.8ml mellom t1 og t2 og på 170.3ml mellom t3 og t4.</p>
+</section>
+<section id="diskusjon" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="diskusjon"><span class="header-section-number">1.4</span> Diskusjon</h2>
+<p>Variasjonskoeffisientane på 3.2% og 4.2% er eit mål på den typiske prosentvise feilen i målingane. Det er både styrker og svakheter ved vår gjennomføringar av testane. Dette var for mange, både som deltakar og testledar, det første møtet med fysiologisk testlabb og <span class="math inline">\(\dot{V}O_{2max}\)</span> test. Sjølv om formålet med rapporten var å estimere reliabilitet, så var hensikta med testgjennomføringane at deltakarane skulle lære seg å gjennomføre ein <span class="math inline">\(\dot{V}O_{2max}\)</span> protokoll. Dette førte til svakhetar ved at det blei brukt 16 forskjellige testledrarar og assistentar, data vart henta frå fire forskjellige grupper, anntall observatørar varierte og innsatsen var ikkje alltd maksimal på grunn av varierande motivasjon blandt studentane i undervisninga. På ei annna side var ustyret av grullstandard ved testing av <span class="math inline">\(\dot{V}O_{2max}\)</span> og lærar med erfaring og høg kompetanse.</p>
+<p>Ifølge <span class="citation" data-cites="Hopkins">(<a href="#ref-Hopkins" role="doc-biblioref">Hopkins 2000</a>)</span> er observert endring reliabel om den er større enn den typiske feilen. I vårt tilfelle vil det tilsvare ein større endring enn 129.8ml og 170.3ml noko vi synes er i overkant mykje for å kunne fastslå endring i ein <span class="math inline">\(\dot{V}O_{2max}\)</span> test. Dei nevnte svakhetene ved gjennomføringane vil operere som forstyrrende variabler og kan dermed virke negativt på reliabiliteten <span class="citation" data-cites="Halperin">(<a href="#ref-Halperin" role="doc-biblioref">Halperin, Pyne, and Martin 2015</a>)</span>.</p>
+</section>
+<section id="konklusjon" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="konklusjon"><span class="header-section-number">1.5</span> Konklusjon</h2>
+<p>Basert på vår estimering av reliabiliteten frå testane våre synest vi at variasjonscoefesienter på 3.2% og 4.2% er for høge. Det vil då kreve i overkant mykje å skulle bekrefte endring ved ein ny test. Det kjem sansylegvis som følge av ein for dårleg og variert gjennomføring av metoden.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Halperin" class="csl-entry" role="listitem">
+Halperin, Israel, David B Pyne, and David T Martin. 2015. <span>“Threats to Internal Validity in Exercise Science: A Review of Overlooked Confounding Variables.”</span> <em>Int. J. Sports Physiol. Perform.</em> 10 (7): 823–29.
+</div>
+<div id="ref-Hopkins" class="csl-entry" role="listitem">
+Hopkins, W G. 2000. <span>“Measures of Reliability in Sports Medicine and Science.”</span> <em>Sports Med.</em> 30 (1): 1–15.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -722,6 +888,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="Forord">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Forord</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./02-Regresjonsmodellar.html" class="pagination-link" aria-label="Regresjonsmodellar">

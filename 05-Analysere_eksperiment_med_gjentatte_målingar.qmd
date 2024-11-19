@@ -1,23 +1,21 @@
 ---
 title: "Analysere eksperiment med gjentatte målingar"
-format: html
 editor: visual
-output: html_document
 editor_options: 
   chunk_output_type: console
-bibliography: bibliografi.bib
 ---
 
-
 ## Introduksjon
+
 Styrketrening har gjennom tida blitt eit vanleg fenomen i kvardagen til mange menneske. [@Kraemer] definerte styrketrening som eit generelt omgrep som viser til trening der ein må utøve kraft mot ei motstand, og sa det har vist seg å vere ein særs effektiv metode for å auke muskelstyrke og muskelvekst. Korleis ein skal trene styrketrening har over tid blitt studert for å finne svar på kva som er optimalt når det kjem til volum, frekvens og intensitet for å få best mogleg muskelvekst og forbetring av muskelstyrke. [@Berger] var tidleg ute med å undersøke ulike styrketreningsmetodar då han fordelte college studentar i ni grupper som trena med forskjellige sett og repetisjonar, og konkluderte med at tre sett med seks tunge repetisjonar førte til den største forbetringa i muskelstyrken.
 
-I seinare tid har det blitt gjort studiar som ikkje er einige i sine svar på kva som er optimalt treningsvolum for forbetring av maksstyrke og  muskelvekst. Studien av [@Ost] som undersøkte forskjellen på tre ulike treningsvolum kategorisert som låg, middels og høg, og konkluderte med at det ikkje var forskjell mellom dei metodane. I nyare tid har andre studiar funne ut at eit større treningsvolum i form av tre eller seks sett mot eit sett per øvelse er betre for å auke muskelstyrke [@Galvao], [@Humburg] og [@McBride]. Etter desse har studien til [@Cannon] lagt fram sine funn om at høgt treningsvolum ikkje fungerte betre for muskelstyrke enn lågt treningsvolum. Dei sprikande resultata frå studiane gjer at det er behov for tydeligare svar. I denne rapporten blei det sett på effekten frå eit mot tre setts protokoller på muskelstyrke og mager kroppsmasse regionalt ved hjelp av eit «within-participant» design. Hypotesen min er at motstandstrening med tre sett vil gi større effekt på maksimalstyrke og regional mager masse.
-   
-## Metode
-### Forsøkspersoner og studieoversikt
-Forsøkspersonane i denne studien var 34 friske menneske mellom 18 – 40 år som gjennomførte ein intervensjonsperiode på 12 veke. Info om deltakarane ligger i @tbl-deltakara. Studien nyttar seg av «within-participant» design der forsøkspersonane gjennomførte motstandstrening på eit bein i gongen for å samanlikne responsen frå eit og tre sett trenings protokoll. Alle fekk tilfeldig fordelt kva slags bein som skulle bruke tre og eit sett i alle øvelsane gjennom intervensjonsperioden.   
+I seinare tid har det blitt gjort studiar som ikkje er einige i sine svar på kva som er optimalt treningsvolum for forbetring av maksstyrke og muskelvekst. Studien av [@Ost] som undersøkte forskjellen på tre ulike treningsvolum kategorisert som låg, middels og høg, og konkluderte med at det ikkje var forskjell mellom dei metodane. I nyare tid har andre studiar funne ut at eit større treningsvolum i form av tre eller seks sett mot eit sett per øvelse er betre for å auke muskelstyrke [@Galvao], [@Humburg] og [@McBride]. Etter desse har studien til [@Cannon] lagt fram sine funn om at høgt treningsvolum ikkje fungerte betre for muskelstyrke enn lågt treningsvolum. Dei sprikande resultata frå studiane gjer at det er behov for tydeligare svar. I denne rapporten blei det sett på effekten frå eit mot tre setts protokoller på muskelstyrke og mager kroppsmasse regionalt ved hjelp av eit «within-participant» design. Hypotesen min er at motstandstrening med tre sett vil gi større effekt på maksimalstyrke og regional mager masse.
 
+## Metode
+
+### Forsøkspersoner og studieoversikt
+
+Forsøkspersonane i denne studien var 34 friske menneske mellom 18 – 40 år som gjennomførte ein intervensjonsperiode på 12 veke. Info om deltakarane ligger i @tbl-deltakara. Studien nyttar seg av «within-participant» design der forsøkspersonane gjennomførte motstandstrening på eit bein i gongen for å samanlikne responsen frå eit og tre sett trenings protokoll. Alle fekk tilfeldig fordelt kva slags bein som skulle bruke tre og eit sett i alle øvelsane gjennom intervensjonsperioden.
 
 ```{r}
 #| warning: false
@@ -55,8 +53,7 @@ deltakar_tabell <- exscidata::dxadata %>%
   dplyr::select(sex, variable, stat) %>% 
   pivot_wider(names_from = variable,
               values_from = stat) %>% 
-  kable(format = "html",
-        col.names = c(" ", "Alder (&Aring;r)", "H&oslash;gde (cm)", "Vekt (kg)"),
+  kable(col.names = c(" ", "Alder (&Aring;r)", "H&oslash;gde (cm)", "Vekt (kg)"),
         escape = FALSE,
         caption = "Deltakere") %>% 
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
@@ -65,19 +62,17 @@ deltakar_tabell
 
 ```
 
-
 #### Muskelstyrke og mager kroppsmasse
+
 For å måle maksstyrke blei det brukt styrketest i form av å måle belastning i kilogram på ein repetisjon maksimum (1RM) av beinpress. For å måle mager kroppsmasse regionalt for beina blei det brukt dual-energy X-ray absorptiometry (DXA) test for å bestemme kroppssamansetninga. Testane vart utført ved baseline (pre) og etter 12 veke (post).
 
 #### Treningsprotokoll
-Ein standardisert oppvarming på fem minutt sykling på ergometersykkel, i tillegg til ti repetisjonar av armhevingar(individuelt tilpassa), sit-ups, rygghev og knebøy med kroppsvekt tilsvarande ~50% av (1RM) vart brukt for alle forsøkspersonar før alle økter. I hovuddelen av økta blei beina trent med motstandsøvelsane i følgande rekkefølge: ein fots beinpress, hamstring curl og beinspark, før det blei gjort to sett med benkpress, nedtrekk og endten skulderpres eller sittande roing. Pusane mellom sett var 90 – 180s. I beinøvelsane blei eit sett foten brukt mellom det andre og tredje settet til tre sett foten. 
-Treningsintervensjonen følgde ein progressiv auking i treningsintensitet ved to veker med 10RM, tre veker med 8RM, og sju veker med 7RM i den rekkefølga. Det meste av treningsøktene blei overvaka av forskarteamet og alt som ikkje blei gjennomført med tilsyn vart nøye loggført og vurdert. Etter det var gjennomført ni treningsøkter vart alle veker med tre treningsøkter gjennomført med ein redusert økt tilsvarande 90% av dei to andre. Minst 48 timar skilte økter med maksimal innsats, medan minst 24 timar skilde submaksimale økter (90%).     
+
+Ein standardisert oppvarming på fem minutt sykling på ergometersykkel, i tillegg til ti repetisjonar av armhevingar(individuelt tilpassa), sit-ups, rygghev og knebøy med kroppsvekt tilsvarande \~50% av (1RM) vart brukt for alle forsøkspersonar før alle økter. I hovuddelen av økta blei beina trent med motstandsøvelsane i følgande rekkefølge: ein fots beinpress, hamstring curl og beinspark, før det blei gjort to sett med benkpress, nedtrekk og endten skulderpres eller sittande roing. Pusane mellom sett var 90 – 180s. I beinøvelsane blei eit sett foten brukt mellom det andre og tredje settet til tre sett foten. Treningsintervensjonen følgde ein progressiv auking i treningsintensitet ved to veker med 10RM, tre veker med 8RM, og sju veker med 7RM i den rekkefølga. Det meste av treningsøktene blei overvaka av forskarteamet og alt som ikkje blei gjennomført med tilsyn vart nøye loggført og vurdert. Etter det var gjennomført ni treningsøkter vart alle veker med tre treningsøkter gjennomført med ein redusert økt tilsvarande 90% av dei to andre. Minst 48 timar skilte økter med maksimal innsats, medan minst 24 timar skilde submaksimale økter (90%).
 
 ### Data analyse og statistikk
+
 Det blei brukt para t-test for å samanlikne gjennomsnittleg endring frå pre til post test for tre sett mot eit sett for både beinpress og mager kroppsmasse testane.
-
-
-
 
 ```{r}
 #| echo: false
@@ -156,12 +151,8 @@ lean.mass.resultat <- paste0(estimate,
 ## Resultat
 
 ### Mager kroppsmasse
+
 Den gjennomsnittlige differansen i endring for regional mager kroppsmasse i beina mellom tre og eit sett var `r lean.mass.resultat` til fordel for tre sett.
-
-
-
-
-
 
 ```{r}
 #| echo: false  
@@ -185,18 +176,13 @@ leanmass_mean_by_sex <- leanmass_change_wide %>%
 leanmass_mean_by_sex %>% 
    mutate(sex = if_else(sex == "male", "Mann", "Kvinne"),
           across(where(is.numeric), ~ round(., 1))) %>%
-  kable(format = "html",
-        col.names = c(" ", "Endring eit sett", "Endring tre sett", "Forskjell mellom eit og tre sett"),
+  kable(col.names = c(" ", "Endring eit sett", "Endring tre sett", "Forskjell mellom eit og tre sett"),
         escape = FALSE) %>% 
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
    
 
   
 ```
-
-
-
-
 
 ```{r}
 #| echo: false  
@@ -246,8 +232,6 @@ ggplot(leanmass_summary, aes(x = sets,
         legend.position = "top") 
 
 ```
-
-
 
 ```{r}
 #| echo: false  
@@ -318,8 +302,8 @@ strength.results <- paste0(estimate2,
 ```
 
 ### Maksstyrke
-Den gjennomsnittlige differansen i endring for maksstyrke mellom tre og eit sett var `r strength.results` til fordel for tre sett.
 
+Den gjennomsnittlige differansen i endring for maksstyrke mellom tre og eit sett var `r strength.results` til fordel for tre sett.
 
 ```{r}
 #| echo: false  
@@ -344,14 +328,11 @@ strength_mean_by_sex <- str_tst %>%
 strength_mean_by_sex %>% 
    mutate(sex = if_else(sex == "male", "Mann", "Kvinne"),
           across(where(is.numeric), ~ round(., 1))) %>%
-  kable(format = "html",
-        col.names = c(" ", "Endring eit sett", "Endring tre sett", "Forskjell mellom eit og tre sett"),
+  kable(col.names = c(" ", "Endring eit sett", "Endring tre sett", "Forskjell mellom eit og tre sett"),
         escape = FALSE) %>% 
   kable_styling(bootstrap_options = c("striped", "hover", "condensed")) 
 
 ```
-
-
 
 ```{r}
 #| echo: false  
@@ -380,32 +361,22 @@ str_tst %>%
 
 ```
 
-
-
 ## Discussion
+
 ### Generell oppsummering av resultata
-I denne rapporten har det blitt undersøkt effekten av motstandstrening i form av tre sett mot eit sett per øvelse over ti veker. Resultata frå den statistiske analysen viser at tre sett har større effekt for å auke maksimal styrke og regional mager kroppsmasse enn eit sett, noko som stemme overeins med min hypotese. 
+
+I denne rapporten har det blitt undersøkt effekten av motstandstrening i form av tre sett mot eit sett per øvelse over ti veker. Resultata frå den statistiske analysen viser at tre sett har større effekt for å auke maksimal styrke og regional mager kroppsmasse enn eit sett, noko som stemme overeins med min hypotese.
+
 ### Maksimalstyrke
-Maksimalstyrke blei i denne rapporten målt som 1RM i beinpress og hadde signifikant større forbetring for tre sett samanlikna med eit sett. Resultata kan sjåast i likheit med [@Galvao] og [@Humburg] som også såg større forbetringar for tre sett mot eit sett. [@McBride] såg også like resultat i samanlikning av høgt volum samanlikna med lågt volum, då dei såg på seks sett mot eit sett. Resultata er også like med studiane til [@Ost] og [@Cannon] i at dei fant auke i maksimalstyrke for metodar med ulikt volum, men skil seg ved at dei ikkje såg nokre forskjellar mellom høgt og lågt volum.       
+
+Maksimalstyrke blei i denne rapporten målt som 1RM i beinpress og hadde signifikant større forbetring for tre sett samanlikna med eit sett. Resultata kan sjåast i likheit med [@Galvao] og [@Humburg] som også såg større forbetringar for tre sett mot eit sett. [@McBride] såg også like resultat i samanlikning av høgt volum samanlikna med lågt volum, då dei såg på seks sett mot eit sett. Resultata er også like med studiane til [@Ost] og [@Cannon] i at dei fant auke i maksimalstyrke for metodar med ulikt volum, men skil seg ved at dei ikkje såg nokre forskjellar mellom høgt og lågt volum.
 
 ### Mager kroppsmasse
-Mager kroppsmasse blei i denne rapporten bestemt ut ifrå DXA testar før og etter intervensjonen. Det blei kunn undersøkt mager masse regionalt frå beina i denne rapporten. I motsetning til maksimalstyrke er dessa resultata ikkje samsvarande med [@Galvao], [@Humburg] og [@McBride] med tanke på større auke i mager masse for høgare volum mot lågare volum på motstandstreninga. Dei skreiv likevel om at det var ein auke i mager masse for begge metodane frå DXA testar. [@Ost] og [@Cannon] fant auke i knestrekkar muskelen (quadriceps) ved hjelp av magnetisk resonansavbildning (MRI) ved både høgt og lågt treningsvolum utan forskjellar. Resultata for mager kroppsmasse frå denne rapporten visar at tre sett har signifikant større auke i mager masse enn eit sett som ser ut til å vere annleis frå tidlegare litteratur som gjer at dette burde undersøkast meir.        
+
+Mager kroppsmasse blei i denne rapporten bestemt ut ifrå DXA testar før og etter intervensjonen. Det blei kunn undersøkt mager masse regionalt frå beina i denne rapporten. I motsetning til maksimalstyrke er dessa resultata ikkje samsvarande med [@Galvao], [@Humburg] og [@McBride] med tanke på større auke i mager masse for høgare volum mot lågare volum på motstandstreninga. Dei skreiv likevel om at det var ein auke i mager masse for begge metodane frå DXA testar. [@Ost] og [@Cannon] fant auke i knestrekkar muskelen (quadriceps) ved hjelp av magnetisk resonansavbildning (MRI) ved både høgt og lågt treningsvolum utan forskjellar. Resultata for mager kroppsmasse frå denne rapporten visar at tre sett har signifikant større auke i mager masse enn eit sett som ser ut til å vere annleis frå tidlegare litteratur som gjer at dette burde undersøkast meir.
 
 ## Konklusjon
-Konklusjonen frå rapporten er at tre sett per øvelse gir større auke i maksimal muskelstyrke og mager kroppsmasse enn eit sett per øvelse for friske menneske i nokså ung alder (18-40). Vidare burde effekten frå ulikt volum på mager kroppsmasse undersøkast meir.  
 
+Konklusjonen frå rapporten er at tre sett per øvelse gir større auke i maksimal muskelstyrke og mager kroppsmasse enn eit sett per øvelse for friske menneske i nokså ung alder (18-40). Vidare burde effekten frå ulikt volum på mager kroppsmasse undersøkast meir.
 
 ## Referanser
-
-
-
-
-
-
-
-
-
-
-
-
-

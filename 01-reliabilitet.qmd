@@ -1,65 +1,61 @@
 ---
 title: "Reliabilitet"
-format: html
 editor_options: 
   chunk_output_type: console
 ---
+\newpage
+
+## Intrtoduksjon
+
+Hensikten med denne rapporten er å presentere estimater for reliabilitet av data samlet i fysiologisk testlab ved Høgskolen i Innlandet. Hovudfokuset i eksperimentet er å vise til god standardisering og gjennomtenkt metode for å minske støy, det er viktig for å auke reliabiliteten [@Halperin]. Ifølge [@Hopkins] er reliabilitet reproduserbarheten av verdier fra en test, analyse eller annen måling ved gjentatte forsøk på samme individ.
+Vi har gjennomført $\dot{V}O_{2max}$ tester på sykkel der 16 deltakere har gjennomført 2 eller 4 tester i løpet av tre uker. De to første testene ble gjennomført med ca. 24 timers mellomrom i uke en. De to siste testene ble gjennomført med ca. 48 timers mellomrom i uke tre. Vi har brukt Rstudio for å analysere dataen og få svar på om våre tester er reliable.
 
 
-# Assignment 1: Reliability and tools for reproducible data science {#assignment1}
+## Metode
 
-The purpose of this assignment is to present estimates of reliability of measures collected in the physiology lab. A second purpose is to use tools for reproducible data science. The report that you are expected to hand in therefore has some strict requirements in its format (see [assignment description](https://dhammarstrom.github.io/quant-methods-workshops/assignment-1.html)). The assignment is a group assignment and at least three students are expected to contribute to each report.
-
-## Elements of the report
-
-**Importantly, the report should contain:**
-
-- At least one table (created from your data)
-- At least one figure (created from your data), and
-- data presented in the text.
-- The report should use a bibliography file to manage references.
+Vi gjennomførte ein test-retest i studien vår, der vi samla data frå fleire $\dot{V}O_{2max}$-testar. 16 deltakarar gjennomførte to til fire testar i løpet av ein periode på tre veker. Dei to første testane blei gjennomførte innan 24 timar i løpet av den første veka. Dei siste to testane blei gjennomførte innan 48 timar i løpet av den tredje veka.  
 
 
 
+### Standardisering av testar
+
+Resultata av ein $\dot{V}O_{2max}$-test blir påverka av ulike fysiologiske og miljømessige faktorar, så det er viktig å setje visse reglar som deltakarane må følgje i dagane før testen. Ein rettleiar kan sendast ut til deltakarane nokre dagar før den første testen, med informasjon om korleis dei skal førebu seg. Denne rettleiaren bør inkludere standardiseringspraksisar som bidreg til å isolere deltakarens faktiske aerobe kapasitet og eliminerer ytre faktorar som kan påverke testresultata. Biologiske faktorar som blir kontrollerte, inkluderer trening, hydrering, søvn, inntak av koffein og kaloriar, alkoholkonsum og tidspunkt for testen. Deltakaren må følgje same rutine fram mot neste test for å sikre nøyaktige, pålitelege og samanliknbare resultat.  
+
+
+
+### Utstyr
+
+Spesifikt utstyr er nødvendig for å gjennomføre ein $\dot{V}O_{2max}$-test. Vi fekk deltakarane til å utføre testen på ein elektromagnetisk bremsa sykkelergometer (Lode Excalibur Sport, Lode B. V., Groningen, The Nederland) for å utfordre deltakarens aerobe kapasitet. Vi brukte også eit system kalla Vyntus CPX mixing chamber (Vyntus CPX, JaegerCareFusion, UK) for å måle $\dot{V}O_{2max}$ For å måle hjartefekvensen blei det brukt pulsmonitor festa til brystet. For å måle laktatnivået til deltakarane brukte vi ein maskin kalla Biosen c-line (EKF diagnostic GmbH, Barleben, Tyskland). Det blei også brukt ei stoppeklokke, ein ekstra datamaskin for excel-arket vårt for plotting og ei badevekt for å måle vekta til deltakarane før testen starta. Denne oppsettet lar oss overvake og måle dataene som trengst for å bestemme deltakarens $\dot{V}O_{2max}$ og gir oss nøyaktig informasjon om deltakarens oksygenforbruk, hjartefrekvens og kraft under sykling.
+
+
+
+### Testprotokoll
+
+Testprotokollen for $\dot{V}O_{2max}$-testen fortel korleis testen skal utførast kvar gong for å sikre nøyaktige og pålitelege resultat. Ein deltakar bør difor ha same testleiar om testen blir gjentatt. Under testane følgde vi denne protokollen: Før testleiaren kjem til laboratoriet, blir eit excel-ark førebudd. Ved ankomst tek testleiaren på seg labfrakk og sikrar at Biosen er slått på. Maskina skal kalibrerast, og resultatet skal vere 12 mmol/la. Ved kalibreringsfeil, noko som betyr at instrumentet kan gi unøyaktige data, blir standardvæska bytt ut. Vyntus må og kalibrerast med gass- og volumkalibrering. Vi har satt grensar for at gasskalibrering må vere innanfor 2,0 diff., og at volumkalibrering må vere innanfor 0,2 diff. Her må gassbehaldar opnast, og ventilasjonsvolumtransduseren (Triple-V-turbin) koplast til Vyntus. Mens kalibreringa er i gang, set testleiaren saman munnstykket, festar naseklypa, og koplar det til miksekammeret. Sykkelergometeren må deretter kalibrerast ved å posisjonere krankarmen vertikalt. Denne kalibreringa skjer på datamaskinen kopla til ergometeret, då vi bruker eit anna program her enn Vyntus. Pedalarmen blir kontrollert for å sikre at han er 172,5mm lang, og at riktig pedaltype er montert. Til slutt blir utstyret for laktatmåling henta, og alt er klart til deltakarens ankomst.  
+
+Ein deltakarprofil må opprettast i både Vyntus og ergometerprogrammet. Profilen inkluderer deltakarens namn, fødselsdato, kjønn, høgd og vekt. Det første vi gjer når deltakaren kjem, er å måle vekt minus 300g. Sykkelergometeret blir deretter justert slik at deltakaren sit komfortabelt på sykkelen. Sykkelinnstillingane blir deretter lagra i sykkelprogrammet for å bli brukt ved framtidige testar. Oppvarminga varer i fem minutt, der deltakaren skal ha ei gradvis auke på Borgs skala for opplevd anstrengelse (RPE) frå 10 til 13. Om deltakaren ønskjer det, blir vifta slått på og retta mot dei. Testleiaren gir deretter informasjon om testen og Borgs skala.  
+
+Vyntus blir deretter sett til "måling," og testleiaren sikrar at pulsmonitoren er kopla til Vyntus, samt at innstillingane er sette til 30-sekundsmålingar og storleik medium for munnstykket. Gassbehaldar blir lukka, og Triple-V blir kopla frå Vyntus og fest til miksekammeret. Oppvarminga er ferdig, og testen blir starta i Vyntus. Den eigentlege testen startar når 1 minutt har gått i Vyntus, og $\dot{V}O_{2max}$-protokollen startar i sykkelprogrammet. Ei stoppeklokke blir også starta og plassert framfor deltakaren.  
+
+Under heile testen informerer testleiaren om auken i motstand (W), vanlegvis 20 W for kvinner og 25 W for menn, og motiverer deltakaren til å sykle til utmatting. Testen stoppast når deltakaren gir opp eller RPM fell under 60. Testleiaren noterer den maksimale pulsen, sluttida, watt ved endt test og Borgs score på slutten av testen i excel-arket. Laktat blir målt eit minutt etter at testen er ferdig, ved å tørke av fingeren til deltakaren, stikke hol, tørke av den første bloddropa og fylle opp røret. Blodet blir deretter analysert i Biosen. Deltakaren er ferdig for deltakaren, og testleiaren avsluttar testen i både Vyntus og sykkelprogrammet. Sykkelen, munnstykket, slangen og pulsmonitoren blir vaska, og vifta blir vend mot miksekammeret for å la det tørke.  
 
 
 
 
-# Oppgave 1: Reliabilitet og verktøy for å reprodusere data
+### Data behandling etter test
 
-Hensikten med denne rapporten er å presentere estimater for reliabilitet av data samlet i fysiologisk testlab ved Høgskolen i Innlandet. Vi har gjennomført VO2max tester på sykkel der 16 deltakere har gjennomført 2 eller 4 tester i løpet av tre uker. De to første testene ble gjennomført med ca. 24 timers mellomrom i uke en. De to siste testene ble gjennomført med ca. 48 timers mellomrom i uke tre. Vi har brukt Rstudio for å analysere dataen og få svar på om våre tester er reliable.
+Korrekt innsamling av data frå testen er avgjerande, då det gir oss innsikt i deltakarens aerobe kapasitet. Rapporten generert av Vyntus blir lagra på ein minnepinne, slik at ho seinare kan lagrast på OneDrive. Excel-arket blir deretter fylt ut med verdiar frå rapporten. Desse verdiane inkluderer absolutt $\dot{V}O_{2max}$, uttrykt i milliliter oksygen per minutt (ml/min), som gir oss det totale oksygenforbruket til deltakaren, noko som er nødvendig for å vurdere den aerobe kapasiteten. Maksimalt volum av karbondioksid (CO2) produsert (vco2.max) fortel oss kor mykje CO2 som blir utskilt av kroppen til deltakaren under testen. Respiratorisk utvekslingsforhold (RER) blir brukt til å estimere forholdet mellom karbondioksid (CO2) produsert og oksygen (O2) forbrukt under metabolisme. Maksimal ventilasjonsvolum per minutt (VE.max) er det høgaste volumet av luft deltakaren kan flytte inn og ut av lungene per minutt. Maksimal pustefrekvens (BF.max) er det høgaste talet på pust per minutt. Til slutt blir laktatmålingane samla frå Biosen. Vi fekk deretter data frå dei andre gruppene og samla alt i eit excel-ark. Dataene blei deretter eksporterte til RStudio, der vi analyserte resultata vidare.
 
-**protokoll (+ preparations of the participant)**
 
-Test protokoll for VO2max test
-
-Test protokoll for VO2maks testingen forteller hvordan testene ble gjennomført. Et plotteark i exel er klargjøort av testleder før man kommer til labben ved å fylle inn informasjon man vet om deltaker på forhånd. I labb forbreder testleder ustyr og maskiner på en standardisert måte hver test. Det første som gjøres i labben er at testleder tar på seg labfrakk som henger i labben, og sørger for at biosen(laktatmåler) er skrudd på og se om kalibreringen måler 12mmol/la. Ved "kalibrerings error" byttes standardveske. Vyntusen skal kalibreres av gasskalibrering og volum kalibrereing mens gassbeholderen er open og trippel står i vyntus. Mens vyntuskalibreringene pågår setter testleder sammen munstykke med naseklype og tar med slange til å puste gjennom som festes til miksekammer og sykkel. For å vere klar til test må gasskalibreringen på vyntus vere innernfor 2,0 diff og volumkalibreringen innenfor 0,2 diff. Deretter hentes utstyret for å måle laktat klart, og sykkelen kalibreres på lodeprogrammet etter at krankarmen er plasert rett opp. Man sjekker også at krankarmen er 172,5mm lang og riktig pedaltype for utøveren. Da er det klart for at utøver kommer i labben for å måle vekt og stille inn sykkelen for sin krop. Deltakerprofil må lages om det ikke allerede eksisterer i både lodeprogram og vyntus. Deltakerprofil inneholder navn og id: "idr4000_h24_g3_id(x)" , fødselsdato, kjønn, høyde og vekt. Sykkelen stilles slik deltakeren vil ha det samt at det ser bra ut ifølge testleder. Sykkelinstillingene lagres i lodeprogrammet. Så starter deltakeren en oppvarmingsprotokoll på 5min sykling med progresiv borg fra 10-13. Testleder setter på vifte mot deltakeren og informerer om at testen kommer til å foregå trappetrinsvis ved økning i watt per min (20w for damer og 25w for menn) og at målet skal vere å sykle til det ikkje går lenger, at det blir målinger hvert 30sek og at man skal sitte gjennom hele testen, og forklare borg skala. Mens deltakeren varmer opp gjør testleder vyntuden klar til test ved å dobbeltsjekker pulsbeltettilkobling, at instillingene står på 30sek målinger og meduim munnstykke, gjennomføre zeroing, flytte trippel v til miksekammeret og skru igjen gassbeholderen. Oppvarming er ferdig og testen startes i vyntus. Testen starter for deltaker ved å starte VO2maks protokollen i lodeprogrammet samt en tidtakerklokke etter 1min er gått i vyntus. Gjennom testen informerer testleder om målinger og økninger samt motiverer når det blir tungt for deltaker. Testen stopper ved at deltaker gir seg eller RPM går under 60. Testleder noterer ned makspuls, sluttid, sluttwatt og borgskår ved endt test. Laktat tas i fingeren 1min etter endt test ved å tørke, stikke, tørke første bloddråpe og fylle laktatrør. Testleder passer på at deltaker har det bra. Laktat plottes i skjema. Deltakeren er da ferdig og testleder avslutter test i vyntus og lodeprogrammet som lagres. Vyntus filen lagres over på minnepen før den lagres i onedrive på lab pc. Sykkelen, munstykket, slangen og pulsbeltet vaskes. Vifta settes til å tørke fukt i miksekammeret. Plotteskjema fylles med verdier frå Vyntus og lagres.
-
-**kommentere standardisering av test**
-
-**post-test data preparation**
-
-**figur og tabell**
-
-**reliability**
-
-**konklusjon**
-
-## Elements of the report
-
-**Importantly, the report should contain:**
-
--   At least one table (created from your data)
--   At least one figure (created from your data), and
--   data presented in the text.
--   The report should use a bibliography file to manage references.
 
 ```{r}
 #| echo: false
 #| warning: false
+#| message: false
 
 library(readxl)
 library(dplyr)
+
 
 vars <- c("id", "timepoint", "temperature", "humidity", 
           "sex", "age", "height", "weight", "w.max", 
@@ -69,23 +65,26 @@ vars <- c("id", "timepoint", "temperature", "humidity",
 
 
 dat <- bind_rows(
-read_excel("g1.xlsx", sheet = "data_excel", na = "na") %>%
+  read_excel("g1.xlsx", sheet = "data_excel", na = "na") %>%
   select(all_of(vars)) %>%
   mutate(group = "G1", 
          id = paste0(group, "_", id)) ,
-
-read_excel("g2.xlsx", na = "na") %>%
+  
+  
+  read_excel("g2.xlsx", na = "na") %>%
    select(all_of(vars)) %>%
   mutate(group = "G2", 
          id = paste0(group, "_", id)) ,
-
-read_excel("g3.xlsx") %>%
+  
+  
+  read_excel("g3.xlsx") %>%
    select(all_of(vars)) %>%
   mutate(timepoint = paste0("t", timepoint), 
          group = "G3", 
-         id = paste0(group, "_", id)) ,
-
-read_excel("g4.xlsx") %>%
+         id = paste0(group, "_", id)) , 
+  
+  
+  read_excel("g4.xlsx") %>%
    select(all_of(vars)) %>%
   mutate(group = "G4", 
          id = paste0(group, "_", id)) )
@@ -94,38 +93,79 @@ read_excel("g4.xlsx") %>%
 
 ```
 
-# Figur
+
+
+
+## Resultat
 
 ```{r}
 #| echo: false
 #| warning: false
+#| message: false
+#| label: fig-ovesikt
+#| fig-cap: "Deltakaranes V&#775;O<sub>2max</sub> verdiar i ml/min"
 
 library(ggplot2)
-  ggplot(data = dat, aes(x = id , y = vo2.max, color = timepoint)) + geom_point() 
- 
 
+
+oversikt_fig <- dat %>% 
+  select("ID" = id, 
+         "Tidspungt" = timepoint, vo2.max) %>%
+  
+  ggplot(aes(x = ID, 
+             y = vo2.max, 
+             color = Tidspungt)) +
+  geom_point() +
+  labs(y = expression(V*O[2]*"max")) +
+  scale_x_discrete(labels = c("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16"))
+
+
+oversikt_fig
 
 ```
 
-Tabell
+
 
 ```{r}
 #| echo: false
 #| warning: false
-#| 
+#| message: false
+#| label: tbl-testres
+
+
+
 library(tidyverse)
-dat %>%
-  select(id, timepoint, vo2.max) %>%
-  pivot_wider(names_from = timepoint,
+library(kableExtra)
+
+Tabell_testres <- dat %>%
+  group_by(id) %>%
+  mutate(id = paste0("ID", cur_group_id())) %>%
+  ungroup() %>%
+  select("ID" = id, "Tidspunkt" = timepoint, 
+         vo2.max) %>%
+  pivot_wider(names_from = Tidspunkt,
               values_from = vo2.max) %>%
-  print()
+  kable(col.names = c("ID ", "Test 1", "Test 2", "Test 3", "Test 4"),
+        escape = FALSE,
+        caption = "Deltakaranes V&#775;O<sub>2max</sub> verdiar i ml/min") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+
+
+Tabell_testres
 
 ```
 
-Calculate typical error between t1 and t2
+
+
+
+
 
 ```{r}
 #| echo: false
+#| message: false
+#| warning: false
+
+#Calculate typical error between t1 and t2
 
 cv1 <- dat %>%
   select(id, timepoint, vo2.max) %>%
@@ -136,19 +176,23 @@ cv1 <- dat %>%
   summarise(m = mean(c(t1, t2), na.rm = TRUE), 
             s = sd(diff, na.rm = TRUE),  
             te = s / sqrt(2), 
-            cv = 100 * (te/m)) %>%
-  print()
+            cv = 100 * (te/m))
 
 
-cv_percent1 <- round(cv1$cv,1) %>%
-  print()
+cv_percent1 <- round(cv1$cv,1) 
+te_1 <- round(cv1$te,1)
+
 
 ```
 
-Calculate typical error between t3 and t4
+
 
 ```{r}
 #| echo: false
+#| message: false
+#| warning: false
+
+#Calculate typical error between t3 and t4
 
 cv2 <- dat %>%
   select(id, timepoint, vo2.max) %>%
@@ -159,11 +203,32 @@ cv2 <- dat %>%
   summarise(m = mean(c(t1, t2), na.rm = TRUE), 
             s = sd(diff, na.rm = TRUE),  
             te = s / sqrt(2), 
-            cv = 100 * (te/m)) %>%
-  print()
+            cv = 100 * (te/m)) 
 
 
-cv_percent2 <- round(cv2$cv,1) %>%
-  print()
+cv_percent2 <- round(cv2$cv,1) 
+te_2 <- round(cv2$te,1) 
 
 ```
+
+
+
+Resulatata frå vår utrekning av målefeil frå $\dot{V}O_{2max}$ testane viste at mellom t1 og t2 var `r cv_percent1`% variasjonskoeffisienten og mellom t3 og t4 var `r cv_percent2`% variasjonskoeffisienten. Det tisvarar ein målefeil på `r te_1`ml mellom t1 og t2 og på `r te_2`ml mellom t3 og t4. 
+
+
+## Diskusjon
+
+Variasjonskoeffisientane på `r cv_percent1`% og `r cv_percent2`% er eit mål på den typiske prosentvise feilen i målingane. Det er både styrker og svakheter ved vår gjennomføringar av testane. Dette var for mange, både som deltakar og testledar, det første møtet med fysiologisk testlabb og $\dot{V}O_{2max}$ test. Sjølv om formålet med rapporten var å estimere reliabilitet, så var hensikta med testgjennomføringane at deltakarane skulle lære seg å gjennomføre ein $\dot{V}O_{2max}$ protokoll. Dette førte til svakhetar ved at det blei brukt 16 forskjellige testledrarar og assistentar, data vart henta frå fire forskjellige grupper, anntall observatørar varierte og innsatsen var ikkje alltd maksimal på grunn av varierande motivasjon blandt studentane i undervisninga. På ei annna side var ustyret av grullstandard ved testing av $\dot{V}O_{2max}$ og lærar med erfaring og høg kompetanse.   
+
+Ifølge [@Hopkins] er observert endring reliabel om den er større enn den typiske feilen. I vårt tilfelle vil det tilsvare ein større endring enn `r te_1`ml og `r te_2`ml noko vi synes er i overkant mykje for å kunne fastslå endring i ein $\dot{V}O_{2max}$ test. Dei nevnte svakhetene ved gjennomføringane vil operere som forstyrrende variabler og kan dermed virke negativt på reliabiliteten [@Halperin].         
+
+
+## Konklusjon
+Basert på vår estimering av reliabiliteten frå testane våre synest vi at variasjonscoefesienter på `r cv_percent1`% og `r cv_percent2`% er for høge. Det vil då kreve i overkant mykje å skulle bekrefte endring ved ein ny test. Det kjem sansylegvis som følge av ein for dårleg og variert gjennomføring av metoden.    
+
+
+
+
+
+
+

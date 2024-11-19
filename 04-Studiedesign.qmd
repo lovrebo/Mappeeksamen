@@ -1,26 +1,18 @@
 ---
 title: "Studiedesign"
-format: html
 editor: visual
 bibliography: bibliografi.bib
 ---
 
 # Assignment 4: Study designs
 
-
 ## Overview
-Choose an area of interest (e.g. protein supplementation for muscle hypertrophy or the effect of block
-periodization on VO<sub>2max</sub>). Find at least five *original research studies*^[Avoid using review articles or meta-analyses] in your selected area and describe strength and weakness of these studies. The report should focus on the design of the studies and selection of statistical tests to answer study aims.
-Conclude your report with a recommendation, how should future studies in your area be designed to best
-answer similar questions?
 
-V&#775;O<sub>2max</sub> = VO2maks
+Choose an area of interest (e.g. protein supplementation for muscle hypertrophy or the effect of block periodization on VO<sub>2max</sub>). Find at least five *original research studies*[^04-studiedesign-1] in your selected area and describe strength and weakness of these studies. The report should focus on the design of the studies and selection of statistical tests to answer study aims. Conclude your report with a recommendation, how should future studies in your area be designed to best answer similar questions?
 
+[^04-studiedesign-1]: Avoid using review articles or meta-analyses
 
-
-
-
-
+V̇O<sub>2max</sub> = VO2maks
 
 ## **Rapport 4**
 
