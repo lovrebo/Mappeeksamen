@@ -5,31 +5,17 @@ bibliography: bibliografi.bib
 ---
 
 
-## Overview
-
-Choose an area of interest (e.g. protein supplementation for muscle hypertrophy or the effect of block periodization on VO<sub>2max</sub>). Find at least five *original research studies*[^04-studiedesign-1] in your selected area and describe strength and weakness of these studies. The report should focus on the design of the studies and selection of statistical tests to answer study aims. Conclude your report with a recommendation, how should future studies in your area be designed to best answer similar questions?
-
-[^04-studiedesign-1]: Avoid using review articles or meta-analyses
-
-V̇O<sub>2max</sub> = VO2maks
-
-## **Rapport 4**
-
-Lars Øvrebø
-
-**Studie design**
-
-**Introduksjon**
+## Introduksjon
 
 Rapporten har som formål å analysere og vurdere ulike studiedesign brukt av fem andre forskingsstudiar som ser på effekten av blokkperiodisering på utholdenhetsprestasjonen. Blokkperiodisering har som formål å strukturere utholdenhetstrening i bestemte mønstre som skal påverke kondisjonen på ein effektiv og mulig betre måte enn meir tradisjonell stabil trening med mindre variasjonar. Det er blitt ein populær treningsmetode for å forbetre utholdenhetsprestasjonen og blir brukt av mange utholdenhetsutøvarar i dag.
 
 Analysen i denne rapporten vil evaluere styrkar opp mot svakheiter i fem utvalde studiar ved hjelp av QLAMRI-metoden, med fokus på studiedesign og statistiske testar som skal svare spørsmåla forfattarane ønsker å svare på.
 
-**Metode**
+## Metode
 
 Metoden som blir brukt i rapporten for å analysere og vurdere studiane er QLAMRI-metoden som hjelper til med å dele opp analysene i komponenter som vurderingane skal basere seg frå. Komponentane som blir brukt i metoden er spørsmål (questions), alternativ, logik, metode og slutningar (inferens). Studiane som ble analysert er [@Alm], [@Ronnestad], [@Bakken], [@McGawley] og [@Nuuttila]
 
-**Resultat**
+## Resultat
 
 Studien til [@Alm] spurte om kva som var effektane av ein seks dagers blokk med høgintensiv trening (HIT) og ein påfølgande fem dagers treningsreduksjon på prestasjonsvariablar for ein langrennsløpar målt opp mot vanleg trening. Dei har ein hypotese om at blokka med påfølgande kvile vil gi betre responsar i treningsvariablane enn den vanlege treninga. Logikken for hypotesen baserer seg på at ein kort intensiv høyintensitetsperiode utan at belastninga blir for stor vil ha meir gunstig påvirkning på utholdenhetsfaktorer som VO2max og blodlaktatterskel enn vanlig trening. Metoden studien blei gjennomført på var å dele i to grupper med godt trente langrensutøvere der ei blokk-gruppe trente blokk og ei kontroll-gruppe trente vanleg. det var like mange utøvara i kvar gruppe, VO2maks var lik for begge grupper før intervensjonen. Statistiske analyser ved hjelp av ANCOVA test blei brukt for å avgjere resultat for samanlikninga av treningsresponsane til gruppene. Resultata viste at blokk gruppa hadde større forbedringer i hastighet siste min av VO2max test og ved blodlaktatterskel satt til 4mmol/L-1 samanlikna med kontroll, samt at blokk gruppa reduserte sine verdiar for respirasjonsvekslingsforhold, blodlaktatkonsentrasjon, hjertefrekvens og opplevd annstrengelse. Forfattarane konkluderer med at resultanta fortel at blokk gruppa har betre resultat etter inervensjonsperioden enn gruppa som trener vanlig.
 
@@ -41,16 +27,18 @@ Ein masterstudie av [@Bakken] såg på korleis man best skulle organisere uthold
 
 Studien til [@Nuuttila] spurte om det var forskjell i utholdenhetsprestasjon av HIT og LIT blokker for mosjonistar på ein kort periode. Hypotesa var at både HIT og LIT blokker kom til å forbetre utholdenhetsprestasjon. I ein slik studie kan det tenkast at treningskapasiteten vil variere og restitusjonen kan bli forskjellig som blir alternative forklaringar til dataen i tillegg til genetiske faktorar. Det er logisk å tenke at mosjonistane vil få god respons på trening uavhengig av treningsintensitet. Studien brukte eit parallell gruppedesign som brukte gruppene HIT og LIT med 15 personar kvar som gjennomgjekk 2 veker med treningsintervensjon. ANOVA test blei brukt i statistisk analyse av dataen. Resultata viste at begge grupper forbedra seg på utholdenhetsprestasjon i form av ein 3000m test.
 
-**Diskusjon**
+## Diskusjon
 
-(Diskusjon)[@Alm] har ein studie med eit relativt lite utval på 24 utøvarar fordelt på to grupper som kan vere negativt for studiens statistiske styrke. Det litle utvalet er godt trente langrennsløparar som er ein relevant gruppe som kan dra stor nytte av temaet. Utvalet gir ein god overføringsverdi for liknande utøvarar. Forskarane nytter seg av gode testar for å måle VO2maks og laktat som er fine metodar å måle endringar i utholdenhetsprestasjon. Det finns og alternative forklaringar som kan ha innvirkning på resultantane som er vanskeleg å kontrollere for, men det er mulighet for at ulik treningshistorikk, genetikk, ernæring, søvn, stressnivå og dagsform påverkar resultata i slike studiar.
+Det er ein klar kobling mellom studiedesigna og dei statistiske testane som vert brukt i alle studiane. Designa, som inkluderer randomiserte kontrollgrupper og crossover-design, legg grunnlaget for kva statistiske analyser som er mest relevante for å besvare problemstillingane. For eksempel, i studien til [@Alm] blir ANCOVA brukt for å justere for individuelle forskjellar mellom gruppene som finst før inervensjonen startar. Det er spesielt nyttig i små utval, der variasjon kan påverke resultata. Vidare er t-testar brukt i fleire av studiane for å samanlikne to grupper (som i [@Bakken]), noko som fungerer godt når målet er å undersøke enkle forskjellar mellom to forhold.
 
-(Diskusjon) Studien til [@Ronnestad] konkluderer med blokk periodisering var best for å auke mengda raude blodceller, og den vanlege treninga var best for betre kapilærtilpassningar i muskelfibre, men det var ikkje forskjell mellom effektane på utholdenhetsprestasjon. Alternative forklaringar på resultat frå ein slik studie kan vere at det vil vere individuelle forskjellar til responsen på treningsmengda, treningshistorikken til kvar enkelt, søvn, ernering og restitusjon.
+Randomiserte crossover-design som i [@McGawley] sikrar at kvar deltakar fungerer som si eiga kontroll, noko som styrkar intern validitet og reduserer påverknaden av individuelle forskjellar. Dette gjer t-testen meir robust i denne studien samanlikna med studiar med parallelle grupper. Til slutt gir ANOVA, som brukt i [@Nuuttila], høve til å samanlikne fleire grupper eller forhold samstundes, noko som er ideelt når ein ønskjer å evaluere ulike nivå av intensitet eller treningsmetodar.
 
-(Diskusjon) Masterstudien til [@Bakken] konkluderte med at blokk periodisering såg ut til å ha betre responsar for utholdenhetsprestasjonen enn kontrollgruppa over ein fem veker lang periode, og at det kan tyde på at det er ein meir effektiv måte å trene på for utholdenhetsutøvarar. Temaet og utvalet studien tar for seg passer godt saman til å forklare kva som kan anbefalast for utholdenhetsutøvarar i langrenn og skiskyting som har fokus på treningsoptimalisering. Studien er designet slik at det totale trenings volumet er kontrollert som kan vere bra for å isolere undersøkinga av treninga av blokk mot vanleg trening. Ei svakheit med studien vil vere eit lite utval i kvar gruppe og særleg få jenter som gjer studiens statistiske styrke mykje svakare enn om det hadde vert dobbelt så mange.
 
-(Diskusjon) [@McGawley] konkluderte med at blokkperiodisering av HIT ikkje gav betre responsar enn jevnlig fordeling av HIT for unge langrennsløparar. Studien er designa ved randomisert crossover slik at effekten av individuelle treningstilpassningar blir redusert og nøyaktigheita av effektane frå kvar periodiseringsmetode blir i større grad kontrollert for enn ikkje randomiserte crossover studiar. Studien har og eit utval som temaet er svært relevant for med tanke på å optimalisere treninga for yngre langrennsløparar. Denne studien har og eit relativt lite utval å undersøke som påverkar den statistiske styrken negativt, men har lik fordeling mellom gutar og jenter. Ein intervensjonsperiode på tre veker er relativt kort og kunne med fordel vert lenger for å gi ytterlegare innsikt på effektar av blokktrening.
+Ein svakheit med mange av studiane er liten statistisk styrke grunna små utval, noko som aukar risikoen for type II-feil. Til dømes, sjølv om [@Alm] sin studie viste signifikante forskjellar, kunne eit større utval styrkt konklusjonane. På same måte kan bruken av p-verdi som hovudindikator for statistisk signifikans vere problematisk, då den ikkje reflekterer storleiken på effektane. Ei større vektlegging av effektstorleik og konfidensintervall ville gitt meir nyansert innsikt.
 
-[@Nuuttila] konkluderte med at både LIT og HIT blokk trening forbedra utholdenhetsprestasjonen for mosjonistar. Studien hadde eit litt større utval enn de andre studiane som er analysert som gjer den statistiske styrken sannsynlegvis litt sterkare, men det er fortsatt eit relativt lite utval som gir låg statistisk styrke. Mosjonistar som utval er meir representativt for ein større del menneske enn idrettsutøvarar.
+
+For å styrke framtidige studiar om blokkperiodisering, bør designa ta høgde for større og meir mangfaldige utval. Dette vil auke den statistiske styrken og sikre betre generaliserbarheit. Vidare bør lengre intervensjonsperiodar vurderast, som [@McGawley] også peika på, for å forstå langtidsverknader av blokkperiodisering. Kombinasjonar av kvalitative og kvantitative metodar kan og vurderast for å få innsikt i subjektive opplevingar av treningsmetoden, som kan utfylle dei fysiologiske målingane.
+
+Statistisk sett bør framtidige studiar inkludere meir avanserte analysar, som multivariable modelleringar, for å ta høgde for komplekse samanhengar mellom variablar. Dette kan inkludere samspel mellom kjønn, alder, treningsbakgrunn og intensitetsnivå. Samstundes bør rapportering av både signifikans, effektstorleik og konfidensintervall verte standardisert for å auke transparensen og replikasjonen av resultata.
 
 

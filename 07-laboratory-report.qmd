@@ -5,25 +5,7 @@ editor_options:
 ---
 
 
-## Introduksjon
-
-Analyse av genuttrykk gjennom fluoresensbasert sanntids kvantitativ polymerasekjedereaksjon (qPCR) er ein veletablert praksis brukt i ulike treningsstudier [@Kuang]. qPCR vert brukt til å måle uttrykket av eit målgen i prøver frå vev som blod og muskel. Ein vanleg applikasjon innan treningsfysiologi er måling av treningsinduserte endringar i genuttrykk knytt til ulike muskelfiber-typar. Sjølv om denne typen analyse er mykje brukt, finst det mange protokollar og metodar for å gjennomføre analysen. Reproduserbarheita og pålitelegheita av dataa avhenger i stor grad av korleis eksperimenta blir utført og tolka. For å sikre pålitelege testresultat, er det viktig å følgje ein detaljert og nøye utforma protokoll [@Kuang].
-
-Prinsippet bak ein qPCR-analyse er å overvåke PCR i sanntid. For å utføre PCR, må vi først trekke ut RNA frå eit biologisk celleprøve. RNA blir deretter omdanna til cDNA i ein prosess kalla revers transkripsjon. PCR blir deretter brukt til å amplifisere dette cDNA-et til milliardar av kopiar [@Kuang]. Kvar syklus i PCR består av tre steg for å kopiere DNA. I første steg (denaturering) blir DNA-et utsett for høge temperaturar for å skilje det frå dobbeltstrenga til enkelstrenga. I andre steg (annealing) blir temperaturen senka, og primerar bind seg til malstrengene. I det siste steget (elongering) aukar temperaturen igjen, og DNA-polymerasar bind seg til primerane og syntetiserer nytt dobbeltstranda DNA, identisk med utgangspunktet [@Kuang]. Denne syklusen blir deretter repetert, og DNA-et dobler seg eksponentielt med kvar runde. I ein qPCR som bruker SYBR Green-metoden, blir DNA-et bunde til ein fluorescerande markør under kvar syklus, noko som gjer at PCR-prosessen kan overvåkast i sanntid ved å fange fluorescensen etter kvar syklus [@Kuang]. Mengda cDNA og fluorescens dobles med kvar syklus, og fluorescenssignalet aukar eksponentielt. Kor raskt fluorescenssignalet når ein sett terskel, kjent som syklusterskelen (CT), bestemmer genuttrykksnivået. Jo færre syklar som trengs for å nå CT, desto høgare er uttrykket av målgenet i prøva [@Livak].
-
-MHC står for Myosin Heavy Chain, som refererer til proteinkomponenten i myosin, ein motorprotein avgjerande for muskelkontraksjon. Det finst fleire typar MHC som svarar til ulike muskelfiber-typar, som:
-
-MHC1 (Type I): Finnes i langsamt kontraherande muskelfiber som er meir uthaldande.
-
-MHC2a (Type IIa): Finnes i raskt kontraherande fiber som er motstandsdyktige mot trettheit og brukt i moderat langvarige aktivitetar.
-
-MHC2x (Type IIx): Finnes i raskt kontraherande fiber som er meir kraftige, men trettast raskt.
-
-Endringar i uttrykket av desse MHC-isoformene kan indikere tilpassingar i samansetjing av muskelfiber, ofte som resultat av trening eller intervensjonar.
-
-NY
-
-7.1 Innleiing
+## Indroduksjon
 
 Analyse av genuttrykk gjennom fluoresensbasert sanntids kvantitativ polymerasekjedereaksjon (qPCR) er ein veletablert metode som blir brukt i ei rekke treningsstudier [@Kuang]. Denne metoden kvantifiserer uttrykket av målgen i biologiske prøver, som frå blod eller muskelvev. qPCR er mykje brukt, og det finst mange protokollar og metodar for å gjennomføre analysen. I vår studie brukte vi SYBR Green-metoden, der eit fluorescerande fargestoff bind seg til DNA under amplifiseringa. Denne fluorescensen gjer det mogleg å overvake reaksjonen i sanntid, ettersom signalintensiteten samsvarar med mengda DNA som er til stades [@Kuang]. Fluorescensen når ein førehandsbestemt terskel, kalla syklusterskelen (CT), som reflekterer nivået av genuttrykk. Ein lågare CT indikerer høgare genuttrykk, ettersom færre amplifiseringssyklar var nødvendige for å krysse terskelen [@Livak].
 
@@ -32,13 +14,6 @@ Innan treningsfysiologi blir qPCR ofte brukt for å undersøkje endringar i genu
 
 
 ## Metode
-
-**7.2 Materiale**
-
-- Ein sanntids PCR-maskin (vi brukar QuantStudio 5)
-- Ei qPCR-reaksjonsplate
-- Nucleasfritt vatn og pipette-spissar
-- SYBR-green Master Mix
 
 Før eksperimentet forberedde laboratorieansvarleg cDNA-et, som blei trekt ut frå prøver samla under ein studie der deltakarar gjennomførte eit to veker langt styrketreningsprogram.
 
@@ -167,7 +142,7 @@ table_data2 %>% gt() %>%
 
 ``` 
 
- 
+Ein stigning på -2,6 indikerer at primer-effektiviteten ikkje er optimal, då det er kalkulert til å vere 142%. Vi ser at observasjonen vår ikkje er lineær @tbl-fort2. 
 
  
 
@@ -176,7 +151,7 @@ table_data2 %>% gt() %>%
 #| warning: false
 #| message: false
 #| label: tbl-fort2 
-#| tbl-cap: "CV" 
+#| tbl-cap: "Gjennomsnittleg Ct verdiar, standardavvik (SD), og variasjonskoefesient (CV) for pooled qPCR-prøvar ved tre fortynningsnivå" 
 
 library(tidyverse) 
 library(gt) 
@@ -186,7 +161,7 @@ library(gt)
 
 pooled_data <- data.frame( 
   `Pooled sam` = c(1, 0.5, 0.1), 
-  Avg = c(28.847, 29.433, 31.868), 
+  Snitt = c(28.847, 29.433, 31.868), 
   SD = c(0.26704902, 0.17887641, 0.50500096), 
   `CV` = c("0.93 %", "0.61 %", "1.58 %")) 
 
@@ -198,7 +173,7 @@ pooled_data %>%
 ``` 
 
  
-Ein stigning på -2,6 indikerer at primer-effektiviteten ikkje er optimal, då det er kalkulert til å vere 142%. Vi ser at observasjonen vår ikkje er lineær @fig-snitt-ct.
+
 
 
  
@@ -233,7 +208,7 @@ ggplot(data, aes(x = Avg_Ct, y = Log_sample_quan, color = Fortynning)) +
 
 ``` 
 
-Standardavviket er relativt lågt for fortynningane i den "sammenslåtte prøven", som indikerer presisjon i resultata. Standardfeilen er lågast for den 1/2 fortynna prøva på 0,61% og høgast for den 1/10 fortynna prøva på 1,58%. Dette tyder på at det er større variasjon mellom målingane for dei mest fortynna prøvene. I tillegg er standardfeilen for den ufortynna prøva høgare enn for den 1/2 fortynna prøva. 
+Standardavviket er relativt lågt for fortynningane i den "sammanslåtte prøva", som indikerar presisjon i resultata. Variasjonskoefesienten er lågast for den 1/2 fortynna prøva på 0,61% og høgast for den 1/10 fortynna prøva på 1,58%. Dette tyder på at det er større variasjon mellom målingane for dei mest fortynna prøvene. I tillegg er standardfeilen for den ufortynna prøva høgare enn for den 1/2 fortynna prøva. 
 
  
 
@@ -275,7 +250,7 @@ table_data2 %>% gt() %>%
 
 ``` 
 
-I tabell 7.5 kan vi sjå at talet på syklar for å nå syklusterskelen (CT) har endra seg frå veke 0 til veke 2. Talet på syklar minkla for myhc1 frå eit gjennomsnitt på 19,7 til 19,3 syklar. For myhc2a gjekk syklane ned frå 20,9 til 19,4, og for myhc2x gjekk det frå 26,6 til 24,4 syklar. Dette indikerer at genuttrykket auka frå veke 0 til veke 2, då færre syklar indikerer høgare genuttrykk (Livak og Schmittgen, 2001). 
+I @tbl-ct kan vi sjå at talet på syklar for å nå syklusterskelen (CT) har endra seg frå veke 0 til veke 2. Talet på syklar minkla for myhc1 frå eit gjennomsnitt på 19,7 til 19,3 syklar. For myhc2a gjekk syklane ned frå 20,9 til 19,4, og for myhc2x gjekk det frå 26,6 til 24,4 syklar. Dette indikerer at genuttrykket auka frå veke 0 til veke 2, då færre syklar indikerer høgare genuttrykk (Livak og Schmittgen, 2001). 
 
 
 
@@ -300,7 +275,7 @@ table_data3 %>% gt()
 
 ``` 
 
-I tabell 7.6 kan vi sjå at mengda genuttrykk for dei ulike muskelfiber-typane har endra seg frå veke 0 til veke 2. Uttrykket av Muskel Fiber Type 
+I @tbl-gene-exp kan vi sjå at mengda genuttrykk for dei ulike muskelfiber-typane har endra seg frå veke 0 til veke 2. Uttrykket av muskel fiber type 1 (MYHC1) og muskel fiber type 2a (MYCH2a) hadde nedgang, mens muskel fiber type 2x (MYCH2x) hadde auke.  
 
 
 
@@ -309,4 +284,12 @@ I tabell 7.6 kan vi sjå at mengda genuttrykk for dei ulike muskelfiber-typane h
 
 ## Diskusjon 
 Auken i myhc2x, som er knytt til dei raskaste og mest eksplosive muskelfibrane, er uventa, sidan denne fibertypen vanlegvis minkar ved langvarig trening til fordel for meir uthaldande eller styrkeretta fibrar (type I og IIa). Det kan vere at denne aukinga er eit resultat av kortvarige tilpassingar som gjev auka eksplosivitet eller kraftutvikling, men det er òg mogleg at dette reflekterer tekniske feil, som til dømes høg primer-effektivitet eller biologisk variasjon. 
+
+I ei studie [@Wilborn] fann ein at etter 8 veker med tung styrketrening var genuttrykket for myhc 1 og 2a auka, men noko mindre for myhc 2x. Det finst ikkje studiar på to veker med styrketrening som forklarer endringar i myhc-genuttrykk, men vi spekulerer i at det vil vere dei same endringane som i [@Wilborn], men i mindre grad. Dette samsvarar med våre funn, der vi ser ein auke i genuttrykk for både myhc 1 og myhc 2a. Samstundes har vi også motstridande resultat – vi ser ein auke i myhc 2x.
+
+Auken i myhc 2x, som er knytt til dei raskaste og mest eksplosive muskelfibrane, er uventa. Denne fibertypen blir vanlegvis redusert ved langvarig trening til fordel for meir uthalds- eller styrkeorienterte fibrar (type I og IIa). Det kan vere at denne auken er eit resultat av tekniske feil, som til dømes høg primer-effektivitet eller biologisk variasjon [@Pette].
+
+Primer-effektiviteten er ikkje optimal då ho er kalkulert til 142 %. Referanseverdiane, som ligg på 90–110 %, indikerer at kvar PCR-syklus doblar mengda mål-DNA. Vår høge verdi tyder på ulike feilkjelder undervegs i forsøket, som feil pipettering eller kontaminasjon. Primarar kan binde seg til fleire stader på DNA, eller til kvarandre, noko som kan gi falske resultat.
+
+CV-målingane viser at det er høgare variasjon i målingane når prøven er meir fortynna. Gjennomsnittet er lågast for den ufortynna prøven, noko som kan forklare kvifor CV er høgare for denne enn for den 1/2-fortynna prøven. Sidan CV blir rekna ut frå standardavviket delt på gjennomsnittet, vil eit lågare gjennomsnitt gi ein høgare CV. Vi mistenker at dårleg pipettering er årsaka til at CV er høgare for den ufortynna prøven enn for den 1/2-fortynna prøven.
 
