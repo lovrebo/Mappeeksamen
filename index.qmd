@@ -1,15 +1,7 @@
 # Forord {.unnumbered}
 
-Takk til Daniel for opplæring i R. Har klart å få på plass ei mappeeksamen som eg er fornøgd med.
+
+Mappeeksamen består av sju arbeisdkrav som er satt saman til ei bok. Arbeidskrava som er gjort er rapportar skrive om ulike temaer innanfor statistikk i vitenskapen, vitenskapsfilosofi og ein molekylærlabb qPCR analyse.
 
 https://github.com/lovrebo/Mappeeksamen.git
-
-Mappeeksamen består av følgende deler: 
-
-- Rapport: "Deskriptiv statistikk, reliabilitet og validitet og verktøy for reproduserbar vitenskap".
-- Laborasjonsrapport fra molekylærlabb
-- Arbeidskrav i vitenskapsteori
-- Rapport: "Statistisk inferens, statistiske modeller og statistisk styrke"
-- Rapport: "Studiedesign"
-- Rapport: "Analyse av eksperimenter med repeterte målinger"
 

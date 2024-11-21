@@ -21,6 +21,13 @@ MHC2x (Type IIx): Finnes i raskt kontraherande fiber som er meir kraftige, men t
 
 Endringar i uttrykket av desse MHC-isoformene kan indikere tilpassingar i samansetjing av muskelfiber, ofte som resultat av trening eller intervensjonar.
 
+NY
+
+7.1 Innleiing
+
+Analyse av genuttrykk gjennom fluoresensbasert sanntids kvantitativ polymerasekjedereaksjon (qPCR) er ein veletablert metode som blir brukt i ei rekke treningsstudier [@Kuang]. Denne metoden kvantifiserer uttrykket av målgen i biologiske prøver, som frå blod eller muskelvev. qPCR er mykje brukt, og det finst mange protokollar og metodar for å gjennomføre analysen. I vår studie brukte vi SYBR Green-metoden, der eit fluorescerande fargestoff bind seg til DNA under amplifiseringa. Denne fluorescensen gjer det mogleg å overvake reaksjonen i sanntid, ettersom signalintensiteten samsvarar med mengda DNA som er til stades [@Kuang]. Fluorescensen når ein førehandsbestemt terskel, kalla syklusterskelen (CT), som reflekterer nivået av genuttrykk. Ein lågare CT indikerer høgare genuttrykk, ettersom færre amplifiseringssyklar var nødvendige for å krysse terskelen [@Livak].
+
+Innan treningsfysiologi blir qPCR ofte brukt for å undersøkje endringar i genuttrykk som skjer ved trening. I denne studien ønskjer vi å teste primer-effektiviteten og utføre målretta amplifisering av cDNA ved bruk av spesifikke primerar. I tillegg vil vi undersøkje korleis styrketrening påverkar genuttrykket i ulike muskelfiber-typar, ettersom deltakarane gjennomførte eit to veker langt styrketreningsprogram. Dei ulike muskelfiber-typane vi undersøkte, var type I, type IIa og type IIx. Type I-fibrar, også kalla langsame fibrar, er svært oksidative og kan oppretthalde kontraksjon over lengre tid utan å bli utmatta [Pette, 2000]. Type IIa-fibrar nyttar både aerobe og anaerobe metabolske vegar, har moderat motstand mot utmatting og produserer meir kraft enn type I-fibrar [@Pette]. Til slutt har vi type IIx-fibrar, som hovudsakleg er avhengige av anaerob metabolisme og er spesialiserte for raske og kraftige kontraksjonar [@Pette].
 
 
 
@@ -102,13 +109,20 @@ table_data1 <- data.frame(
 )  
 
 
-colnames(table_data1) <- c("row", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23")  
+colnames(table_data1) <- c("Rader", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23")  
 
 
 table_data1[is.na(table_data1)] <- "" 
 
 
-table_data1 %>% gt() 
+table_data1 %>% gt() %>% 
+  tab_options(
+    table.font.size = px(9),
+    table.width = px(500)
+  )
+
+
+ 
 
 
 ``` 
@@ -124,7 +138,7 @@ Plata blei deretter dekt med plast og sentrifugert ved 1200rpm i 1 minutt. PCR-p
 #| message: false
 #| label: tbl-fort1  
 #| tbl-cap: "Fortynningsrekke" 
-#| tbl-column: page
+
 
 #TABLE 7.3 FORTYNNINGSREKKE 
 
@@ -142,8 +156,13 @@ table_data2 <- data.frame(
 
 table_data2[is.na(table_data2)] <- "" 
 
+table_data2 %>% gt() %>% 
+   tab_options(
+    table.font.size = px(9),
+    table.width = px(500)
+  )
 
-table_data2 %>% gt() 
+
 
 
 ``` 
@@ -226,7 +245,7 @@ Standardavviket er relativt lågt for fortynningane i den "sammenslåtte prøven
 #| message: false
 #| label: tbl-ct 
 #| tbl-cap: "Delta ct" 
-#| tbl-column: page
+
 
 
 #TABLE 7.5 CT VALUES  
@@ -247,7 +266,11 @@ table_data2 <- data.frame(
   To_Delta_Delta_Ct = c(28.867, 18.536, 12.613, 16.944, 0.253, 0.555)) 
 
 
-table_data2 %>% gt() 
+table_data2 %>% gt() %>% 
+   tab_options(
+    table.font.size = px(9),
+    table.width = px(500)
+  )
 
 
 ``` 
@@ -285,5 +308,5 @@ I tabell 7.6 kan vi sjå at mengda genuttrykk for dei ulike muskelfiber-typane h
 
 
 ## Diskusjon 
-[@Wilborn] sa
+Auken i myhc2x, som er knytt til dei raskaste og mest eksplosive muskelfibrane, er uventa, sidan denne fibertypen vanlegvis minkar ved langvarig trening til fordel for meir uthaldande eller styrkeretta fibrar (type I og IIa). Det kan vere at denne aukinga er eit resultat av kortvarige tilpassingar som gjev auka eksplosivitet eller kraftutvikling, men det er òg mogleg at dette reflekterer tekniske feil, som til dømes høg primer-effektivitet eller biologisk variasjon. 
 

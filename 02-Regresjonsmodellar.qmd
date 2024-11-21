@@ -4,28 +4,30 @@ editor_options:
   chunk_output_type: console
 ---
 
-## Introduksjon
- 
-Hensikten med denne rapporten er å predikere data ved hjelp av regresjon gjort i Rstudio, samt tolke en regresjonstabell. Rapporten inneholder tre deler. Ved å bestemme laktatterskel ved blodlaktatverdiene 2 og 4 mmol L^-1^ analyserer vi forholdet mellom prestasjon i watt og treningsintensitet. Vi analyserte hellningen til en qPCR kalibreringskurve, og tolket en regresjonstabell om forholdet mellom 3RM squat og tverrsnittsareal til type II muskelfibrer. 
- 
-## Metode
- 
-### Del 1: Predikert laktatterskel
- 
-I del 1 av rapporten ble datasettet cyclingstudy fra [@Sylta] brukt til å predikere to bestemte blodlaktatterskler ved 2 og 4 mmol L^-1^ ved bruk av ein tredjegradspolynom modell. Det blei testa ut fire modellar for estimering av blodlaktatteskel til ID10, ein rett linje modell, andregradspolynom, tredjegradspolynom. Behandlingen av dataen ble gjort i [@RCoreTeam]. 
+**Oversette til nynorsk**
 
-### Del 2: Predikert hellning på qPCR kalibreringskurve 
- 
-I del 2 av rapporten har vi ved hjelp av [@Schindelin] analysert et bilde av qPCR som ble hentet fram fra forsøket [@DNA]. Analysen av bildet gav oss data som vi anvendte i [@RCoreTeam] for å predikere hellningen til qPCR kalibreringskurven. 
+## Introduksjon
+
+Hensikten med denne rapporten er å predikere data ved hjelp av regresjon gjort i Rstudio, samt tolke en regresjonstabell. Rapporten inneholder tre deler. Ved å bestemme laktatterskel ved blodlaktatverdiene 2 og 4 mmol L^-1^ analyserer vi forholdet mellom prestasjon i watt og treningsintensitet. Vi analyserte hellningen til en qPCR kalibreringskurve, og tolket en regresjonstabell om forholdet mellom 3RM squat og tverrsnittsareal til type II muskelfibrer.
+
+## Metode
+
+### Del 1: Predikert laktatterskel
+
+I del 1 av rapporten ble datasettet cyclingstudy fra [@Sylta] brukt til å predikere to bestemte blodlaktatterskler ved 2 og 4 mmol L^-1^ ved bruk av ein tredjegradspolynom modell. Det blei testa ut fire modellar for estimering av blodlaktatteskel til ID10, ein rett linje modell, andregradspolynom, tredjegradspolynom. Behandlingen av dataen ble gjort i [@RCoreTeam].
+
+### Del 2: Predikert hellning på qPCR kalibreringskurve
+
+I del 2 av rapporten har vi ved hjelp av [@Schindelin] analysert et bilde av qPCR som ble hentet fram fra forsøket [@DNA]. Analysen av bildet gav oss data som vi anvendte i [@RCoreTeam] for å predikere hellningen til qPCR kalibreringskurven.
 
 ### Del 3: Tolke en regresjonstabell
- 
+
 I del 3 av rapporten har vi gjort en statistisk analyse av forholdet mellom "Type II (FAST) fibers cross sectional area (micrometer^2^)" ved baseline (FAST_CSA_T1) og "Squat 3 repetition maximum load (kg)" ved baseline (SQUAT_3RM) fra datasettet til [@Haun2018] og [@Haun2019] for å undersøke om det var et linjert forhold.
 
 ## Resultat
- 
-### Del 1: Predikert laktatterskel 
- 
+
+### Del 1: Predikert laktatterskel
+
 ```{r}
 #| warning: FALSE
 #| message: FALSE
@@ -102,9 +104,7 @@ lac2 <- round(lactate_threshold_2$watt,0)
 
 ```
 
-Vi fant ut at tredjegradspolynom (m3) var den beste modellen for å estimere laktatverdiar mot ein rett linje modell(m1) og ein andregradspolynom (m2) (sjå @fig-modell), då residuala frå denne modellen varierte minst frå observerte verdiar. 
-
-
+Vi fant ut at tredjegradspolynom (m3) var den beste modellen for å estimere laktatverdiar mot ein rett linje modell(m1) og ein andregradspolynom (m2) (sjå @fig-modell), då residuala frå denne modellen varierte minst frå observerte verdiar.
 
 ```{r}
 #| warning: FALSE
@@ -141,8 +141,7 @@ cyclingstudy %>%
 
 Vi har kalkulert blodlaktatterskel ved 4mmol L^-1^ til å vere `r lac4` watt, og blodlaktatterskel ved 2mmol L^-1^ til å være `r lac2` watt for subject "10" ved timepoint "pre" (sjå @fig-ID10).
 
-
-### Del 2: Predikert hellning på qPCR kalibreringskurve 
+### Del 2: Predikert hellning på qPCR kalibreringskurve
 
 ```{r}
 #| warning: FALSE
@@ -174,12 +173,8 @@ legend("topright", legend = c("Stige", "Kalibrering", "Ukjente prediksjonar"),
 
 
 ```
-Kalibreringsmodellen beskriver forholdet mellom avstand og molekylvekt. 
-Etter log-transformering av molekylvekten, blir forholdet mellom avstand og molekylvekt tilnærmet lineært, noe som gjør den lineære regresjonsmodellen passende.
-R-kvadratverdien på 0.98 indikerer hvor godt modellen passer til dataene da den er tilnærmet 1. 
-De forutsagte molekylvektene for de ukjente prøvene er basert på den tilpassede kalibreringsmodellen. Predikasjonene for de ukjente prøvene gir et estimat av deres molekylvekt basert på deres migrasjonsavstand i gelen.
-QQ-plottet forteller oss om forskjellene mellom observert og predikert molekylvekt følger en normalfordeling. Ideelt sett bør punktene i QQ-plottet falle langs referanselinjen noe de tilsynelatende gjør. Det vil si at modellen er godt spesifisert, og fanger forholdet mellom migrasjonsavstand og molekylvekt. 
 
+Kalibreringsmodellen beskriver forholdet mellom avstand og molekylvekt. Etter log-transformering av molekylvekten, blir forholdet mellom avstand og molekylvekt tilnærmet lineært, noe som gjør den lineære regresjonsmodellen passende. R-kvadratverdien på 0.98 indikerer hvor godt modellen passer til dataene da den er tilnærmet 1. De forutsagte molekylvektene for de ukjente prøvene er basert på den tilpassede kalibreringsmodellen. Predikasjonene for de ukjente prøvene gir et estimat av deres molekylvekt basert på deres migrasjonsavstand i gelen. QQ-plottet forteller oss om forskjellene mellom observert og predikert molekylvekt følger en normalfordeling. Ideelt sett bør punktene i QQ-plottet falle langs referanselinjen noe de tilsynelatende gjør. Det vil si at modellen er godt spesifisert, og fanger forholdet mellom migrasjonsavstand og molekylvekt.
 
 ### Del 3: Tolke en regresjonstabell
 
@@ -214,21 +209,21 @@ dat %>%
 
 
 ```
-Resultata viser ingen samanheng mellom SQUAT_3RM og FAST_CSA_T1 (Estimat = 5,483µm^2^, SE = 8,032, t = 0,683, p = 0,50), sjå @fig-reg. 
 
+Resultata viser ingen samanheng mellom SQUAT_3RM og FAST_CSA_T1 (Estimat = 5,483µm^2^, SE = 8,032, t = 0,683, p = 0,50), sjå @fig-reg.
 
-
-## Diskusjon 
+## Diskusjon
 
 ### Diskusjon - del 1
-Rapporten viser hvordan man kan kalkulere seg fram til wattbelastning på sykkel ved bestemte laktatverdier på 2 og 4 mmol L^-1^ som beskriver intensiteten. Vi kom fram til at terskelwatten ved 2 mmol L^-1^ var `r lac2`, og at terskelwatten ved 4mmol L^-1^ var `r lac4` for subject "10” ved timepoint "pre”. Berekninga blei gjort ved bruk av tredjegradspolynomial modell då estimata frå denne passa betre enn ein linjer modell og ein andregradspolynomial modell. Tredjegradspolynomial modell har tidligare blitt bevist å vere god for å estimere ein laktatprofil kurve [@Newell]. 
 
+Rapporten viser hvordan man kan kalkulere seg fram til wattbelastning på sykkel ved bestemte laktatverdier på 2 og 4 mmol L^-1^ som beskriver intensiteten. Vi kom fram til at terskelwatten ved 2 mmol L^-1^ var `r lac2`, og at terskelwatten ved 4mmol L^-1^ var `r lac4` for subject "10” ved timepoint "pre”. Berekninga blei gjort ved bruk av tredjegradspolynomial modell då estimata frå denne passa betre enn ein linjer modell og ein andregradspolynomial modell. Tredjegradspolynomial modell har tidligare blitt bevist å vere god for å estimere ein laktatprofil kurve [@Newell].
 
 ### Diskusjon - del 2
-Kalibreringsmodellen viser seg å være effektiv til å beskrive forholdet mellom avstand og molekylvekt, spesielt etter at molekylvekten ble log-transformert. Denne transformasjonen bidro til å gjøre forholdet tilnærmet lineær, noe som bekrefter at en lineær regresjonsmodell er en passende tilnærming. Med en R-kvadratverdi på 0.98 ser vi at modellen gir en nesten perfekt tilpasning til dataene, som styrer modellens prediksjonsnøyaktighet.
-For de ukjente prøvene baseres prediksjonene av molekylvekt på modellen og gir troverdige estimater basert på migrasjonsavstand i gelen. QQ-plottet støtter også modellens robusthet, ettersom punktene faller nær referanselinjen, som indikerer at restene følger en normalfordeling. Dette antyder at modellen er godt spesifisert og gir en pålitelig beskrivelse av sammenhengen mellom migrasjonsavstand og molekylvekt. Samlet bekrefter resultatene at den utviklede modellen fanger opp de sentrale aspektene ved dataene på en god måte.
+
+Kalibreringsmodellen viser seg å være effektiv til å beskrive forholdet mellom avstand og molekylvekt, spesielt etter at molekylvekten ble log-transformert. Denne transformasjonen bidro til å gjøre forholdet tilnærmet lineær, noe som bekrefter at en lineær regresjonsmodell er en passende tilnærming. Med en R-kvadratverdi på 0.98 ser vi at modellen gir en nesten perfekt tilpasning til dataene, som styrer modellens prediksjonsnøyaktighet. For de ukjente prøvene baseres prediksjonene av molekylvekt på modellen og gir troverdige estimater basert på migrasjonsavstand i gelen. QQ-plottet støtter også modellens robusthet, ettersom punktene faller nær referanselinjen, som indikerer at restene følger en normalfordeling. Dette antyder at modellen er godt spesifisert og gir en pålitelig beskrivelse av sammenhengen mellom migrasjonsavstand og molekylvekt. Samlet bekrefter resultatene at den utviklede modellen fanger opp de sentrale aspektene ved dataene på en god måte.
 
 ### Diskusjon - del 3
+
 Resutlata visar ingen samanheng mellom FAST_CSA_T1 og SQUAT_3RM (Estimat = 5,483µm^2^, SE = 8,032, t = 0,683, p = 0,50). SE forklarer kor mykje gjennomsnittet frå vårt utvalg forventas å avvike frå det sanne gjennomsnittet i populasjonen [@Sport]. P-verdien her tilsier at vi vil sjå eit likt eller meir ekstremt resultat i 50% av tilfellene om vi repiterer studien gitt at nullhypotesen er sann [@Sport]. T-verdien er lav og indikerer at differansen mellom gjennomsnittet i dataen og gjennomsnittet i populasjonen sannsynligvis er liten [@Sport]. Den lave t-verdien ilag med den høge p-verdien indikerar at det ikkje er grunnalag for å sei at det er statistisk signifikant [@Sport]. Oppsumert ser vi at det ikke er noe grunnlag for å sei at det er ein signifikant sammenheng mellom økning i kilo i SQUAT_3RM og økning i µm^2^ i FAST_CSA_T1.
 
-## Referanser
+

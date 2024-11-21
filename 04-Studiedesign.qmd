@@ -4,7 +4,6 @@ editor: visual
 bibliography: bibliografi.bib
 ---
 
-# Assignment 4: Study designs
 
 ## Overview
 
@@ -54,4 +53,4 @@ Studien til [@Nuuttila] spurte om det var forskjell i utholdenhetsprestasjon av 
 
 [@Nuuttila] konkluderte med at både LIT og HIT blokk trening forbedra utholdenhetsprestasjonen for mosjonistar. Studien hadde eit litt større utval enn de andre studiane som er analysert som gjer den statistiske styrken sannsynlegvis litt sterkare, men det er fortsatt eit relativt lite utval som gir låg statistisk styrke. Mosjonistar som utval er meir representativt for ein større del menneske enn idrettsutøvarar.
 
-**Referanser**
+

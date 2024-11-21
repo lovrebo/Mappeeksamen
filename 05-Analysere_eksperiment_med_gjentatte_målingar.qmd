@@ -53,7 +53,7 @@ deltakar_tabell <- exscidata::dxadata %>%
   dplyr::select(sex, variable, stat) %>% 
   pivot_wider(names_from = variable,
               values_from = stat) %>% 
-  kable(col.names = c(" ", "Alder (&Aring;r)", "H&oslash;gde (cm)", "Vekt (kg)"),
+  kable(col.names = c(" ", "Alder (År)", "Høgde (cm)", "Vekt (kg)"),
         escape = FALSE,
         caption = "Deltakere") %>% 
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
@@ -379,4 +379,4 @@ Mager kroppsmasse blei i denne rapporten bestemt ut ifrå DXA testar før og ett
 
 Konklusjonen frå rapporten er at tre sett per øvelse gir større auke i maksimal muskelstyrke og mager kroppsmasse enn eit sett per øvelse for friske menneske i nokså ung alder (18-40). Vidare burde effekten frå ulikt volum på mager kroppsmasse undersøkast meir.
 
-## Referanser
+

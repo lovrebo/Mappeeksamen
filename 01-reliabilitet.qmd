@@ -3,7 +3,7 @@ title: "Reliabilitet"
 editor_options: 
   chunk_output_type: console
 ---
-\newpage
+
 
 ## Intrtoduksjon
 

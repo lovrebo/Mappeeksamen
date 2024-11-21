@@ -5,28 +5,20 @@ editor_options:
   chunk_output_type: console
 ---
 
-# Assignment 3: Drawing inference from statistical models, and statistical power {#assignment3}
+## Introdukjon
 
-This assignment is set up as a statistical laboratory, we will perform simulations and your assignment is to interpret and explain the results. Create a report based on the code used in the lab and make sure you answer the specified questions (1-8). You can be as creative as you want and explore the results further.
+Denne rapporten inneheld besvarelsar på spørsmål innanfor temaet å trekke sluttningar frå statistiske modellar. Besvarelsen inneheld simuleringar med mine tolkningar og forklaringar av resultatane.
 
-## Rapport 3
+## Metode
 
-**Forfattar: Lars Øvrebø**
+I raporten er det gjennomført simulasjonar av to datasett. Eit datasett med populasjonseffekt og eit datasett utan populasjonseffekt, begge datasetta inneheld to utvalgsstørrelsar på 8 og 40. Det er laga to histogram basert på kvart datasett som viser simulering av begge utvalgsstørrelsane. Frå datasettet med populasjonseffekt blei det kalkulert standardavvik (SD), gjennomsnittleg standardfeil (SE), statistisk styrke og anntal studier som vil vere statistisk signifikante ved signifikansnivå på 5%. Frå datasettet utan populasjonseffekt blei det kalkulert anntal studia som vil gi "falsk positiv" effekt ved et signifikansnivå på 5%.
 
-### Introdukjon
-
-Eg fekk i oppgåve å skrive ein rapport med svar på ulike spørsmål om temaet å trekke sluttninger frå statistiske modeller, og statistisk styrke. Oppgaven skulle inneholde simuleringer med mine tolkninger og forklaringer av resultatene.
-
-### Metode
-
-I denne raporten er det gjennomført simulasjoner av to datasett. Eit datasett med populasjonseffekt og eit datasett uten, begge datasettene inneholder to utvalgsstørrelser på 8 og 40. Det er laget to histogram basert på hvert datasett som viser simulering av begge utvalgsstørrelsene. Frå datasettet med populasjonseffekt ble det kalkulert standardavvik, gjennomsnittlig standardfeil (SE), statistisk styrke og anntal studier som vil vere statistisk signifikante ved signifikansnivå på 5%. Frå datasettet uten populasjonseffekt ble det kalkulert anntal studier som vil gi "falsk positiv" effekt ved et signifikansnivå på 5%.
-
-### Resultat
+## Besvarelse
 
 ```{r}
 #| warning: FALSE
 #| message: FALSE
-#| code-fold: true
+#| echo: true
 
 
 library(tidyverse)
@@ -46,13 +38,29 @@ m2 <- lm(y ~ 1, data = samp2)
 summary(m1)
 summary(m2)
 
+
 ```
 
-1\) Frå utvalga m1 (n = 8) og m2 (n = 40) er det estimert 1,84 og 1,5642 som gjennomsnittsverdi av en variabel x, SE på 1,251 og 0,4774, t-verdi på 1,47 og 3,276, p-verdi på 0,185 og 0,002. Estimatet her er en effekt frå ein simulasjon. SE er standard feil som forteller om variasjonen frå estimatet til gjennomsnittet i populasjonen. En lav SE indikerer at det er liten variasjon og dermed mer sansynlig at estimatet er nerme populasjonsgjennomsnittet og er representativt for populasjonen. T-verdien forteller at estimatet ligger 1,47 for m1 og 3,276 for m2 standardfeil frå nullhypotesen reknet ut ifrå estimatet/SE. m2 studien sin t-verdi er høgare enn m1 studien som forteller at det er større sansynlighet for å vere statistisk signifikant. P-verdien forteller at m1 ikkje er statistisk signifikant, mens m2 er signifikant og kan dermed kaste en nullhypotese, med eit aksept om at 5% av studiene gjort på samme måte vil vere feil. P-verdiene på 0,185 og 0,002 blir berekna frå t-verdiane og forteller om kor ofte vi vil kunne sjå ein lik eller meir ekstrem t-verdi om nullhypotesen er sann. For eksempel ved 1000 repiterte studier vil 185 m1 studier og 2 m2 studier kunne få lik eller meir ekstrem t-verdi om nullhypotesen er sann.
+1\) I koden er utvala m1 (n = 8) og m2 (n = 40) estimerte til gjennomsnittsverdiar på `r coef(m1)[1]` og `r coef(m2)[1]` for ein variabel som eg kallar *x*. SE er `r summary(m1)$coefficients[1, 2]` for m1 og `r summary(m2)$coefficients[1, 2]` for m2. T-verdiane er `r summary(m1)$coefficients[1, 3]` for m1 og `r summary(m2)$coefficients[1, 3]` for m2, og p-verdiane er `r summary(m1)$coefficients[1, 4]` for m1 og `r summary(m2)$coefficients[1, 4]` for m2. Estimatet representerer ein effekt frå ein simulering. 
 
-2\) De ulike resultatene i de to studiene vil vere påvirka av ulikt anntall på utvalget (n). I m1 studien vil det vere større påvirkning på verdiene ved avvik eller ekstreme verdier enn m2 studien. Statistisk styrke påvirkes av utvalgsstørrelsen der en studie med større utvalg f.eks m2 vil ha større statistisk styrke enn m1.
+SE gir eit mål på variasjonen mellom estimatet frå utvalet og det sanne gjennomsnittet i populasjonen. Ein låg SE indikerer mindre variasjon, noko som aukar sannsynet for at estimatet ligg nærare det sanne populasjonsgjennomsnittet og dermed er meir representativt for populasjonen. T-verdien fortel kor mange standardfeil estimatet ligg frå nullhypotesen. Den høgare t-verdien for m2 tyder på større sannsyn for at resultatet er statistisk signifikant. P-verdien indikerer sannsynet for å observere ein t-verdi som er lik eller meir ekstrem enn den observerte, dersom nullhypotesen er sann. P-verdien for m1 er ikkje statistisk signifikant, medan p-verdien for m2 er signifikant ut ifrå eit signifikansnivå på 0,05. Dette betyr at vi kan forkaste nullhypotesen for m2 med ei aksept for at opptil 5 % av liknande studiar vil gje feilaktig forkasting av nullhypotesen. Dersom vi repetera studien 1000 gonger, kan vi forvente at 185 av m1-studiar og 2 av m2-studiar vil gje ein like stor eller meir ekstrem t-verdi dersom nullhypotesen er sann. 
 
-3\) I en t-distrubusjon ønker vi å sjå på heile figuren inkludert det skraverte områdene som representerer p-verdien for å få oversikt og se etter endring. Endten det er endring i en postiv eller negativ retning så kan vi ved hjelp av det skraverte området i nedre og øvre hale av t-fordelingen undersøke.......
+
+
+2\) Ulikt utvalgsstorleik (n):
+I koden er det to utval med forskjellig storleik: m1 har berre 8 observasjonar, medan m2 har 40 observasjonar. Når utvalsstorleiken er liten (som i m1), vil ekstreme verdiar ha større påverknad på gjennomsnittsberekninga og standardfeilen. Dette gjer estimatet meir usikkert og kan føre til større varians i resultatet.
+
+Statistisk styrke:
+Statistisk styrke er definert som sannsynet for å korrekt forkaste nullhypotesen når ho faktisk er falsk. Styrken aukar med større utval, fordi det gir mindre standardfeil og meir presise estimat. I dette tilfellet vil m2, med 40 observasjonar, ha større statistisk styrke enn m1.
+
+
+
+
+3\) I ein t-fordeling ønsker vi å sjå på heile figuren, inkludert dei skraverte områda som representerer p-verdiane, for å få ein oversikt og undersøkje mogelege endringar. Anten det er endring i positiv eller negativ retning, kan vi bruke dei skraverte områda i dei nedre og øvre halane av t-fordelinga til å analysere korleis gjentatte studiar vil fordele seg.
+
+(Denne formuleringa understrekar betre at dei skraverte områda (p-verdiane) viser sannsynet for å observere ein t-verdi som er lik eller meir ekstrem enn den observerte, dersom nullhypotesen er sann.)
+
+
 
 ```{r}
 #| warning: FALSE
@@ -102,6 +110,7 @@ results <- bind_rows(results_8, results_40)
 
 
 
+
 ```
 
 ```{r}
@@ -118,8 +127,11 @@ mean_se8 <- mean(results_8$se)
 
 ```
 
-4\)
+4\)Standardavviket for estimata i studien med utvalgsstorleik på 8 er 1,05, medan standardavviket for estimata i studien med utvalgsstorleik på 40 er 0,47. Dette viser at estimata frå studien med større utvalgsstorleik (40) har mindre spreiing, noko som er forventa fordi større utval gir meir presise estimat.
 
+Den gjennomsnittlege standardfeilen (SE) for studiane med utvalgsstorleik 8 og 40 er høvesvis 1,03 og 0,47. Dette bekreftar at større utvalgsstorleik gir lågare standardfeil, noko som tyder på at estimata er nærare populasjonsgjennomsnittet.
+
+Gammal
 Standardavviket til studien med utvalgsstørrelse på 8 er 1,05, mens standardavviket for studien med utvalgsstørrelsen på 40 er 0,47. Det gjennomsnittlige standardfeilen for studiene med 8 og 40 er 1,03 og 0,47.
 
 ```{r}
@@ -130,12 +142,21 @@ Standardavviket til studien med utvalgsstørrelse på 8 er 1,05, mens standardav
 results %>%
   ggplot(aes(pval)) + 
   geom_histogram() +
-  facet_wrap(~ n
-             
-            )
+  facet_wrap(~ n) +
+  labs(x = "P-verdi", y = "1000 repiterte studiar")
 ```
 
-5\) I histogrammenne ser vi forventa p-verdier frå studier med utvalgsstørrelse på 8 og frå studier med utvalgsstørrelse på 40. Det kjem tydelig fram at studier med utvalgsstørrelser på 8 vil ha større spreding av p-verdier samt mindre signifikante resultater enn studiene med utvalgsstørrelse på 40 som vil få stor annsamling av lav p-verdi og flere signifikante resultater. Basert på dette vil det bli gjor mer type to feil i studiene med lav utvalgsstørrelse i form av at nullhypotesen ikkje forkastes selv om den ikkje representerer populasjonen.
+5\) I histogramma ser vi forventa p-verdiar frå studiar med utvalgsstorleik på 8 samanlikna med studiar med utvalgsstorleik på 40. Det er tydeleg at studiar med utvalgsstorleik på 8 har større spreiing i p-verdiar og færre signifikante resultat. Dette kjem av høgare standardfeil og lågare statistisk styrke ved små utval. Derimot ser vi at studiar med utvalgsstorleik på 40 har ein høgare konsentrasjon av låge p-verdiar og fleire signifikante resultat, grunna lågare standardfeil og høgare presisjon i estimata.
+
+Basert på dette kan vi forvente fleire type II-feil i studiar med små utval, der nullhypotesen ikkje blir forkasta sjølv om ho faktisk er feil. Dette skuldast at små utval har lågare evne til å oppdage reelle effektar i populasjonen.
+
+
+Gammal
+I histogrammenne ser vi forventa p-verdier frå studier med utvalgsstørrelse på 8 og frå studier med utvalgsstørrelse på 40. Det kjem tydelig fram at studier med utvalgsstørrelser på 8 vil ha større spreding av p-verdier samt mindre signifikante resultater enn studiene med utvalgsstørrelse på 40 som vil få stor annsamling av lav p-verdi og flere signifikante resultater.
+
+(Denne større spreiinga i p-verdiar ved små utval kjem av at tilfeldig variasjon speler ei større rolle i små utval, noko som gjer at resultatet kan bli meir påverka av ekstreme enkeltverdiar. Dermed blir det vanskelegare å oppdage signifikante effektar, sjølv når dei faktisk er til stades.)
+
+Basert på dette vil det bli gjor mer type to feil i studiene med lav utvalgsstørrelse i form av at nullhypotesen ikkje forkastes selv om den ikkje representerer populasjonen.
 
 ```{r}
 #| warning: FALSE
@@ -161,7 +182,9 @@ pwr.t.test(n = 40, sig.level = 0.05, d = 1.5/3, type = "one.sample")
 pwr.t.test(n = 8, sig.level = 0.05, d = 1.5/3, type = "one.sample")
 ```
 
-Frå ein one-sample t test bereknes styrken til studier med utvalgsstørrelse på 40 til å vere 0,869 ved et p-verdi signifikansnivå satt til 0,05. Om vi bytter utvalgsstørrelsen til 8 og beholder samme signifikansnivå vil styrken til studiene vere 0,232.
+Her viser berekningane frå ein t-test at styrken for studiar med utvalsstorleik på 40 er 0,869 (høg), medan ho for studiar med utvalsstorleik på 8 er 0,232 (låg). Dette indikerer at studiar med små utval har ein betydeleg risiko for type II-feil, altså at dei ikkje forkastar nullhypotesen sjølv når ho er feil.
+
+
 
 ```{r}
 #| warning: FALSE
@@ -215,14 +238,19 @@ results_null <- bind_rows(results_8, results_40)
 results_null %>%
   ggplot(aes(pval)) + 
   geom_histogram() +
-  facet_wrap(~ n
-             
-            )
+  facet_wrap(~ n) +
+  labs(x = "P-verdi", y = "1000 repiterte studiar")
 
 ```
 
 Når populasjonseffekten er null og med eit signifikansnivå på 5% vil 5% av gjentatte studier gi et "falskt positivt" resultat.
 
-### Konklusjon
+## Konklusjon
 
+Etter simulasjon av to ulike utvalgsstørrelser på 8 og 40 frå datasett både med og utan populasjonseffekt, kjem det tydelig fram at utvalgsstørrelsen spelar ei avgjerande rolle for påliteligheten av resultata. Studiene med større utvalgsstørrelse (n = 40) viser ikkje berre fleire signifikante målingar, men også mindre spreiing av estimata og lågare påverknad frå avvik eller ekstreme variablar. Dette gjev dei større statistisk styrke og aukar sansynet for at resultata frå desse studiane er representative for populasjonen. I motsetning viser studiane med mindre utvalgsstørrelse (n = 8) både større spreiing i p-verdiar og høgare risiko for type to-feil, noko som indikerer at dei i mange tilfelle ikkje vil kunne fange opp reelle effektar i populasjonen.
+
+Desse resultata understrekar kor viktig det er å velje ei tilstrekkeleg utvalgsstørrelse i forskingsdesign for å sikre valide og generaliserbare resultat. Samtidig viser simulasjonane korleis små utvalgsstørrelsar kan føre til upålitelege resultat, noko som potensielt kan påverke tolkinga av forskingsfunn og deira praktiske implikasjonar. Valet av utvalgsstorleik bør derfor alltid tilpassast både forskingsspørsmålet og den forventede effekten, for å balansere presisjon, ressursbruk og robustheit i analysen.
+
+
+Gammal
 Etter simulasjon av to utvalgsstørrelser på 8 og 40 frå datasett med og uten populasjonseffekt ser eg at det er store forskjeller i kor ofte estimatene treffer populasjonen. Studiene med større utvalg har flere signifikante målinger, mindre påvirkning frå avvik eller ekstreme variabler og har større statistisk styrke som gjer at studiane sansynligvis vil vere representativt for populasjonen enn studiane med mindre utvalg.
