@@ -3,5 +3,7 @@
 
 Mappeeksamen består av sju arbeisdkrav som er satt saman til ei bok. Arbeidskrava som er gjort er rapportar skrive om ulike temaer innanfor statistikk i vitenskapen, vitenskapsfilosofi og ein molekylærlabb qPCR analyse.
 
+Vil benytte muligheten til å takke gruppa mi og fleire klassekamerata for godt samarbeid. Vil og sei takk til lærar som har vert tolmodig med oss og prøvd godt å legge tilrette for læring. 
+
 https://github.com/lovrebo/Mappeeksamen.git
 

@@ -7,8 +7,8 @@ editor_options:
 
 ## Intrtoduksjon
 
-Hensikten med denne rapporten er å presentere estimater for reliabilitet av data samlet i fysiologisk testlab ved Høgskolen i Innlandet. Hovudfokuset i eksperimentet er å vise til god standardisering og gjennomtenkt metode for å minske støy, det er viktig for å auke reliabiliteten [@Halperin]. Ifølge [@Hopkins] er reliabilitet reproduserbarheten av verdier fra en test, analyse eller annen måling ved gjentatte forsøk på samme individ.
-Vi har gjennomført $\dot{V}O_{2max}$ tester på sykkel der 16 deltakere har gjennomført 2 eller 4 tester i løpet av tre uker. De to første testene ble gjennomført med ca. 24 timers mellomrom i uke en. De to siste testene ble gjennomført med ca. 48 timers mellomrom i uke tre. Vi har brukt Rstudio for å analysere dataen og få svar på om våre tester er reliable.
+Hensikta med denne rapporten er å presentere estimat for reliabilitet av data samla i fysiologisk testlab ved Høgskolen i Innlandet. Hovudfokuset i eksperimentet er å vise til god standardisering og gjennomtenkt metode for å minske støy, det er viktig for å auke reliabiliteten [@Halperin]. Ifølge [@Hopkins] er reliabilitet reproduserbarheten av verdiar frå ein test, analyse eller annan måling ved gjentatte forsøk på samme individ.
+Vi har gjennomført $\dot{V}O_{2max}$ testar på sykkel der 16 deltakarar har gjennomført 2 eller 4 tester i løpet av tre veker. Dei to første testane blei gjennomført med ca. 24 timars mellomrom i veke ein. Dei to siste testane blei gjennomført med ca. 48 timers mellomrom i veke tre. Vi har brukt Rstudio for å analysere dataen og få svar på om våre testar er reliable.
 
 
 ## Metode
@@ -19,7 +19,7 @@ Vi gjennomførte ein test-retest i studien vår, der vi samla data frå fleire $
 
 ### Standardisering av testar
 
-Resultata av ein $\dot{V}O_{2max}$-test blir påverka av ulike fysiologiske og miljømessige faktorar, så det er viktig å setje visse reglar som deltakarane må følgje i dagane før testen. Ein rettleiar kan sendast ut til deltakarane nokre dagar før den første testen, med informasjon om korleis dei skal førebu seg. Denne rettleiaren bør inkludere standardiseringspraksisar som bidreg til å isolere deltakarens faktiske aerobe kapasitet og eliminerer ytre faktorar som kan påverke testresultata. Biologiske faktorar som blir kontrollerte, inkluderer trening, hydrering, søvn, inntak av koffein og kaloriar, alkoholkonsum og tidspunkt for testen. Deltakaren må følgje same rutine fram mot neste test for å sikre nøyaktige, pålitelege og samanliknbare resultat.  
+Resultata av ein $\dot{V}O_{2max}$-test blir påverka av ulike fysiologiske og miljømessige faktorar, så det er viktig å setje visse reglar som deltakarane må følgje i dagane før testen. Eit rettleiingsdokument kan sendast ut til deltakarane nokre dagar før den første testen, med informasjon om korleis dei skal førebu seg. Dokumentet bør inkludere standardiseringspraksisar som bidreg til å isolere deltakarens faktiske aerobe kapasitet og eliminerer ytre faktorar som kan påverke testresultata. Biologiske faktorar som blir kontrollerte, inkluderer trening, hydrering, søvn, inntak av koffein og kaloriar, alkoholkonsum og tidspunkt for testen. Deltakaren må følgje same rutine fram mot neste test for å sikre nøyaktige, pålitelege og samanliknbare resultat.  
 
 
 
@@ -94,7 +94,7 @@ dat <- bind_rows(
 ```
 
 
-
+\newpage
 
 ## Resultat
 
@@ -135,7 +135,7 @@ oversikt_fig
 
 
 library(tidyverse)
-library(kableExtra)
+library(gt)
 
 Tabell_testres <- dat %>%
   group_by(id) %>%
@@ -145,11 +145,7 @@ Tabell_testres <- dat %>%
          vo2.max) %>%
   pivot_wider(names_from = Tidspunkt,
               values_from = vo2.max) %>%
-  kable(col.names = c("ID ", "Test 1", "Test 2", "Test 3", "Test 4"),
-        escape = FALSE,
-        caption = "Deltakaranes V&#775;O<sub>2max</sub> verdiar i ml/min") %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
-
+  gt() 
 
 Tabell_testres
 

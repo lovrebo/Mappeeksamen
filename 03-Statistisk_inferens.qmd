@@ -37,9 +37,10 @@ samp2 <- data.frame(y = sample(population, 40, replace = FALSE))
 ```
 
 ```{r}
+#| echo: false
 #| warning: FALSE
 #| message: FALSE
-#| echo: false
+
 
 
 m1 <- lm(y ~ 1, data = samp1)
@@ -49,23 +50,13 @@ summary(m1)
 summary(m2)
 ```
 
+1\) I koden er utvala m1 (n = 8) og m2 (n = 40) estimerte til gjennomsnittsverdiar på `r coef(m1)[1]` og `r coef(m2)[1]` for ein ukjent variabel. Estimatet representerer ein effekt frå ei simulering. SE er `r round(summary(m1)$coefficients[1, 2], 2)` for m1 og `r round(summary(m2)$coefficients[1, 2], 2)` for m2. T-verdiane er `r round(summary(m1)$coefficients[1, 3], 2)` for m1 og `r round(summary(m2)$coefficients[1, 3], 2)` for m2, og p-verdiane er `r round(summary(m1)$coefficients[1, 4], 3)` for m1 og `r round(summary(m2)$coefficients[1, 4], 3)` for m2.
 
-1\) I koden er utvala m1 (n = 8) og m2 (n = 40) estimerte til gjennomsnittsverdiar på `r coef(m1)[1]` og `r coef(m2)[1]` for ein ukjent variabel. Estimatet representerer ein effekt frå ei simulering. SE er `r round(summary(m1)$coefficients[1, 2], 2)` for m1 og `r round(summary(m2)$coefficients[1, 2], 2)` for m2. T-verdiane er `r round(summary(m1)$coefficients[1, 3], 2)` for m1 og `r round(summary(m2)$coefficients[1, 3], 2)` for m2, og p-verdiane er `r round(summary(m1)$coefficients[1, 4], 3)` for m1 og `r round(summary(m2)$coefficients[1, 4], 3)` for m2. 
+SE gir eit mål på variasjonen mellom estimatet frå utvalet og det sanne gjennomsnittet i populasjonen. Ein låg SE indikerer mindre variasjon, noko som aukar sannsynet for at estimatet ligg nærare det sanne populasjonsgjennomsnittet og dermed er meir representativt for populasjonen. T-verdien fortel kor mange standardfeil estimatet ligg frå nullhypotesen. Den høgare t-verdien for m2 tyder på større sannsyn for at resultatet er statistisk signifikant. P-verdien indikerer sannsynet for å observere ein t-verdi som er lik eller meir ekstrem enn den observerte, dersom nullhypotesen er sann. P-verdien for m1 er ikkje statistisk signifikant, medan p-verdien for m2 er signifikant ut ifrå eit signifikansnivå på 0,05. Dette betyr at vi kan forkaste nullhypotesen for m2 med ei aksept for at opptil 5 % av liknande studiar vil gje feilaktig forkasting av nullhypotesen. Dersom vi repetera studien 1000 gonger, kan vi forvente at 185 av m1-studiar og 2 av m2-studiar vil gje ein like stor eller meir ekstrem t-verdi dersom nullhypotesen er sann.
 
-
-SE gir eit mål på variasjonen mellom estimatet frå utvalet og det sanne gjennomsnittet i populasjonen. Ein låg SE indikerer mindre variasjon, noko som aukar sannsynet for at estimatet ligg nærare det sanne populasjonsgjennomsnittet og dermed er meir representativt for populasjonen. T-verdien fortel kor mange standardfeil estimatet ligg frå nullhypotesen. Den høgare t-verdien for m2 tyder på større sannsyn for at resultatet er statistisk signifikant. P-verdien indikerer sannsynet for å observere ein t-verdi som er lik eller meir ekstrem enn den observerte, dersom nullhypotesen er sann. P-verdien for m1 er ikkje statistisk signifikant, medan p-verdien for m2 er signifikant ut ifrå eit signifikansnivå på 0,05. Dette betyr at vi kan forkaste nullhypotesen for m2 med ei aksept for at opptil 5 % av liknande studiar vil gje feilaktig forkasting av nullhypotesen. Dersom vi repetera studien 1000 gonger, kan vi forvente at 185 av m1-studiar og 2 av m2-studiar vil gje ein like stor eller meir ekstrem t-verdi dersom nullhypotesen er sann. 
-
-
-
-2\) Ulikt utvalgsstorleik (n):
-I koden er det to utval med forskjellig storleik: m1 har berre 8 observasjonar, medan m2 har 40 observasjonar. Når utvalsstorleiken er liten som i m1, vil ekstreme verdiar ha større påverknad på gjennomsnittsberekninga og standardfeilen. Det gjer at estimatet er meir usikkert og kan føre til større varians i resultatet. Statistisk styrke er definert som sannsynet for å korrekt forkaste nullhypotesen når ho faktisk er falsk.. Styrken aukar med større utval, fordi det gir mindre standardfeil og meir presise estimat. I dette tilfellet vil m2, med 40 observasjonar, ha større statistisk styrke enn m1.
-
-
-
+2\) Ulikt utvalgsstorleik (n): I koden er det to utval med forskjellig storleik: m1 har berre 8 observasjonar, medan m2 har 40 observasjonar. Når utvalsstorleiken er liten som i m1, vil ekstreme verdiar ha større påverknad på gjennomsnittsberekninga og standardfeilen. Det gjer at estimatet er meir usikkert og kan føre til større varians i resultatet. Statistisk styrke er definert som sannsynet for å korrekt forkaste nullhypotesen når ho faktisk er falsk.. Styrken aukar med større utval, fordi det gir mindre standardfeil og meir presise estimat. I dette tilfellet vil m2, med 40 observasjonar, ha større statistisk styrke enn m1.
 
 3\) I ein t-fordeling ønsker vi å sjå på heile figuren, inkludert dei skraverte områda som representerer p-verdiane, for å få ein oversikt og undersøkje mogelege endringar. Enten det er endring i positiv eller negativ retning, kan vi bruke dei skraverte områda i dei nedre og øvre halane av t-fordelinga til å analysere korleis gjentatte studiar vil fordele seg. Dei skraverte områda (p-verdiane) ilustrera sannsynet for å observere ein t-verdi som er lik eller meir ekstrem enn den observerte, om nullhypotesen er sann.
-
-
 
 ```{r}
 #| warning: FALSE
@@ -132,9 +123,9 @@ mean_se8 <- mean(results_8$se)
 
 ```
 
-4\)Standardavviket for estimata i studien med utvalgsstorleik på 8 er `r sd_est8`, medan standardavviket for estimata i studien med utvalgsstorleik på 40 er `r sd_est40`. Dette viser at estimata frå studien med større utvalgsstorleik (40) har mindre spreiing, noko som er forventa fordi større utval gir meir presise estimat.
+4)  Standardavviket for estimata i studien med utvalgsstorleik på 8 er `r round(sd_est8, 2)`, medan standardavviket for estimata i studien med utvalgsstorleik på 40 er `r round(sd_est40, 2)`. Dette viser at estimata frå studien med større utvalgsstorleik (40) har mindre spreiing, noko som er forventa fordi større utval gir meir presise estimat.
 
-Den gjennomsnittlege standardfeilen (SE) for studiane med utvalgsstorleik 8 og 40 er `r mean_se8` og `r mean_se40`. Dette bekreftar at større utvalgsstorleik gir lågare standardfeil, noko som tyder på at estimata er nærare populasjonsgjennomsnittet.
+Den gjennomsnittlege standardfeilen (SE) for studiane med utvalgsstorleik 8 og 40 er `r round(mean_se8, 2)` og `r round(mean_se40, 2)`. Dette bekreftar at større utvalgsstorleik gir lågare standardfeil, noko som tyder på at estimata er nærare populasjonsgjennomsnittet.
 
 ```{r}
 #| warning: FALSE
@@ -148,20 +139,20 @@ results %>%
   labs(x = "P-verdi", y = "1000 repiterte studiar")
 ```
 
-5\) I histogramma ser vi forventa p-verdiar frå studiar med utvalgsstorleik på 8 samanlikna med studiar med utvalgsstorleik på 40. Det er tydeleg at studiar med utvalgsstorleik på 8 har større spreiing i p-verdiar og færre signifikante resultat. Dette kjem av høgare standardfeil og lågare statistisk styrke ved små utval. Derimot ser vi at studiar med utvalgsstorleik på 40 har ein høgare konsentrasjon av låge p-verdiar og fleire signifikante resultat, grunna lågare standardfeil og høgare presisjon i estimata. Denne større spreiinga i p-verdiar ved små utval kjem av at tilfeldig variasjon speler ei større rolle i små utval, noko som gjer at resultatet kan bli meir påverka av ekstreme enkeltverdiar. Dermed blir det vanskelegare å oppdage signifikante effektar, sjølv når dei faktisk er til stades. Basert på dette kan vi forvente fleire type II-feil i studiar med små utval, der nullhypotesen ikkje blir forkasta sjølv om ho faktisk er feil. Dette skuldast at små utval har lågare evne til å oppdage reelle effektar i populasjonen. 
-
-
-
+5\) I histogramma ser vi forventa p-verdiar frå studiar med utvalgsstorleik på 8 samanlikna med studiar med utvalgsstorleik på 40. Det er tydeleg at studiar med utvalgsstorleik på 8 har større spreiing i p-verdiar og færre signifikante resultat. Dette kjem av høgare standardfeil og lågare statistisk styrke ved små utval. Derimot ser vi at studiar med utvalgsstorleik på 40 har ein høgare konsentrasjon av låge p-verdiar og fleire signifikante resultat, grunna lågare standardfeil og høgare presisjon i estimata. Denne større spreiinga i p-verdiar ved små utval kjem av at tilfeldig variasjon speler ei større rolle i små utval, noko som gjer at resultatet kan bli meir påverka av ekstreme enkeltverdiar. Dermed blir det vanskelegare å oppdage signifikante effektar, sjølv når dei faktisk er til stades. Basert på dette kan vi forvente fleire type II-feil i studiar med små utval, der nullhypotesen ikkje blir forkasta sjølv om ho faktisk er feil. Dette skuldast at små utval har lågare evne til å oppdage reelle effektar i populasjonen.
 
 ```{r}
 #| warning: FALSE
 #| message: FALSE
 #| echo: false
 
+library(gt)
+
 results %>%
   filter(pval < 0.05) %>%
   group_by(n) %>%
-  summarise(sig_results = n())
+  summarise(Signifikant = n()) %>% 
+  gt()
 ```
 
 6\) Ved eit p-verdi signifikansnivå på 0,05 vil 227 av 1000 studier med utvalgsstørrelse på 8 og oppgi ein statistisk signifikant effekt. Studier med utvalgsstørrelse på 40 vil derimot ha 865 av 1000 studier som oppgir statistisk signifikant effekt.
@@ -177,9 +168,7 @@ st_str_40 <- pwr.t.test(n = 40, sig.level = 0.05, d = 1.5/3, type = "one.sample"
 st_str_8 <- pwr.t.test(n = 8, sig.level = 0.05, d = 1.5/3, type = "one.sample")
 ```
 
-7\) Her viser berekningane frå ein t-test at styrken for studiar med utvalsstorleik på 40 er `r round(st_str_40$power, 3)`
- (høg), medan ho for studiar med utvalsstorleik på 8 er `r round(st_str_8$power, 3)`
- (låg). Dette indikerer at studiar med små utval har ein betydeleg risiko for type II-feil, altså at dei ikkje forkastar nullhypotesen sjølv når ho er feil.
+7\) Her viser berekningane frå ein t-test at styrken for studiar med utvalsstorleik på 40 er `r round(st_str_40$power, 3)` (høg), medan ho for studiar med utvalsstorleik på 8 er `r round(st_str_8$power, 3)` (låg). Dette indikerer at studiar med små utval har ein betydeleg risiko for type II-feil, altså at dei ikkje forkastar nullhypotesen sjølv når ho er feil.
 
 ```{r}
 #| warning: FALSE
@@ -188,7 +177,6 @@ st_str_8 <- pwr.t.test(n = 8, sig.level = 0.05, d = 1.5/3, type = "one.sample")
 
 population <- rnorm(1000000, mean = 0, sd = 3)
 ```
-
 
 ```{r}
 #| warning: FALSE
@@ -252,5 +240,3 @@ results_null %>%
 ## Konklusjon
 
 Etter simulasjon av to ulike utvalgsstørrelser på 8 og 40 frå datasett både med og utan populasjonseffekt, ser ein godt at utvalgsstørrelsen spelar ei avgjerande rolle for påliteligheita av resultata. Studiane med større utvalgsstørrelse (n = 40) viser fleire signifikante målingar, mindre spreiing av estimata, og lågare påverknad frå avvik eller ekstreme variablar. Det gir dei større statistisk styrke og aukar sansynet for at resultata frå desse studiane er representative for populasjonen. I motsetning viser studiane med mindre utvalgsstørrelse (n = 8) både større spreiing i p-verdiar og høgare risiko for type to-feil, noko som indikera at dei i mange tilfelle ikkje vil kunne fange opp reelle effektar i populasjonen. Resultata understrekar kor viktig det er å velge ein tilstrekkeleg utvalgsstørrelse i forskingsdesign for å sikre riktige resultat.
-
-
